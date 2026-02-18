@@ -28,7 +28,7 @@
                     </p>
                 </div>
 
-                <div class="flex flex-wrap gap-4 pt-4">
+                <div class="flex justify-center flex-wrap gap-4 pt-4">
                     <NuxtLink to="/admissions"
                         class="bg-[#6C1C23] text-white px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-[#5a171d] transition-colors rounded-sm">
                         Inscrire mon enfant
