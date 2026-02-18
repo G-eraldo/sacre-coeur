@@ -71,7 +71,7 @@ const quickLinks = [
                         </h2>
 
                         <p
-                            class="text-base lg:text-xl font-sans font-light max-w-2xl mx-auto opacity-90 leading-relaxed px-4">
+                            class=" text-base font-bold lg:text-xl font-sans lg:font-light max-w-2xl mx-auto opacity-90 leading-relaxed px-4">
                             {{ slide.subtitle }}
                         </p>
                     </div>
