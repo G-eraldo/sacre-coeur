@@ -67,6 +67,11 @@ import { MailIcon, MapIcon, PhoneIcon } from 'lucide-vue-next';
                         <NuxtLink to="/" target="_blank" class="hover:text-[#C4A55F] transition-colors">E-Sidoc
                         </NuxtLink>
                     </li>
+                    <li>
+                        <NuxtLink to="https://www.apel.fr/" target="_blank"
+                            class="hover:text-[#C4A55F] transition-colors">Apel
+                        </NuxtLink>
+                    </li>
 
                 </ul>
             </div>

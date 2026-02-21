@@ -3,7 +3,13 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
-  modules: ["@nuxt/eslint", "@nuxt/icon", "@nuxt/image", "shadcn-nuxt"],
+  modules: [
+    "@nuxt/eslint",
+    "@nuxt/icon",
+    "@nuxt/image",
+    "shadcn-nuxt",
+    "@nuxtjs/strapi",
+  ],
 
   css: ["./app/assets/css/main.css"],
   vite: {
@@ -22,5 +28,21 @@ export default defineNuxtConfig({
      * @default "@/components/ui"
      */
     componentDir: "@/components/ui",
+  },
+  runtimeConfig: {
+    strapi: {
+      url: process.env.STRAPI_URL || "http://localhost:1337",
+      prefix: "/api",
+      admin: "/admin",
+      version: "v5",
+      cookie: {
+        path: "/",
+        maxAge: 14 * 24 * 60 * 60,
+        secure: process.env.NODE_ENV === "production",
+        sameSite: "Lax",
+        httpOnly: true,
+      },
+      cookieName: "strapi_jwt",
+    },
   },
 });

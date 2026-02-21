@@ -19,7 +19,7 @@ const actualite = [
 </script>
 
 <template>
-    <section class="max-w-7xl mx-auto px-6 py-10 lg:py-8 bg-[#F9F7F4] rounded-lg">
+    <section class="max-w-7xl mx-auto px-6 py-10 lg:py-8 ">
         <div class="flex flex-col">
             <div class="mb-12">
                 <h2 class="text-4xl lg:text-5xl font-serif text-[#6C1C23] tracking-tight ">
@@ -27,9 +27,8 @@ const actualite = [
                 </h2>
             </div>
             <div class="grid grid-cols-1 lg:grid-cols-3">
-                <Card
-                    class="lg:w-96 w-full mx-auto mb-12 p-4 lg:p-6 lg:mb-16 hover:scale-102 transition-transform duration-300 ease-in-out"
-                    v-for="(item, index) in actualite" :key="index">
+                <Card v-for="(item, index) in actualite" :key="index"
+                    class="lg:w-96 w-full mx-auto mb-12 p-4 lg:p-6 lg:mb-16 hover:scale-102 transition-transform duration-300 ease-in-out">
                     <CardHeader id="commander">
                         <CardTitle class="font-mono">{{ item.title }}</CardTitle>
                         <CardDescription class="h-24">{{ item.description }}</CardDescription>

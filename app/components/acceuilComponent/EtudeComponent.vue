@@ -24,7 +24,7 @@ const actualite = [
 </script>
 
 <template>
-    <section class="max-w-7xl mx-auto px-6 py-10 lg:py-8">
+    <section class="max-w-7xl mx-auto px-6 py-10 lg:py-8 bg-[#F9F7F4] rounded-lg">
         <div class="flex flex-col">
             <div class="mb-12">
                 <h2 class="text-4xl lg:text-5xl font-serif text-[#6C1C23] tracking-tight ">
