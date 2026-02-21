@@ -2,11 +2,11 @@
 const { find } = useStrapi()
 const pdfs = await find("pdfs", { populate: "*" })
 
-const selectedPdf = ref(null)
+function getViewerUrl(url) {
+    return `https://docs.google.com/viewer?url=${encodeURIComponent(url)}&embedded=false`
+}
 
-// Génère une preview image de la 1ère page du PDF via Cloudinary
 function getPdfPreview(url) {
-    // Transforme l'URL cloudinary pour extraire une image de la 1ère page
     return url.replace('/image/upload/', '/image/upload/pg_1,w_400,f_jpg/')
 }
 </script>
@@ -22,22 +22,22 @@ function getPdfPreview(url) {
 
             <div class="grid grid-cols-1 lg:grid-cols-3">
                 <Card v-for="pdf in pdfs.data" :key="pdf.id"
-                    class="lg:w-96 w-full mx-auto mb-12 p-4 lg:p-6 lg:mb-16 hover:scale-102 transition-transform duration-300 ease-in-out cursor-pointer"
-                    @click="selectedPdf = pdf">
+                    class="lg:w-96 w-full mx-auto mb-12 p-4 lg:p-6 lg:mb-16 hover:scale-102 transition-transform duration-300 ease-in-out">
                     <CardHeader>
                         <CardTitle class="font-mono">{{ pdf.title }}</CardTitle>
                     </CardHeader>
                     <CardContent>
-                        <NuxtLink :to="pdf.document[0].url" target="_blank">
+                        <NuxtLink :to="getViewerUrl(pdf.document[0].url)" target="_blank" external>
                             <NuxtImg :src="getPdfPreview(pdf.document[0].url)" :alt="pdf.title"
-                                class="w-full h-48 object-cover rounded-lg border border-gray-100" />
+                                class="w-full h-48 object-cover rounded-lg border border-gray-100 hover:opacity-80 transition-opacity" />
                         </NuxtLink>
                     </CardContent>
                     <CardFooter class="flex justify-center">
                         <Button
-                            class="bg-[#6C1C23] hover:bg-[#C4A55F] text-white px-8 py-4 text-xs font-bold uppercase rounded-sm"
-                            @click.stop>
-                            <NuxtLink :to="pdf.document[0].url" target="_blank">Apercu</NuxtLink>
+                            class="bg-[#6C1C23] hover:bg-[#C4A55F] text-white px-8 py-4 text-xs font-bold uppercase rounded-sm">
+                            <NuxtLink :to="getViewerUrl(pdf.document[0].url)" target="_blank" external>
+                                Aperçu
+                            </NuxtLink>
                         </Button>
                     </CardFooter>
                 </Card>
