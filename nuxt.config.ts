@@ -29,20 +29,11 @@ export default defineNuxtConfig({
      */
     componentDir: "@/components/ui",
   },
-  runtimeConfig: {
-    strapi: {
-      url: process.env.STRAPI_URL,
-      prefix: "/api",
-      admin: "/admin",
-      version: "v5",
-      cookie: {
-        path: "/",
-        maxAge: 14 * 24 * 60 * 60,
-        secure: process.env.NODE_ENV === "production",
-        sameSite: "Lax",
-        httpOnly: true,
-      },
-      cookieName: "strapi_jwt",
-    },
+  strapi: {
+    url: process.env.STRAPI_URL || "http://localhost:1337",
+    prefix: "/api",
+    admin: "/admin",
+    version: "v5",
   },
+  runtimeConfig: {},
 });
