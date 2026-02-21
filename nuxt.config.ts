@@ -29,11 +29,12 @@ export default defineNuxtConfig({
      */
     componentDir: "@/components/ui",
   },
-  strapi: {
-    url: process.env.STRAPI_URL || "http://localhost:1337",
-    prefix: "/api",
-    admin: "/admin",
-    version: "v5",
+  runtimeConfig: {
+    strapi: {
+      url: process.env.STRAPI_URL || "http://localhost:1337",
+      prefix: "/api",
+      admin: "/admin",
+      version: "v5",
+    },
   },
-  runtimeConfig: {},
 });
