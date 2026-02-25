@@ -36,7 +36,7 @@ function getPdfPreview(url) {
                         <Button
                             class="bg-[#6C1C23] hover:bg-[#C4A55F] text-white px-8 py-4 text-xs font-bold uppercase rounded-sm">
                             <NuxtLink :to="getViewerUrl(pdf.document[0].url)" target="_blank" external>
-                                Aperçu
+                                Aperçu du document
                             </NuxtLink>
                         </Button>
                     </CardFooter>
