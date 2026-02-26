@@ -7,13 +7,11 @@ import DocumentsComponent from '~/components/acceuilComponent/DocumentsComponent
 import EtudeComponent from '~/components/acceuilComponent/EtudeComponent.vue';
 import InstitutionComponent from '~/components/acceuilComponent/InstitutionComponent.vue';
 import VideoComponent from '~/components/acceuilComponent/VideoComponent.vue';
-
-
-
 </script>
 
 <template>
-    <main class="relative w-full">
+    <main id="main-content" aria-label="Contenu principal" class="relative w-full">
+        <h1 class="sr-only">Sacré-Cœur de Breteuil</h1>
         <CarouselComponent />
         <InstitutionComponent />
         <ActualiteComponent />
@@ -22,13 +20,5 @@ import VideoComponent from '~/components/acceuilComponent/VideoComponent.vue';
         <CarnetDeVoyageComponent />
         <DocumentsComponent />
         <AproposComponent />
-
-
     </main>
 </template>
-
-<style scoped>
-.font-serif {
-    font-family: var(--font-serif), serif;
-}
-</style>

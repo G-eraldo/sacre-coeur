@@ -86,11 +86,11 @@ const quickLinks = [
                     <NuxtLink v-for="link in quickLinks" :key="link.label" :to="link.to"
                         class="flex flex-col justify-center items-center gap-2 lg:gap-4 group transition-all duration-300 min-w-20 lg:min-w-25">
                         <div
-                            class="p-2 lg:p-3 rounded-xl bg-white/5 border border-white/10 group-hover:bg-[#6C1C23] group-hover:border-[#6C1C23] group-hover:scale-110 transition-all duration-300">
-                            <component :is="link.icon" :size="24" class="text-white lg:size-7" stroke-width="1.5" />
+                            class="p-3 rounded-xl bg-white/5 border border-white/10 group-hover:bg-brand-primary group-hover:border-brand-primary group-hover:scale-110 transition-all duration-300">
+                            <component :is="link.icon" :size="24" class="text-white lg:size-7" stroke-width="1.5" aria-hidden="true" />
                         </div>
                         <span
-                            class="text-[9px] lg:text-[11px] font-bold uppercase tracking-[0.15em] text-white/80 group-hover:text-white transition-colors leading-tight text-center">
+                            class="text-[11px] lg:text-[11px] font-bold uppercase tracking-[0.15em] text-white/80 group-hover:text-white transition-colors leading-tight text-center">
                             {{ link.label }}
                         </span>
                     </NuxtLink>
