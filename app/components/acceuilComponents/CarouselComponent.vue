@@ -9,10 +9,10 @@ import {
 import Autoplay from 'embla-carousel-autoplay';
 import {
     Calendar,
+    ClipboardList,
     Euro,
     ExternalLink,
     GraduationCap,
-    MapPin,
     Phone
 } from 'lucide-vue-next';
 
@@ -35,14 +35,11 @@ const images = [
 ]
 
 const quickLinks = [
-    // { label: 'Transports', icon: Bus, to: '/transports' },
-    { label: 'Inscriptions', icon: GraduationCap, to: '/admissions' },
+    { label: 'Pré-inscriptions', icon: GraduationCap, to: '/pre-inscription' },
     { label: 'Calendrier', icon: Calendar, to: '/calendrier' },
-    // { label: 'Documents', icon: ClipboardList, to: '/documents' },
-    { label: 'Liens utiles', icon: ExternalLink, to: '/liens' },
+    { label: 'Liens utiles', icon: ExternalLink, to: '/a-propos#liens-utiles' },
     { label: 'Tarifs', icon: Euro, to: '/tarifs' },
-    { label: 'Plan d\'accès', icon: MapPin, to: '/contact' },
-    // { label: 'À qui s\'adresser ?', icon: CircleHelp, to: '/contact' },
+    { label: 'Nos documents', icon: ClipboardList, to: '/documents' },
     { label: 'Nous contacter', icon: Phone, to: '/contact' },
 ]
 </script>
@@ -57,7 +54,7 @@ const quickLinks = [
                     <NuxtImg :src="slide.url" :alt="slide.title" :loading="index === 0 ? 'eager' : 'lazy'"
                         :fetchpriority="index === 0 ? 'high' : 'auto'" format="webp" quality="80"
                         sizes="100vw sm:100vw md:100vw lg:100vw" class="w-full h-full object-cover brightness-[0.7]" />
-                    <div class="absolute inset-0 bg-linear-to-b from-black/40 via-transparent to-black/60"></div>
+                    <div class="absolute inset-0 bg-linear-to-b from-black/40 via-transparent to-black/60" />
                 </div>
 
                 <!-- Slide Content Overlay -->

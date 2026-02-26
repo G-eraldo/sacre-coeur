@@ -28,9 +28,9 @@ const navLinks = [
     { id: 3, title: 'Collège', to: '/', icon: SchoolIcon },
     { id: 4, title: 'Segpa', to: '/', icon: BedIcon },
     { id: 5, title: 'Internat', to: '/', icon: BookOpenIcon },
-    { id: 6, title: 'A propos', to: '/', icon: InfoIcon },
+    { id: 6, title: 'A propos', to: '/a-propos', icon: InfoIcon },
     { id: 7, title: 'Pastorale', to: '/', icon: ChurchIcon },
-    { id: 8, title: 'Contact', to: '/', icon: PhoneIcon },
+    { id: 8, title: 'Contact', to: '/contact', icon: PhoneIcon },
 ]
 </script>
 

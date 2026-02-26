@@ -1,12 +1,11 @@
 <script setup>
-import ActualiteComponent from '~/components/acceuilComponent/ActualiteComponent.vue';
-import AproposComponent from '~/components/acceuilComponent/AproposComponent.vue';
-import CarnetDeVoyageComponent from '~/components/acceuilComponent/CarnetDeVoyageComponent.vue';
-import CarouselComponent from '~/components/acceuilComponent/CarouselComponent.vue';
-import DocumentsComponent from '~/components/acceuilComponent/DocumentsComponent.vue';
-import EtudeComponent from '~/components/acceuilComponent/EtudeComponent.vue';
-import InstitutionComponent from '~/components/acceuilComponent/InstitutionComponent.vue';
-import VideoComponent from '~/components/acceuilComponent/VideoComponent.vue';
+import ActualiteComponent from '~/components/acceuilComponents/ActualiteComponent.vue';
+import AproposComponent from '~/components/acceuilComponents/AproposComponent.vue';
+import CarnetDeVoyageComponent from '~/components/acceuilComponents/CarnetDeVoyageComponent.vue';
+import CarouselComponent from '~/components/acceuilComponents/CarouselComponent.vue';
+import EtudeComponent from '~/components/acceuilComponents/EtudeComponent.vue';
+import InstitutionComponent from '~/components/acceuilComponents/InstitutionComponent.vue';
+import VideoComponent from '~/components/acceuilComponents/VideoComponent.vue';
 </script>
 
 <template>
@@ -18,7 +17,6 @@ import VideoComponent from '~/components/acceuilComponent/VideoComponent.vue';
         <VideoComponent />
         <EtudeComponent />
         <CarnetDeVoyageComponent />
-        <DocumentsComponent />
         <AproposComponent />
     </main>
 </template>

@@ -32,12 +32,13 @@
                     <div class="flex justify-center flex-wrap gap-4 pt-4">
                         <Button as-child
                             class="bg-brand-primary text-white px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-[#5a171d] transition-colors rounded-sm">
-                            <NuxtLink to="/admissions" aria-label="Accéder au formulaire d'inscription pour mon enfant">
-                                Inscrire mon enfant</NuxtLink>
+                            <NuxtLink to="/pre-inscription"
+                                aria-label="Accéder au formulaire d'inscription pour mon enfant">
+                                Pré-inscrire mon enfant</NuxtLink>
                         </Button>
                         <Button as-child variant="outline"
                             class="border-brand-primary text-brand-primary px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-brand-gold hover:text-white hover:border-brand-gold transition-all rounded-sm">
-                            <NuxtLink to="/contact" aria-label="En savoir plus sur l'Institution du Sacré-Cœur">En
+                            <NuxtLink to="/a-propos" aria-label="En savoir plus sur l'Institution du Sacré-Cœur">En
                                 savoir plus</NuxtLink>
                         </Button>
                     </div>
