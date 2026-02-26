@@ -79,18 +79,19 @@ const quickLinks = [
         </CarouselContent>
 
         <!-- Fixed Quick Links Bar -->
-        <div class="absolute bottom-10 lg:bottom-0 left-0 w-full z-20 pb-8 lg:pb-16 px-4">
+        <div class="absolute bottom-5 lg:bottom-0 left-0 w-full z-20 pb-8 lg:pb-16 px-4">
             <div class="max-w-7xl mx-auto border-t border-white/20 pt-6 lg:pt-12">
-                <div class="flex flex-wrap justify-center items-center gap-6 md:gap-8 lg:gap-12">
+                <div
+                    class="grid grid-cols-3 md:flex md:flex-wrap justify-center items-center gap-y-8 gap-x-2 md:gap-8 lg:gap-12">
                     <NuxtLink v-for="link in quickLinks" :key="link.label" :to="link.to"
-                        class="flex flex-col justify-center items-center gap-2 lg:gap-4 group transition-all duration-300 min-w-20 lg:min-w-25">
+                        class="flex flex-col justify-center items-center gap-2 lg:gap-4 group transition-all duration-300 min-w-0 md:min-w-20 lg:min-w-25">
                         <div
-                            class="p-3 rounded-xl bg-white/5 border border-white/10 group-hover:bg-brand-primary group-hover:border-brand-primary group-hover:scale-110 transition-all duration-300">
-                            <component :is="link.icon" :size="24" class="text-white lg:size-7" stroke-width="1.5"
-                                aria-hidden="true" />
+                            class="p-2.5 lg:p-3 rounded-xl bg-white/5 border border-white/10 group-hover:bg-brand-primary group-hover:border-brand-primary group-hover:scale-110 transition-all duration-300">
+                            <component :is="link.icon" :size="20" class="text-white lg:size-7 shrink-0"
+                                stroke-width="1.5" aria-hidden="true" />
                         </div>
                         <span
-                            class="text-[11px] lg:text-[11px] font-bold uppercase tracking-[0.15em] text-white/80 group-hover:text-white transition-colors leading-tight text-center">
+                            class="text-[9px] md:text-[11px] font-bold uppercase tracking-widest md:tracking-[0.15em] text-white/80 group-hover:text-white transition-colors leading-tight text-center max-w-25">
                             {{ link.label }}
                         </span>
                     </NuxtLink>
