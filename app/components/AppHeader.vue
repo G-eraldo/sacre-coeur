@@ -42,7 +42,8 @@ const navLinks = [
             :class="isScrolled ? 'h-18' : 'hidden'">
             <div class="flex items-center gap-3" :class="isScrolled ? '' : 'hidden'">
                 <NuxtLink to="/" class="flex items-center gap-3">
-                    <NuxtImg src="/logo4.png" alt="logo" width="32" height="32" class="bg-white rounded p-0.5" />
+                    <NuxtImg src="/logo4.png" alt="Logo de l'Institution du Sacré-Cœur de Breteuil" width="32"
+                        height="32" class="bg-white rounded p-0.5" />
                     <span class="text-lg font-serif font-bold tracking-tight sm:block">Sacré-Cœur de Breteuil</span>
                 </NuxtLink>
             </div>
@@ -57,12 +58,8 @@ const navLinks = [
 
             <div class="flex items-center gap-4">
                 <!-- Mobile Toggle -->
-                <button
-                    class="lg:hidden text-white"
-                    :aria-label="isOpen ? 'Fermer le menu de navigation' : 'Ouvrir le menu de navigation'"
-                    :aria-expanded="isOpen"
-                    aria-controls="mobile-menu"
-                    @click="toggle">
+                <button class="lg:hidden text-white" :aria-label="isOpen ? 'Fermer le menu' : 'Ouvrir le menu'"
+                    :aria-expanded="isOpen" aria-controls="mobile-menu" @click="toggle">
                     <XIcon v-if="isOpen" aria-hidden="true" />
                     <MenuIcon v-else aria-hidden="true" />
                 </button>
@@ -79,12 +76,8 @@ const navLinks = [
                         Sacré-Cœur de Breteuil
                     </p>
                 </div>
-                <button
-                    class="mr-4 lg:hidden"
-                    :aria-label="isOpen ? 'Fermer le menu de navigation' : 'Ouvrir le menu de navigation'"
-                    :aria-expanded="isOpen"
-                    aria-controls="mobile-menu"
-                    @click="toggle">
+                <button class="mr-4 lg:hidden" :aria-label="isOpen ? 'Fermer le menu' : 'Ouvrir le menu'"
+                    :aria-expanded="isOpen" aria-controls="mobile-menu" @click="toggle">
                     <XIcon v-if="isOpen" aria-hidden="true" />
                     <MenuIcon v-else aria-hidden="true" />
                 </button>
@@ -99,17 +92,10 @@ const navLinks = [
         </nav>
 
         <!-- Mobile Drawer -->
-        <div
-            id="mobile-menu"
-            v-show="isOpen"
-            class="lg:hidden bg-white shadow-xl py-6 transition-all duration-300">
+        <div v-show="isOpen" id="mobile-menu" class="lg:hidden bg-white shadow-xl py-6 transition-all duration-300">
             <div class="grid grid-cols-2 gap-x-4 gap-y-4 px-6">
-                <NuxtLink
-                    v-for="link in navLinks"
-                    :key="link.id"
-                    class="link-mobile border-b border-gray-50 pb-2"
-                    :to="link.to"
-                    @click="isOpen = false">
+                <NuxtLink v-for="link in navLinks" :key="link.id" class="link-mobile border-b border-gray-50 pb-2"
+                    :to="link.to" @click="isOpen = false">
                     <component :is="link.icon" class="w-5 h-5 text-gray-400" aria-hidden="true" />
                     <span class="text-gray-700">{{ link.title }}</span>
                 </NuxtLink>

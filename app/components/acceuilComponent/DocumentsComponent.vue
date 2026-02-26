@@ -44,24 +44,25 @@ function getPdfPreview(url) {
                 </div>
 
                 <div v-else class="grid grid-cols-1 lg:grid-cols-3">
-                    <Card
-                        v-for="pdf in pdfs"
-                        :key="pdf.id"
+                    <Card v-for="pdf in pdfs" :key="pdf.id"
                         class="lg:w-96 w-full mx-auto mb-12 p-4 lg:p-6 lg:mb-16 hover:scale-[1.02] transition-transform duration-300 ease-in-out">
                         <CardHeader>
                             <CardTitle class="font-sans">{{ pdf.title }}</CardTitle>
                         </CardHeader>
                         <CardContent>
-                            <NuxtLink :to="getViewerUrl(pdf.document[0].url)" target="_blank" external>
-                                <NuxtImg
-                                    :src="getPdfPreview(pdf.document[0].url)"
-                                    :alt="`Aperçu du document : ${pdf.title}`"
+                            <NuxtLink :to="getViewerUrl(pdf.document[0].url)" target="_blank" external
+                                :aria-label="`Aperçu du document : ${pdf.title}`">
+                                <NuxtImg :src="getPdfPreview(pdf.document[0].url)"
+                                    :alt="`Aperçu du document : ${pdf.title}`" format="webp" quality="80" loading="lazy"
+                                    sizes="320px md:384px lg:384px"
                                     class="w-full h-48 object-cover rounded-lg border border-gray-100 hover:opacity-80 transition-opacity" />
                             </NuxtLink>
                         </CardContent>
                         <CardFooter class="flex justify-center">
-                            <Button as-child class="bg-brand-primary hover:bg-brand-gold text-white px-8 py-4 text-xs font-bold uppercase rounded-sm">
-                                <NuxtLink :to="getViewerUrl(pdf.document[0].url)" target="_blank" external>
+                            <Button as-child
+                                class="bg-brand-primary hover:bg-brand-gold text-white px-8 py-4 text-xs font-bold uppercase rounded-sm">
+                                <NuxtLink :to="getViewerUrl(pdf.document[0].url)" target="_blank" external
+                                    :aria-label="`Ouvrir l'aperçu du document : ${pdf.title}`">
                                     Aperçu du document
                                 </NuxtLink>
                             </Button>
@@ -70,7 +71,8 @@ function getPdfPreview(url) {
                 </div>
 
                 <div class="flex justify-center">
-                    <Button as-child class="bg-brand-primary hover:bg-brand-gold text-white px-8 py-4 text-xs font-bold uppercase rounded-sm">
+                    <Button as-child
+                        class="bg-brand-primary hover:bg-brand-gold text-white px-8 py-4 text-xs font-bold uppercase rounded-sm">
                         <NuxtLink to="/">Voir tous nos documents</NuxtLink>
                     </Button>
                 </div>

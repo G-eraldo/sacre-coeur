@@ -30,22 +30,27 @@
                     </div>
 
                     <div class="flex justify-center flex-wrap gap-4 pt-4">
-                        <Button as-child class="bg-brand-primary text-white px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-[#5a171d] transition-colors rounded-sm">
-                            <NuxtLink to="/admissions">Inscrire mon enfant</NuxtLink>
+                        <Button as-child
+                            class="bg-brand-primary text-white px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-[#5a171d] transition-colors rounded-sm">
+                            <NuxtLink to="/admissions" aria-label="Accéder au formulaire d'inscription pour mon enfant">
+                                Inscrire mon enfant</NuxtLink>
                         </Button>
-                        <Button as-child variant="outline" class="border-brand-primary text-brand-primary px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-brand-gold hover:text-white hover:border-brand-gold transition-all rounded-sm">
-                            <NuxtLink to="/contact">En savoir plus</NuxtLink>
+                        <Button as-child variant="outline"
+                            class="border-brand-primary text-brand-primary px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-brand-gold hover:text-white hover:border-brand-gold transition-all rounded-sm">
+                            <NuxtLink to="/contact" aria-label="En savoir plus sur l'Institution du Sacré-Cœur">En
+                                savoir plus</NuxtLink>
                         </Button>
                     </div>
                 </div>
 
                 <div class="hidden lg:block lg:relative">
-                    <div class="absolute -top-4 -right-4 -bottom-4 -left-4 border-2 border-[#D4AF37] opacity-40 rounded-sm">
-                    </div>
+                    <div
+                        class="absolute -top-4 -right-4 -bottom-4 -left-4 border-2 border-[#D4AF37] opacity-40 rounded-sm" />
                     <div class="relative bg-white p-2 shadow-2xl">
                         <NuxtImg
                             src="https://res.cloudinary.com/dlnbsf2ed/image/upload/v1770720141/pexels-pixabay-265076_bden5m.jpg"
-                            alt="Campus Sacré-Cœur de Breteuil" class="w-full h-auto object-cover" />
+                            alt="Campus de l'Institution du Sacré-Cœur de Breteuil" format="webp" quality="80"
+                            loading="lazy" sizes="100vw lg:600px" class="w-full h-auto object-cover" />
                     </div>
                 </div>
             </div>

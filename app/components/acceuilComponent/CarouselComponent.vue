@@ -54,7 +54,9 @@ const quickLinks = [
             <CarouselItem v-for="(slide, index) in images" :key="index" class="relative w-full h-full pl-0">
                 <!-- Slide Background Image -->
                 <div class="absolute inset-0 w-full h-full">
-                    <NuxtImg :src="slide.url" :alt="slide.title" class="w-full h-full object-cover brightness-[0.7]" />
+                    <NuxtImg :src="slide.url" :alt="slide.title" :loading="index === 0 ? 'eager' : 'lazy'"
+                        :fetchpriority="index === 0 ? 'high' : 'auto'" format="webp" quality="80"
+                        sizes="100vw sm:100vw md:100vw lg:100vw" class="w-full h-full object-cover brightness-[0.7]" />
                     <div class="absolute inset-0 bg-linear-to-b from-black/40 via-transparent to-black/60"></div>
                 </div>
 
@@ -87,7 +89,8 @@ const quickLinks = [
                         class="flex flex-col justify-center items-center gap-2 lg:gap-4 group transition-all duration-300 min-w-20 lg:min-w-25">
                         <div
                             class="p-3 rounded-xl bg-white/5 border border-white/10 group-hover:bg-brand-primary group-hover:border-brand-primary group-hover:scale-110 transition-all duration-300">
-                            <component :is="link.icon" :size="24" class="text-white lg:size-7" stroke-width="1.5" aria-hidden="true" />
+                            <component :is="link.icon" :size="24" class="text-white lg:size-7" stroke-width="1.5"
+                                aria-hidden="true" />
                         </div>
                         <span
                             class="text-[11px] lg:text-[11px] font-bold uppercase tracking-[0.15em] text-white/80 group-hover:text-white transition-colors leading-tight text-center">

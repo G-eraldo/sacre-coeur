@@ -6,6 +6,13 @@ export default defineNuxtConfig({
   app: {
     head: {
       htmlAttrs: { lang: "fr" },
+      meta: [
+        {
+          name: "description",
+          content:
+            "L'Institution du Sacré-Cœur à Breteuil : une communauté éducative bienveillante de la maternelle au collège, alliant excellence académique et épanouissement personnel.",
+        },
+      ],
     },
   },
   modules: [

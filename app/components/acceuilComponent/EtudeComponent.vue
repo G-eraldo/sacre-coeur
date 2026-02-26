@@ -33,20 +33,21 @@ const actualite = [
                     </h2>
                 </div>
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-                    <Card
-                        v-for="(item, index) in actualite"
-                        :key="index"
+                    <Card v-for="(item, index) in actualite" :key="index"
                         class="w-full mx-auto mb-12 p-4 lg:p-6 lg:mb-16 hover:scale-[1.02] transition-transform duration-300 ease-in-out">
                         <CardHeader>
                             <CardTitle class="font-sans">{{ item.title }}</CardTitle>
                             <CardDescription class="h-24">{{ item.description }}</CardDescription>
                         </CardHeader>
                         <CardContent>
-                            <NuxtImg :src="item.image" :alt="item.title" class="w-full h-48 object-cover rounded-lg" />
+                            <NuxtImg :src="item.image" :alt="item.title" format="webp" quality="80" loading="lazy"
+                                sizes="320px md:384px lg:384px" class="w-full h-48 object-cover rounded-lg" />
                         </CardContent>
                         <CardFooter class="flex justify-center">
-                            <Button as-child class="bg-brand-primary hover:bg-brand-gold text-white px-8 py-4 text-xs font-bold uppercase rounded-sm">
-                                <NuxtLink to="/">Savoir plus</NuxtLink>
+                            <Button as-child
+                                class="bg-brand-primary hover:bg-brand-gold text-white px-8 py-4 text-xs font-bold uppercase rounded-sm">
+                                <NuxtLink to="/" :aria-label="`En savoir plus sur : ${item.title}`">Savoir plus
+                                </NuxtLink>
                             </Button>
                         </CardFooter>
                     </Card>

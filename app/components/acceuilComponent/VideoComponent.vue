@@ -46,13 +46,9 @@ watchEffect(() => {
                     <!-- Vidéo principale -->
                     <div class="flex-1">
                         <div class="rounded-xl overflow-hidden bg-black shadow-lg">
-                            <video
-                                v-if="selectedVideo?.video?.length > 0"
-                                :key="selectedVideo.id"
-                                :src="selectedVideo.video[0].url"
-                                controls
-                                playsinline
-                                :aria-label="selectedVideo.title"
+                            <video v-if="selectedVideo?.video?.length > 0" :key="selectedVideo.id"
+                                :src="selectedVideo.video[0].url" controls playsinline preload="metadata"
+                                :aria-label="`Témoignage vidéo : ${selectedVideo.title}`"
                                 class="w-full aspect-video object-cover" />
                         </div>
                         <h3 class="mt-4 text-xl font-serif text-brand-primary">
@@ -61,28 +57,22 @@ watchEffect(() => {
                     </div>
 
                     <!-- Liste des miniatures -->
-                    <div class="flex lg:flex-col flex-row gap-4 lg:w-64 overflow-x-auto lg:overflow-y-auto lg:max-h-100">
-                        <div
-                            v-for="video in videos.filter(v => v.id !== selectedVideo?.id)"
-                            :key="video.id"
+                    <div
+                        class="flex lg:flex-col flex-row gap-4 lg:w-64 overflow-x-auto lg:overflow-y-auto lg:max-h-100">
+                        <div v-for="video in videos.filter(v => v.id !== selectedVideo?.id)" :key="video.id"
                             class="shrink-0 cursor-pointer rounded-lg overflow-hidden border-2 transition-all duration-200"
                             :class="selectedVideo?.id === video.id
                                 ? 'border-brand-primary shadow-md scale-105 rounded-lg'
                                 : 'border-transparent hover:border-brand-gold opacity-70 hover:opacity-100'"
-                            role="button"
-                            tabindex="0"
-                            :aria-label="`Visionner : ${video.title}`"
-                            @click="selectedVideo = video"
-                            @keydown.enter="selectedVideo = video"
+                            role="button" tabindex="0" :aria-label="`Visionner le témoignage : ${video.title}`"
+                            @click="selectedVideo = video" @keydown.enter="selectedVideo = video"
                             @keydown.space.prevent="selectedVideo = video">
                             <div class="relative bg-black lg:w-64 w-40">
-                                <video
-                                    v-if="video.video?.length > 0"
-                                    :src="video.video[0].url"
-                                    class="w-full aspect-video object-cover pointer-events-none"
-                                    aria-hidden="true" />
+                                <video v-if="video.video?.length > 0" :src="video.video[0].url" preload="none"
+                                    class="w-full aspect-video object-cover pointer-events-none" aria-hidden="true" />
                                 <!-- Overlay play -->
-                                <div class="absolute inset-0 flex items-center justify-center bg-black/30 hover:bg-black/10 transition-colors" aria-hidden="true">
+                                <div class="absolute inset-0 flex items-center justify-center bg-black/30 hover:bg-black/10 transition-colors"
+                                    aria-hidden="true">
                                     <svg class="w-8 h-8 text-white drop-shadow" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M8 5v14l11-7z" />
                                     </svg>
@@ -94,7 +84,8 @@ watchEffect(() => {
                 </div>
 
                 <div class="flex justify-center mt-10">
-                    <Button as-child class="bg-brand-primary hover:bg-brand-gold text-white px-8 py-4 text-xs font-bold uppercase rounded-sm">
+                    <Button as-child
+                        class="bg-brand-primary hover:bg-brand-gold text-white px-8 py-4 text-xs font-bold uppercase rounded-sm">
                         <NuxtLink to="/">Voir toutes les vidéos</NuxtLink>
                     </Button>
                 </div>
