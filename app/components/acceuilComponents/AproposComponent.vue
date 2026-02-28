@@ -7,7 +7,8 @@ import { MailIcon, MapIcon, PhoneIcon } from 'lucide-vue-next';
     <section class="bg-brand-dark text-[#E5E5E5] py-16 px-4 lg:px-20">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
             <div>
-                <NuxtImg src="/logo4.png" alt="Logo Sacré-Cœur de Breteuil" class="lg:w-52 lg:h-52 w-24 h-24 object-contain " />
+                <NuxtImg src="/logo4.png" alt="Logo Sacré-Cœur de Breteuil"
+                    class="lg:w-52 lg:h-52 w-24 h-24 object-contain " />
             </div>
             <!-- Colonne 1: Sacré-Cœur Breteuil (User's Elements) -->
             <div class="space-y-8">
@@ -27,10 +28,12 @@ import { MailIcon, MapIcon, PhoneIcon } from 'lucide-vue-next';
                 <ul class="space-y-4 text-[15px] font-light opacity-90">
                     <li class="flex items-center gap-4">
                         <MailIcon class="w-6 h-6" />
-                        <a href="mailto:administration@sacrecoeur-breteuil.fr">administration@sacrecoeur-breteuil.fr</a>
+                        <NuxtLink to="mailto:administration@sacrecoeur-breteuil.fr">
+                            administration@sacrecoeur-breteuil.fr</NuxtLink>
                     </li>
                     <li class="flex items-center gap-4">
-                        <PhoneIcon class="w-6 h-6" />03 44 80 22 50
+                        <PhoneIcon class="w-6 h-6" />
+                        <NuxtLink to="tel:0344802250">03 44 80 22 50</NuxtLink>
                     </li>
 
                 </ul>
@@ -43,7 +46,10 @@ import { MailIcon, MapIcon, PhoneIcon } from 'lucide-vue-next';
                     <li>
                         <div class="flex items-center gap-4">
                             <MapIcon class="w-6 h-6" />
-                            <p>21, Rue des Écoles</p>
+                            <NuxtLink to="https://www.google.com/maps/place/21+Rue+des+Écoles+60120+Breteuil"
+                                target="_blank">
+                                21, Rue des Écoles
+                            </NuxtLink>
                         </div>
                         <p class="ml-10">BP 60104</p>
                         <p class="ml-10">60120 BRETEUIL CEDEX</p>

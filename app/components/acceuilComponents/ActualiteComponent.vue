@@ -3,16 +3,19 @@ const actualite = [
     {
         title: "Actualité 1",
         description: "Description 1",
+        slug: "actualite-1",
         image: "https://res.cloudinary.com/dlnbsf2ed/image/upload/v1770720141/pexels-pixabay-265076_bden5m.jpg"
     },
     {
         title: "Actualité 2",
         description: "Description 2",
+        slug: "actualite-2",
         image: "https://res.cloudinary.com/dlnbsf2ed/image/upload/v1770716886/istockphoto-477206590-612x612_fykq0x.jpg"
     },
     {
         title: "Actualité 3",
         description: "Description 3",
+        slug: "actualite-3",
         image: "https://res.cloudinary.com/dlnbsf2ed/image/upload/v1770716886/istockphoto-1410950079-612x612_mgnu4e.jpg"
     }
 ]
@@ -39,10 +42,12 @@ const actualite = [
                                 sizes="320px md:384px lg:384px" class="w-full h-48 object-cover rounded-lg" />
                         </CardContent>
                         <CardFooter class="flex justify-center">
-                            <Button as-child
-                                class="bg-brand-primary hover:bg-brand-gold text-white px-8 py-4 text-xs font-bold uppercase rounded-sm">
-                                <NuxtLink to="/" :aria-label="`En savoir plus sur l'actualité : ${item.title}`">Savoir
-                                    plus</NuxtLink>
+                            <Button as-child variant="link"
+                                class="p-0 h-auto font-bold text-brand-primary hover:text-brand-gold group/btn">
+                                <NuxtLink :to="`/actualites/${item.slug}`" class="flex items-center gap-2">
+                                    Lire la suite
+                                    <span class="group-hover/btn:translate-x-1 transition-transform">→</span>
+                                </NuxtLink>
                             </Button>
                         </CardFooter>
                     </Card>
@@ -50,7 +55,7 @@ const actualite = [
                 <div class="flex justify-center">
                     <Button as-child
                         class="bg-brand-primary hover:bg-brand-gold text-white px-8 py-4 text-xs font-bold uppercase rounded-sm">
-                        <NuxtLink to="/">Voir toutes les actualités</NuxtLink>
+                        <NuxtLink to="/actualites">Voir toutes les actualités</NuxtLink>
                     </Button>
                 </div>
             </div>

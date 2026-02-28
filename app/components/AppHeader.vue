@@ -24,8 +24,8 @@ onUnmounted(() => {
 
 const navLinks = [
     { id: 1, title: 'Accueil', to: '/', icon: HomeIcon },
-    { id: 2, title: 'Ecole', to: '/', icon: GraduationCapIcon },
-    { id: 3, title: 'Collège', to: '/', icon: SchoolIcon },
+    { id: 2, title: 'Ecole', to: '/l-ecole', icon: GraduationCapIcon },
+    { id: 3, title: 'Collège', to: '/college', icon: SchoolIcon },
     { id: 4, title: 'Segpa', to: '/', icon: BedIcon },
     { id: 5, title: 'Internat', to: '/', icon: BookOpenIcon },
     { id: 6, title: 'A propos', to: '/a-propos', icon: InfoIcon },
@@ -72,9 +72,10 @@ const navLinks = [
             <div class="flex items-center">
                 <div class="container mx-auto px-4 text-center">
                     <!-- Visual title only; accessible h1 is in the page -->
-                    <p class="text-3xl lg:text-5xl text-black tracking-wide font-serif" aria-hidden="true">
+                    <NuxtLink to="/" class="text-3xl lg:text-5xl text-black tracking-wide font-serif"
+                        aria-hidden="true">
                         Sacré-Cœur de Breteuil
-                    </p>
+                    </NuxtLink>
                 </div>
                 <button class="mr-4 lg:hidden" :aria-label="isOpen ? 'Fermer le menu' : 'Ouvrir le menu'"
                     :aria-expanded="isOpen" aria-controls="mobile-menu" @click="toggle">
