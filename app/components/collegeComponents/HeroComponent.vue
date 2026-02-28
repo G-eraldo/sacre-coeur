@@ -1,5 +1,5 @@
 <template>
-    <section class="pt-36 lg:pt-56 pb-20 bg-brand-warm relative overflow-hidden text-center">
+    <section class="pt-40 lg:pt-56 pb-20 bg-brand-warm relative overflow-hidden text-center">
         <div class="max-w-7xl mx-auto px-6 relative z-10">
             <span class="inline-block text-brand-gold font-bold tracking-[0.3em] uppercase text-xs mb-6">
                 Le Collège
