@@ -6,6 +6,15 @@ import CarouselComponent from '~/components/acceuilComponents/CarouselComponent.
 import EtudeComponent from '~/components/acceuilComponents/EtudeComponent.vue';
 import InstitutionComponent from '~/components/acceuilComponents/InstitutionComponent.vue';
 import VideoComponent from '~/components/acceuilComponents/VideoComponent.vue';
+
+useSeoMeta({
+    title: 'Accueil',
+    description: 'Bienvenue sur le site officiel de l\'Institution du Sacré-Cœur à Breteuil. Découvrez notre école, notre collège avec section SEGPA et notre internat.',
+    ogTitle: 'Institution du Sacré-Cœur à Breteuil — Accueil',
+    ogDescription: 'Bienvenue sur le site officiel de l\'Institution du Sacré-Cœur à Breteuil.',
+    ogImage: '/logo4.png',
+    ogType: 'website',
+})
 </script>
 
 <template>

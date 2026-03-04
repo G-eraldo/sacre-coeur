@@ -1,5 +1,15 @@
 <script setup>
 import { onMounted } from 'vue';
+
+useSeoMeta({
+    title: 'Voyages',
+    description: 'Découvrez les carnets de voyage et les sorties scolaires des élèves de l\'Institution du Sacré-Cœur à Breteuil.',
+    ogTitle: 'Institution du Sacré-Cœur à Breteuil — Voyages',
+    ogDescription: 'Retrouvez tous les voyages du Sacré-Cœur.',
+    ogImage: '/logo4.png',
+    ogType: 'website',
+})
+
 onMounted(() => {
     console.log('Page Actualités montée');
 });

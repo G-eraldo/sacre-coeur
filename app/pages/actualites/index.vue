@@ -1,5 +1,15 @@
 <script setup>
 import { onMounted } from 'vue';
+
+useSeoMeta({
+    title: 'Actualités',
+    description: 'Suivez les dernières actualités et événements de l\'Institution du Sacré-Cœur à Breteuil.',
+    ogTitle: 'Institution du Sacré-Cœur à Breteuil — Actualités',
+    ogDescription: 'Retrouvez toutes les actualités du Sacré-Cœur.',
+    ogImage: '/logo4.png',
+    ogType: 'website',
+})
+
 onMounted(() => {
     console.log('Page Actualités montée');
 });

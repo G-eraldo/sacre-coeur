@@ -1,5 +1,12 @@
 <script setup>
-
+useSeoMeta({
+  title: 'Mentions Légales',
+  description: 'Consultez les mentions légales de l\'Institution du Sacré-Cœur à Breteuil.',
+  ogTitle: 'Institution du Sacré-Cœur à Breteuil — Mentions Légales',
+  ogDescription: 'Mentions légales du site de l\'Institution du Sacré-Cœur.',
+  ogImage: '/logo4.png',
+  ogType: 'website',
+})
 </script>
 
 <template>

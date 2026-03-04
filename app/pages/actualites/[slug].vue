@@ -1,6 +1,15 @@
 <script setup>
 const route = useRoute();
 const slug = computed(() => route.params.slug);
+
+useSeoMeta({
+    title: () => `Actualité : ${slug.value}`,
+    description: () => `Découvrez l'actualité "${slug.value}" de l'Institution du Sacré-Cœur.`,
+    ogTitle: () => `Institution du Sacré-Cœur — ${slug.value}`,
+    ogDescription: () => `Lire l'actualité "${slug.value}" sur le site du Sacré-Cœur.`,
+    ogImage: '/logo4.png',
+    ogType: 'article',
+})
 </script>
 
 <template>

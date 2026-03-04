@@ -5,7 +5,15 @@ import EnseignantsComponent from '~/components/collegeComponents/EnseignantsComp
 import HeroComponent from '~/components/collegeComponents/HeroComponent.vue';
 import PedagogieComponent from '~/components/collegeComponents/PedagogieComponent.vue';
 import PresentationComponent from '~/components/collegeComponents/PresentationComponent.vue';
-import VieComponent from '~/components/collegeComponents/VieComponent.vue';
+
+useSeoMeta({
+    title: 'Le Collège',
+    description: 'Découvrez le collège de l\'Institution du Sacré-Cœur à Breteuil : notre projet pédagogique, nos enseignants et les atouts de notre établissement.',
+    ogTitle: 'Institution du Sacré-Cœur à Breteuil — Le Collège',
+    ogDescription: 'Découvrez le collège de l\'Institution du Sacré-Cœur à Breteuil.',
+    ogImage: '/logo4.png',
+    ogType: 'website',
+})
 </script>
 
 <template>

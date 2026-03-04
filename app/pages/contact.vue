@@ -6,6 +6,15 @@ import Button from '~/components/ui/button/Button.vue';
 import Input from '~/components/ui/input/Input.vue';
 import Label from '~/components/ui/label/Label.vue';
 
+useSeoMeta({
+    title: 'Contact',
+    description: 'Une question ? Besoin d\'un renseignement ? Contactez l\'équipe de l\'Institution du Sacré-Cœur à Breteuil via notre formulaire en ligne.',
+    ogTitle: 'Institution du Sacré-Cœur à Breteuil — Contact',
+    ogDescription: 'Contactez l\'Institution du Sacré-Cœur à Breteuil.',
+    ogImage: '/logo4.png',
+    ogType: 'website',
+})
+
 const name = ref('')
 const email = ref('')
 const phone = ref('')

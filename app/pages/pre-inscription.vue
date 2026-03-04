@@ -11,6 +11,15 @@ import SelectItem from '~/components/ui/select/SelectItem.vue';
 import SelectTrigger from '~/components/ui/select/SelectTrigger.vue';
 import SelectValue from '~/components/ui/select/SelectValue.vue';
 
+useSeoMeta({
+    title: 'Pré-inscription',
+    description: 'Inscrivez votre enfant à l\'Institution du Sacré-Cœur à Breteuil via notre formulaire de pré-inscription en ligne.',
+    ogTitle: 'Institution du Sacré-Cœur à Breteuil — Pré-inscription',
+    ogDescription: 'Pré-inscrivez votre enfant au Sacré-Cœur à Breteuil.',
+    ogImage: '/logo4.png',
+    ogType: 'website',
+})
+
 const name = ref('')
 const email = ref('')
 const phone = ref('')

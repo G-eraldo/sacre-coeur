@@ -15,9 +15,26 @@ export default defineNuxtConfig({
   site: {
     url: "https://demo-sacre-coeur.vercel.app",
     name: "Institution du Sacré-Cœur à Breteuil",
+    description:
+      "Site officiel de l'Institution du Sacré-Cœur à Breteuil : École, Collège (SEGPA) et Internat.",
     indexable: false,
     defaultLocale: "fr",
-    locales: ["fr"],
+  },
+  sitemap: {
+    sources: ["/api/__sitemap__/urls"],
+  },
+  schemaOrg: {
+    identity: {
+      type: "Organization",
+      name: "Institution du Sacré-Cœur à Breteuil",
+      url: "https://demo-sacre-coeur.vercel.app",
+      logo: "/logo4.png",
+    },
+  },
+  ogImage: {
+    defaults: {
+      component: "Default",
+    },
   },
   css: ["./app/assets/css/main.css"],
   vite: {
