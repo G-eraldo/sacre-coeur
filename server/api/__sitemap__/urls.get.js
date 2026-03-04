@@ -10,19 +10,96 @@ export default defineSitemapEventHandler(async () => {
 
   // Pages statiques
   const staticUrls = [
-    { loc: "/", changefreq: "daily", priority: 1.0 },
-    { loc: "/l-ecole", changefreq: "monthly", priority: 0.8 },
-    { loc: "/college", changefreq: "monthly", priority: 0.8 },
-    { loc: "/segpa", changefreq: "monthly", priority: 0.8 },
-    { loc: "/internat", changefreq: "monthly", priority: 0.8 },
-    { loc: "/pastorale", changefreq: "monthly", priority: 0.8 },
-    { loc: "/a-propos", changefreq: "monthly", priority: 0.7 },
-    { loc: "/contact", changefreq: "monthly", priority: 0.6 },
-    { loc: "/pre-inscription", changefreq: "monthly", priority: 0.9 },
-    { loc: "/actualites", changefreq: "daily", priority: 0.9 },
-    { loc: "/voyages", changefreq: "daily", priority: 0.9 },
-    { loc: "/documents", changefreq: "monthly", priority: 0.7 },
-    { loc: "/mentions-legales", changefreq: "yearly", priority: 0.3 },
+    {
+      loc: "/",
+      changefreq: "daily",
+      priority: 1.0,
+      lastmod: new Date().toISOString(),
+    },
+    {
+      loc: "/l-ecole",
+      changefreq: "monthly",
+      priority: 0.8,
+      lastmod: "2025-01-01",
+    },
+    {
+      loc: "/college",
+      changefreq: "monthly",
+      priority: 0.8,
+      lastmod: "2025-01-01",
+    },
+    {
+      loc: "/segpa",
+      changefreq: "monthly",
+      priority: 0.8,
+      lastmod: "2025-01-01",
+    },
+    {
+      loc: "/internat",
+      changefreq: "monthly",
+      priority: 0.8,
+      lastmod: "2025-01-01",
+    },
+    {
+      loc: "/pastorale",
+      changefreq: "monthly",
+      priority: 0.8,
+      lastmod: "2025-01-01",
+    },
+    {
+      loc: "/a-propos",
+      changefreq: "monthly",
+      priority: 0.7,
+      lastmod: "2025-01-01",
+    },
+    {
+      loc: "/contact",
+      changefreq: "monthly",
+      priority: 0.6,
+      lastmod: "2025-01-01",
+    },
+    {
+      loc: "/pre-inscription",
+      changefreq: "monthly",
+      priority: 0.9,
+      lastmod: "2025-01-01",
+    },
+    {
+      loc: "/actualites",
+      changefreq: "daily",
+      priority: 0.9,
+      lastmod: new Date().toISOString(),
+    },
+    {
+      loc: "/voyages",
+      changefreq: "daily",
+      priority: 0.9,
+      lastmod: new Date().toISOString(),
+    },
+    {
+      loc: "/calendrier",
+      changefreq: "monthly",
+      priority: 0.7,
+      lastmod: "2025-01-01",
+    },
+    {
+      loc: "/videos",
+      changefreq: "monthly",
+      priority: 0.7,
+      lastmod: "2025-01-01",
+    },
+    {
+      loc: "/documents",
+      changefreq: "monthly",
+      priority: 0.7,
+      lastmod: "2025-01-01",
+    },
+    {
+      loc: "/mentions-legales",
+      changefreq: "yearly",
+      priority: 0.3,
+      lastmod: "2025-01-01",
+    },
   ];
 
   // Fetch Actualités
