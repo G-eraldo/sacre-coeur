@@ -26,10 +26,10 @@ const navLinks = [
     { id: 1, title: 'Accueil', to: '/', icon: HomeIcon },
     { id: 2, title: 'Ecole', to: '/l-ecole', icon: GraduationCapIcon },
     { id: 3, title: 'Collège', to: '/college', icon: SchoolIcon },
-    { id: 4, title: 'Segpa', to: '/', icon: BedIcon },
-    { id: 5, title: 'Internat', to: '/', icon: BookOpenIcon },
+    { id: 4, title: 'Segpa', to: '/segpa', icon: BedIcon },
+    { id: 5, title: 'Internat', to: '/internat', icon: BookOpenIcon },
     { id: 6, title: 'A propos', to: '/a-propos', icon: InfoIcon },
-    { id: 7, title: 'Pastorale', to: '/', icon: ChurchIcon },
+    { id: 7, title: 'Pastorale', to: '/pastorale', icon: ChurchIcon },
     { id: 8, title: 'Contact', to: '/contact', icon: PhoneIcon },
 ]
 </script>

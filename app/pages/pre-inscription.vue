@@ -45,7 +45,7 @@ async function submitForm() {
 </script>
 
 <template>
-    <div class="pt-32 lg:pt-56 pb-20 bg-brand-warm min-h-screen">
+    <div class="pt-40 lg:pt-56 pb-20 bg-brand-warm min-h-screen">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center mb-12 max-w-3xl mx-auto">
                 <h1 class="text-4xl lg:text-5xl font-serif text-brand-primary mb-6">

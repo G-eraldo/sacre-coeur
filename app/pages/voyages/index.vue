@@ -6,25 +6,25 @@ onMounted(() => {
 
 const actualite = [
     {
-        title: "Actualité 1",
+        title: "Voyage 1",
         description: "Description 1",
-        slug: "actualite-1",
         date: "5 Mai 2022",
-        image: "https://res.cloudinary.com/dlnbsf2ed/image/upload/v1770720141/pexels-pixabay-265076_bden5m.jpg"
+        slug: "voyage-1",
+        image: "https://res.cloudinary.com/dlnbsf2ed/image/upload/v1770732109/istockphoto-538358776-612x612_tgjawy.jpg"
     },
     {
-        title: "Actualité 2",
+        title: "Voyage 2",
         description: "Description 2",
-        slug: "actualite-2",
         date: "5 Mai 2022",
-        image: "https://res.cloudinary.com/dlnbsf2ed/image/upload/v1770716886/istockphoto-477206590-612x612_fykq0x.jpg"
+        slug: "voyage-2",
+        image: "https://res.cloudinary.com/dlnbsf2ed/image/upload/v1770732087/istockphoto-538358346-612x612_t6lmw0.jpg"
     },
     {
-        title: "Actualité 3",
+        title: "Voyage 3",
         description: "Description 3",
-        slug: "actualite-3",
         date: "5 Mai 2022",
-        image: "https://res.cloudinary.com/dlnbsf2ed/image/upload/v1770716886/istockphoto-1410950079-612x612_mgnu4e.jpg"
+        slug: "voyage-3",
+        image: "https://res.cloudinary.com/dlnbsf2ed/image/upload/v1770732067/view-young-students-attending-school_nozrjy.jpg"
     }
 ]
 </script>
@@ -34,9 +34,9 @@ const actualite = [
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
                 <p class="text-xs font-bold uppercase tracking-[0.3em] text-brand-gold mb-3">Actualités</p>
-                <h2 class="text-4xl md:text-5xl font-bold text-brand-primary mb-6">Les actualités de notre communauté
+                <h2 class="text-4xl md:text-5xl font-bold text-brand-primary mb-6">Les voyages de notre communauté
                 </h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Découvrez les actualités de notre communauté.</p>
+                <p class="text-gray-600 max-w-2xl mx-auto">Découvrez les voyages de notre communauté.</p>
             </div>
 
 

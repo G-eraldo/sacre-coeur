@@ -32,12 +32,9 @@ watchEffect(() => {
                     </h2>
                 </div>
 
-                <!-- Error state -->
                 <div v-if="videosError" class="text-gray-500 text-center py-12">
                     <p>Les témoignages ne sont pas disponibles pour le moment.</p>
                 </div>
-
-                <!-- Empty state -->
                 <div v-else-if="videos.length === 0" class="text-gray-500 text-center py-12">
                     <p>Aucun témoignage disponible.</p>
                 </div>
@@ -86,7 +83,7 @@ watchEffect(() => {
                 <div class="flex justify-center mt-10">
                     <Button as-child
                         class="bg-brand-primary hover:bg-brand-gold text-white px-8 py-4 text-xs font-bold uppercase rounded-sm">
-                        <NuxtLink to="/">Voir toutes les vidéos</NuxtLink>
+                        <NuxtLink to="/videos">Voir toutes les vidéos</NuxtLink>
                     </Button>
                 </div>
             </div>

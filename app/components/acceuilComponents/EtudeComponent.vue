@@ -9,7 +9,8 @@ const educationLevels = [
             "Préparation au Cambridge proposé dès le CM2",
             "Classe dehors en toute petite section",
         ],
-        image: "https://res.cloudinary.com/dlnbsf2ed/image/upload/v1770720141/pexels-pixabay-265076_bden5m.jpg"
+        image: "https://res.cloudinary.com/dlnbsf2ed/image/upload/v1770720141/pexels-pixabay-265076_bden5m.jpg",
+        url: "/l-ecole"
     },
     {
         title: "Collège",
@@ -18,7 +19,8 @@ const educationLevels = [
             "Lorem ipsum dolor sit amet consectetur.",
             "Lorem ipsum dolor sit amet consectetur."
         ],
-        image: "https://res.cloudinary.com/dlnbsf2ed/image/upload/v1770716887/istockphoto-1355040546-612x612_o55gfe.jpg"
+        image: "https://res.cloudinary.com/dlnbsf2ed/image/upload/v1770716887/istockphoto-1355040546-612x612_o55gfe.jpg",
+        url: "/college"
     },
     {
         title: "Segpa",
@@ -27,7 +29,8 @@ const educationLevels = [
             "Lorem ipsum dolor sit amet consectetur.",
             "Lorem ipsum dolor sit amet consectetur.",
         ],
-        image: "https://res.cloudinary.com/dlnbsf2ed/image/upload/v1770716886/istockphoto-477206590-612x612_fykq0x.jpg"
+        image: "https://res.cloudinary.com/dlnbsf2ed/image/upload/v1770716886/istockphoto-477206590-612x612_fykq0x.jpg",
+        url: "/segpa"
     },
     {
         title: "Internat",
@@ -36,7 +39,8 @@ const educationLevels = [
             "Lorem ipsum dolor sit amet consectetur.",
             "Lorem ipsum dolor sit amet consectetur.",
         ],
-        image: "https://res.cloudinary.com/dlnbsf2ed/image/upload/v1770716886/istockphoto-1410950079-612x612_mgnu4e.jpg"
+        image: "https://res.cloudinary.com/dlnbsf2ed/image/upload/v1770716886/istockphoto-1410950079-612x612_mgnu4e.jpg",
+        url: "/internat"
     }
 ]
 </script>
@@ -74,8 +78,7 @@ const educationLevels = [
                         <CardFooter class="pt-2 pb-8 flex justify-center mt-auto">
                             <Button as-child
                                 class="bg-brand-primary hover:bg-[#5a171d] text-white px-10 py-5 text-xs font-bold uppercase tracking-widest rounded-sm transition-colors shadow-lg shadow-brand-primary/5">
-                                <NuxtLink :to="`/etres/${level.title.toLowerCase()}`"
-                                    :aria-label="`Découvrir la section : ${level.title}`">
+                                <NuxtLink :to="level.url" :aria-label="`Découvrir la section : ${level.title}`">
                                     En savoir plus
                                 </NuxtLink>
                             </Button>

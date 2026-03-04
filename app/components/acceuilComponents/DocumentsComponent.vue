@@ -26,7 +26,7 @@ function getPdfPreview(url) {
 </script>
 
 <template>
-    <section class="pt-32 lg:pt-56 pb-20 bg-brand-warm relative overflow-hidden text-center border-y border-[#ede8e0]">
+    <section class="pt-40 lg:pt-56 pb-20 bg-brand-warm relative overflow-hidden text-center border-y border-[#ede8e0]">
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex flex-col items-center">
                 <div class="text-center mb-16 lg:mb-24 max-w-2xl mx-auto">

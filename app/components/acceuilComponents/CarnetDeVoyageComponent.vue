@@ -3,16 +3,22 @@ const actualite = [
     {
         title: "Voyage 1",
         description: "Description 1",
+        date: "5 Mai 2022",
+        slug: "voyage-1",
         image: "https://res.cloudinary.com/dlnbsf2ed/image/upload/v1770732109/istockphoto-538358776-612x612_tgjawy.jpg"
     },
     {
         title: "Voyage 2",
         description: "Description 2",
+        date: "5 Mai 2022",
+        slug: "voyage-2",
         image: "https://res.cloudinary.com/dlnbsf2ed/image/upload/v1770732087/istockphoto-538358346-612x612_t6lmw0.jpg"
     },
     {
         title: "Voyage 3",
         description: "Description 3",
+        date: "5 Mai 2022",
+        slug: "voyage-3",
         image: "https://res.cloudinary.com/dlnbsf2ed/image/upload/v1770732067/view-young-students-attending-school_nozrjy.jpg"
     }
 ]
@@ -33,16 +39,24 @@ const actualite = [
                         <CardHeader>
                             <CardTitle class="font-sans">{{ item.title }}</CardTitle>
                             <CardDescription class="h-24">{{ item.description }}</CardDescription>
+                            <div class="relative">
+                                <div class="absolute bottom-24 right-2 bg-brand-primary text-white px-3 py-1 rounded-sm text-[10px] font-bold
+                uppercase tracking-widest shadow-sm">
+                                    {{ item.date }}
+                                </div>
+                            </div>
                         </CardHeader>
                         <CardContent>
                             <NuxtImg :src="item.image" :alt="item.title" format="webp" quality="80" loading="lazy"
                                 sizes="320px md:384px lg:384px" class="w-full h-48 object-cover rounded-lg" />
                         </CardContent>
                         <CardFooter class="flex justify-center">
-                            <Button as-child
-                                class="bg-brand-primary hover:bg-brand-gold text-white px-8 py-4 text-xs font-bold uppercase rounded-sm">
-                                <NuxtLink to="/" :aria-label="`En savoir plus sur le voyage : ${item.title}`">En savoir
-                                    plus</NuxtLink>
+                            <Button as-child variant="link"
+                                class="p-0 h-auto font-bold text-brand-primary hover:text-brand-gold group/btn">
+                                <NuxtLink :to="`/voyages/${item.slug}`" class="flex items-center gap-2">
+                                    Lire la suite
+                                    <span class="group-hover/btn:translate-x-1 transition-transform">→</span>
+                                </NuxtLink>
                             </Button>
                         </CardFooter>
                     </Card>
@@ -50,7 +64,7 @@ const actualite = [
                 <div class="flex justify-center">
                     <Button as-child
                         class="bg-brand-primary hover:bg-brand-gold text-white px-8 py-4 text-xs font-bold uppercase rounded-sm">
-                        <NuxtLink to="/">Voir tous les voyages</NuxtLink>
+                        <NuxtLink to="/voyages">Voir tous les voyages</NuxtLink>
                     </Button>
                 </div>
             </div>
