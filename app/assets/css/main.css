@@ -5,6 +5,7 @@
 
 @theme inline {
   --color-brand-primary: var(--brand-primary);
+  --color-brand-primary-dark: var(--brand-primary-dark);
   --color-brand-gold: var(--brand-gold);
   --color-brand-warm: var(--brand-warm);
   --color-brand-dark: var(--brand-dark);
@@ -51,6 +52,7 @@
 :root {
   --radius: 0.625rem;
   --brand-primary: #6C1C23;
+  --brand-primary-dark: #5a171d;
   --brand-gold: #C4A55F;
   --brand-warm: #F9F7F4;
   --brand-dark: #1C1C1C;
@@ -151,6 +153,13 @@
   }
   .link-mobile {
     @apply flex items-center gap-3 text-sm font-medium;
+  }
+  .nav-link.router-link-exact-active {
+    border-bottom-color: var(--brand-primary);
+    color: var(--brand-primary);
+  }
+  .scroll-link.router-link-exact-active {
+    color: var(--brand-gold);
   }
   a:focus-visible,
   button:focus-visible {

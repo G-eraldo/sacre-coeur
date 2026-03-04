@@ -222,7 +222,7 @@ const finalEvents = computed(() => {
                             le</span>
                         <span class="text-xl font-serif text-brand-gold">{{ new
                             Date(eventEnCours.end_date).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long' })
-                            }}</span>
+                        }}</span>
                     </div>
                 </div>
 
@@ -346,13 +346,3 @@ const finalEvents = computed(() => {
         </div>
     </div>
 </template>
-
-<style scoped>
-.font-serif {
-    font-family: var(--font-serif, serif);
-}
-
-.font-sans {
-    font-family: var(--font-sans, sans-serif);
-}
-</style>

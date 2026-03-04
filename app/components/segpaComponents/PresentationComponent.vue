@@ -48,12 +48,4 @@ const presentation = {
     </section>
 </template>
 
-<style scoped>
-.font-serif {
-    font-family: var(--font-serif, serif);
-}
-
-.font-sans {
-    font-family: var(--font-sans, sans-serif);
-}
-</style>
+<style scoped></style>

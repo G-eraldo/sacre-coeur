@@ -31,7 +31,7 @@
 
                     <div class="flex justify-center flex-wrap gap-4 pt-4">
                         <Button as-child
-                            class="bg-brand-primary text-white px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-[#5a171d] transition-colors rounded-sm">
+                            class="bg-brand-primary text-white px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-brand-primary-dark transition-colors rounded-sm">
                             <NuxtLink to="/pre-inscription"
                                 aria-label="Accéder au formulaire d'inscription pour mon enfant">
                                 Pré-inscrire mon enfant</NuxtLink>
@@ -46,7 +46,7 @@
 
                 <div class="hidden lg:block lg:relative">
                     <div
-                        class="absolute -top-4 -right-4 -bottom-4 -left-4 border-2 border-[#D4AF37] opacity-40 rounded-sm" />
+                        class="absolute -top-4 -right-4 -bottom-4 -left-4 border-2 border-brand-gold opacity-40 rounded-sm" />
                     <div class="relative bg-white p-2 shadow-2xl">
                         <NuxtImg
                             src="https://res.cloudinary.com/dlnbsf2ed/image/upload/v1770720141/pexels-pixabay-265076_bden5m.jpg"

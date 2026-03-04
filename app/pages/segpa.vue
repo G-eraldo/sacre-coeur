@@ -28,12 +28,4 @@ useSeoMeta({
     </div>
 </template>
 
-<style scoped>
-.font-serif {
-    font-family: 'Merriweather', serif;
-}
-
-.font-sans {
-    font-family: 'Poppins', sans-serif;
-}
-</style>
+<style scoped></style>

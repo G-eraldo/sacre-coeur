@@ -15,6 +15,7 @@ import {
     GraduationCap,
     Phone
 } from 'lucide-vue-next';
+import { computed, ref } from 'vue';
 
 const images = [
     {
@@ -42,11 +43,28 @@ const quickLinks = [
     { label: 'Nos documents', icon: ClipboardList, to: '/documents' },
     { label: 'Nous contacter', icon: Phone, to: '/contact' },
 ]
+
+const currentSlideIndex = ref(0)
+
+function onSetApi(api) {
+    api.on('select', () => {
+        currentSlideIndex.value = api.selectedScrollSnap()
+    })
+}
+
+const currentSlide = computed(() => images[currentSlideIndex.value])
 </script>
 
 <template>
     <Carousel class="w-full mt-20 lg:h-full" :opts="{ loop: true }"
-        :plugins="[Autoplay({ delay: 5000, stopOnInteraction: false })]">
+        :plugins="[Autoplay({ delay: 5000, stopOnInteraction: false })]"
+        :set-api="onSetApi">
+
+        <!-- Accessible live region for screen readers -->
+        <div class="sr-only" aria-live="polite" aria-atomic="true">
+            Diapositive {{ currentSlideIndex + 1 }} sur {{ images.length }} : {{ currentSlide.title }}
+        </div>
+
         <CarouselContent class="h-140 lg:h-170 ml-0">
             <CarouselItem v-for="(slide, index) in images" :key="index" class="relative w-full h-full pl-0">
                 <!-- Slide Background Image -->
@@ -70,7 +88,7 @@ const quickLinks = [
                         </h2>
 
                         <p
-                            class=" text-base font-bold lg:text-xl font-sans lg:font-light max-w-2xl mx-auto opacity-90 leading-relaxed px-4">
+                            class="text-base font-bold lg:text-xl font-sans lg:font-light max-w-2xl mx-auto opacity-90 leading-relaxed px-4">
                             {{ slide.subtitle }}
                         </p>
                     </div>
@@ -86,12 +104,12 @@ const quickLinks = [
                     <NuxtLink v-for="link in quickLinks" :key="link.label" :to="link.to"
                         class="flex flex-col justify-center items-center gap-2 lg:gap-4 group transition-all duration-300 min-w-0 md:min-w-20 lg:min-w-25">
                         <div
-                            class="p-2.5 lg:p-3 rounded-xl bg-white/5 border border-white/10 group-hover:bg-brand-primary group-hover:border-brand-primary group-hover:scale-110 transition-all duration-300">
+                            class="p-3 lg:p-3.5 rounded-xl bg-white/5 border border-white/10 group-hover:bg-brand-primary group-hover:border-brand-primary group-hover:scale-110 transition-all duration-300 min-w-11 min-h-11 flex items-center justify-center">
                             <component :is="link.icon" :size="20" class="text-white lg:size-7 shrink-0"
                                 stroke-width="1.5" aria-hidden="true" />
                         </div>
                         <span
-                            class="text-[9px] md:text-[11px] font-bold uppercase tracking-widest md:tracking-[0.15em] text-white/80 group-hover:text-white transition-colors leading-tight text-center max-w-25">
+                            class="text-[11px] font-bold uppercase tracking-widest md:tracking-[0.15em] text-white/80 group-hover:text-white transition-colors leading-tight text-center max-w-25">
                             {{ link.label }}
                         </span>
                     </NuxtLink>

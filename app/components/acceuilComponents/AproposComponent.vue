@@ -47,7 +47,7 @@ import { MailIcon, MapIcon, PhoneIcon } from 'lucide-vue-next';
                         <div class="flex items-center gap-4">
                             <MapIcon class="w-6 h-6" />
                             <NuxtLink to="https://www.google.com/maps/place/21+Rue+des+Écoles+60120+Breteuil"
-                                target="_blank">
+                                target="_blank" rel="noopener noreferrer">
                                 21, Rue des Écoles
                             </NuxtLink>
                         </div>
@@ -66,15 +66,15 @@ import { MailIcon, MapIcon, PhoneIcon } from 'lucide-vue-next';
                         <NuxtLink to="/" class="hover:text-brand-gold transition-colors">Inscriptions</NuxtLink>
                     </li>
                     <li>
-                        <NuxtLink to="/" target="_blank" class="hover:text-brand-gold transition-colors">Ecole directe
+                        <NuxtLink to="/" target="_blank" rel="noopener noreferrer" class="hover:text-brand-gold transition-colors">Ecole directe
                         </NuxtLink>
                     </li>
                     <li>
-                        <NuxtLink to="/" target="_blank" class="hover:text-brand-gold transition-colors">E-Sidoc
+                        <NuxtLink to="/" target="_blank" rel="noopener noreferrer" class="hover:text-brand-gold transition-colors">E-Sidoc
                         </NuxtLink>
                     </li>
                     <li>
-                        <NuxtLink to="https://www.apel.fr/" target="_blank"
+                        <NuxtLink to="https://www.apel.fr/" target="_blank" rel="noopener noreferrer"
                             class="hover:text-brand-gold transition-colors">Apel
                         </NuxtLink>
                     </li>
@@ -84,9 +84,3 @@ import { MailIcon, MapIcon, PhoneIcon } from 'lucide-vue-next';
         </div>
     </section>
 </template>
-
-<style scoped>
-.font-serif {
-    font-family: var(--font-serif, serif);
-}
-</style>

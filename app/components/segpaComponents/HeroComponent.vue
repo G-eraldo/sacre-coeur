@@ -17,18 +17,8 @@
                 au sein du collège Sacré-Cœur de Breteuil.
             </p>
             <div class="mt-12 flex justify-center">
-                <div style="width: 60px; height: 3px; background: #C4A55F;" />
+                <div class="w-15 h-0.75 bg-brand-gold" />
             </div>
         </div>
     </section>
 </template>
-
-<style scoped>
-.font-serif {
-    font-family: var(--font-serif, serif);
-}
-
-.font-sans {
-    font-family: var(--font-sans, sans-serif);
-}
-</style>

@@ -38,14 +38,13 @@ const actualite = [
                     <Card v-for="(item, index) in actualite" :key="index"
                         class="lg:w-96 w-full mx-auto mb-12 p-4 lg:p-6 lg:mb-16 hover:scale-[1.02] transition-transform duration-300 ease-in-out">
                         <CardHeader>
-                            <CardTitle class="font-sans">{{ item.title }}</CardTitle>
-                            <CardDescription class="h-24">{{ item.description }}</CardDescription>
-                            <div class="relative">
-                                <div class="absolute bottom-24 right-2 bg-brand-primary text-white px-3 py-1 rounded-sm text-[10px] font-bold
-                uppercase tracking-widest shadow-sm">
+                            <div class="flex items-start justify-between gap-2 mb-1">
+                                <CardTitle class="font-sans">{{ item.title }}</CardTitle>
+                                <span class="bg-brand-primary text-white px-2 py-1 rounded-sm text-[10px] font-bold uppercase tracking-widest shadow-sm shrink-0 whitespace-nowrap">
                                     {{ item.date }}
-                                </div>
+                                </span>
                             </div>
+                            <CardDescription>{{ item.description }}</CardDescription>
                         </CardHeader>
 
                         <CardContent>
@@ -73,5 +72,3 @@ const actualite = [
         </div>
     </section>
 </template>
-
-<style scoped></style>

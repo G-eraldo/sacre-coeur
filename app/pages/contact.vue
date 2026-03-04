@@ -5,6 +5,7 @@ import { toast } from 'vue-sonner';
 import Button from '~/components/ui/button/Button.vue';
 import Input from '~/components/ui/input/Input.vue';
 import Label from '~/components/ui/label/Label.vue';
+import Textarea from '~/components/ui/textarea/Textarea.vue';
 
 useSeoMeta({
     title: 'Contact',
@@ -64,12 +65,12 @@ async function submitForm() {
 
             <Card class="max-w-2xl mx-auto">
                 <div class="p-8">
-                    <h3 class=" text-2xl font-bold text-slate-800 mb-6">
+                    <h2 class="text-2xl font-bold text-slate-800 mb-6">
                         Formulaire de contact
-                    </h3>
+                    </h2>
                     <form class="space-y-4" @submit.prevent="submitForm">
-                        <div>
-                            <Label html-for="name" class="block text-sm font-medium text-slate-700 mb-1">
+                        <div class="space-y-2">
+                            <Label html-for="name" class="text-xs font-bold uppercase tracking-widest text-gray-600">
                                 Votre Nom
                             </Label>
                             <Input id="name" v-model="name" type="text" name="name" required
@@ -97,15 +98,13 @@ async function submitForm() {
                             <Label html-for="message" class="text-xs font-bold uppercase tracking-widest text-gray-600">
                                 Votre message
                             </Label>
-                            <textarea id="message" v-model="textarea" name="message" rows="6" required minlength="10"
-                                class="w-full px-4 py-3 border border-gray-200 rounded-sm focus:ring-brand-primary 
-                                        focus:ring-2 focus:border-brand-primary transition duration-150 outline-none
-                                        placeholder:text-gray-300 resize-none font-sans"
+                            <Textarea id="message" v-model="textarea" name="message" rows="6" required minlength="10"
+                                class="border-gray-200 focus:ring-brand-primary focus:border-brand-primary rounded-sm placeholder:text-gray-300"
                                 placeholder="Comment pouvons-nous vous aider ?" />
                         </div>
 
                         <Button
-                            class="w-full bg-brand-primary text-white py-6 text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#5a171d] transition-all rounded-sm shadow-lg shadow-brand-primary/10">
+                            class="w-full bg-brand-primary text-white py-6 text-xs font-bold uppercase tracking-[0.2em] hover:bg-brand-primary-dark transition-all rounded-sm shadow-lg shadow-brand-primary/10">
                             Envoyer le message
                         </Button>
                     </form>
@@ -114,5 +113,3 @@ async function submitForm() {
         </div>
     </div>
 </template>
-
-<style scoped></style>

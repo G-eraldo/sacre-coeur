@@ -56,7 +56,7 @@ function getPdfPreview(url) {
                 </div>
                 <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 w-full">
                     <Card v-for="pdf in pdfs" :key="pdf.id"
-                        class="bg-white border border-[#ede8e0] rounded-lg shadow-sm hover:shadow-xl transition-all duration-500 ease-out overflow-hidden flex flex-col hover:scale-[1.02]">
+                        class="group bg-white border border-[#ede8e0] rounded-lg shadow-sm hover:shadow-xl transition-all duration-500 ease-out overflow-hidden flex flex-col hover:scale-[1.02]">
 
                         <div class="relative overflow-hidden aspect-4/3 bg-gray-50">
                             <NuxtLink :to="getViewerUrl(pdf.document[0].url)" target="_blank" external
@@ -109,13 +109,3 @@ function getPdfPreview(url) {
         </div>
     </section>
 </template>
-
-<style scoped>
-.font-serif {
-    font-family: var(--font-serif, serif);
-}
-
-.font-sans {
-    font-family: var(--font-sans, sans-serif);
-}
-</style>

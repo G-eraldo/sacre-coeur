@@ -1,10 +1,11 @@
 <!-- eslint-disable vue/first-attribute-linebreak -->
 <script setup lang="ts">
-import { BedIcon, BookOpenIcon, ChurchIcon, GraduationCapIcon, HomeIcon, InfoIcon, MenuIcon, PhoneIcon, SchoolIcon, XIcon } from 'lucide-vue-next';
+import { BookMarkedIcon, BookOpenIcon, ChurchIcon, GraduationCapIcon, HomeIcon, InfoIcon, MenuIcon, PhoneIcon, SchoolIcon, XIcon } from 'lucide-vue-next';
 import { onMounted, onUnmounted, ref } from 'vue';
 
 const isOpen = ref(false)
 const isScrolled = ref(false)
+const route = useRoute()
 
 const toggle = () => {
     isOpen.value = !isOpen.value
@@ -26,7 +27,7 @@ const navLinks = [
     { id: 1, title: 'Accueil', to: '/', icon: HomeIcon },
     { id: 2, title: 'Ecole', to: '/l-ecole', icon: GraduationCapIcon },
     { id: 3, title: 'Collège', to: '/college', icon: SchoolIcon },
-    { id: 4, title: 'Segpa', to: '/segpa', icon: BedIcon },
+    { id: 4, title: 'Segpa', to: '/segpa', icon: BookMarkedIcon },
     { id: 5, title: 'Internat', to: '/internat', icon: BookOpenIcon },
     { id: 6, title: 'A propos', to: '/a-propos', icon: InfoIcon },
     { id: 7, title: 'Pastorale', to: '/pastorale', icon: ChurchIcon },
@@ -53,7 +54,7 @@ const navLinks = [
                 class="hidden lg:flex items-center gap-8 transition-opacity duration-300"
                 :class="isScrolled ? 'opacity-100 h-16' : 'opacity-0 pointer-events-none w-0 h-0 overflow-hidden'">
                 <NuxtLink v-for="link in navLinks" :key="link.id" class="scroll-link hover:text-brand-gold"
-                    :to="link.to">{{ link.title }}</NuxtLink>
+                    :to="link.to" :aria-current="route.path === link.to ? 'page' : undefined">{{ link.title }}</NuxtLink>
             </nav>
 
             <div class="flex items-center gap-4">
@@ -89,19 +90,29 @@ const navLinks = [
         <nav aria-label="Navigation principale"
             class="hidden lg:flex justify-center items-center gap-12 bg-white py-4 border-b border-gray-100 transition-all duration-500 overflow-hidden h-12"
             :class="isScrolled ? 'max-h-0 py-0 opacity-0' : 'max-h-16 opacity-100'">
-            <NuxtLink v-for="link in navLinks" :key="link.id" class="nav-link" :to="link.to">{{ link.title }}</NuxtLink>
+            <NuxtLink v-for="link in navLinks" :key="link.id" class="nav-link" :to="link.to"
+                :aria-current="route.path === link.to ? 'page' : undefined">{{ link.title }}</NuxtLink>
         </nav>
 
         <!-- Mobile Drawer -->
-        <div v-show="isOpen" id="mobile-menu" class="lg:hidden bg-white shadow-xl py-6 transition-all duration-300">
-            <div class="grid grid-cols-2 gap-x-4 gap-y-4 px-6">
-                <NuxtLink v-for="link in navLinks" :key="link.id" class="link-mobile border-b border-gray-50 pb-2"
-                    :to="link.to" @click="isOpen = false">
-                    <component :is="link.icon" class="w-5 h-5 text-gray-400" aria-hidden="true" />
-                    <span class="text-gray-700">{{ link.title }}</span>
-                </NuxtLink>
+        <Transition
+            enter-active-class="transition-all duration-300 ease-out"
+            leave-active-class="transition-all duration-200 ease-in"
+            enter-from-class="opacity-0 -translate-y-2"
+            enter-to-class="opacity-100 translate-y-0"
+            leave-from-class="opacity-100 translate-y-0"
+            leave-to-class="opacity-0 -translate-y-2">
+            <div v-show="isOpen" id="mobile-menu" class="lg:hidden bg-white shadow-xl py-6">
+                <div class="grid grid-cols-2 gap-x-4 gap-y-4 px-6">
+                    <NuxtLink v-for="link in navLinks" :key="link.id" class="link-mobile border-b border-gray-50 pb-2"
+                        :to="link.to" :aria-current="route.path === link.to ? 'page' : undefined"
+                        @click="isOpen = false">
+                        <component :is="link.icon" class="w-5 h-5 text-gray-400" aria-hidden="true" />
+                        <span class="text-gray-700">{{ link.title }}</span>
+                    </NuxtLink>
+                </div>
             </div>
-        </div>
+        </Transition>
     </header>
 </template>
 

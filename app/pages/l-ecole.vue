@@ -27,7 +27,3 @@ useSeoMeta({
         <CtaComponent />
     </div>
 </template>
-
-<style scoped>
-/* Added to prevent Vite/Tailwind parsing issues when no style block is present */
-</style>
