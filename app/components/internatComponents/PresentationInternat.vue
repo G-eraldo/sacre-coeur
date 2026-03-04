@@ -39,7 +39,7 @@ const presentation = {
                 </div>
             </div>
 
-            <div class="relative lg:mt-12">
+            <div class="hidden lg:block lg:relative lg:mt-12">
                 <div
                     class="absolute -top-4 -left-4 w-full h-full border-2 border-brand-gold opacity-20 transform -translate-x-2 -translate-y-2" />
                 <NuxtImg
