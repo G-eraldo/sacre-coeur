@@ -69,6 +69,12 @@ const actualite = [
                     </CardFooter>
                 </Card>
             </div>
+            <div class="flex justify-center">
+                <Button as-child
+                    class="bg-brand-primary hover:bg-brand-gold text-white px-8 py-4 text-xs font-bold uppercase rounded-sm">
+                    <NuxtLink to="/">Retour à l'accueil</NuxtLink>
+                </Button>
+            </div>
         </div>
 
     </section>
