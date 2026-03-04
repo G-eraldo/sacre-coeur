@@ -3,26 +3,22 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
-  app: {
-    head: {
-      htmlAttrs: { lang: "fr" },
-      meta: [
-        {
-          name: "description",
-          content:
-            "L'Institution du Sacré-Cœur à Breteuil : une communauté éducative bienveillante de la maternelle au collège, alliant excellence académique et épanouissement personnel.",
-        },
-      ],
-    },
-  },
   modules: [
     "@nuxt/eslint",
     "@nuxt/icon",
     "@nuxt/image",
     "shadcn-nuxt",
     "@nuxtjs/strapi",
+    "@nuxtjs/seo",
   ],
 
+  site: {
+    url: "https://demo-sacre-coeur.vercel.app",
+    name: "Institution du Sacré-Cœur à Breteuil",
+    indexable: false,
+    defaultLocale: "fr",
+    locales: ["fr"],
+  },
   css: ["./app/assets/css/main.css"],
   vite: {
     plugins: [tailwindcss()],
