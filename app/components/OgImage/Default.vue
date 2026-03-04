@@ -1,7 +1,13 @@
 <script setup>
 defineProps({
-    title: String,
-    description: String
+    title: {
+        type: String,
+        default: 'Institution du Sacré-Cœur'
+    },
+    description: {
+        type: String,
+        default: 'Découvrez notre établissement à Breteuil.'
+    }
 })
 </script>
 
