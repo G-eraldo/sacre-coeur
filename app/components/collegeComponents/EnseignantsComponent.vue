@@ -17,8 +17,8 @@ const horaires = {
 </script>
 
 <template>
-    <section class="py-24 px-6 md:px-12 max-w-7xl mx-auto">
-        <div class="grid lg:grid-cols-2 gap-16">
+    <section class="bg-brand-warm py-24 px-6 md:px-12 ">
+        <div class="grid lg:grid-cols-2 gap-16 max-w-6xl mx-auto ">
             <Card class="bg-brand-primary rounded-sm shadow-sm p-10 text-white relative overflow-hidden">
                 <div class="absolute left-0 top-0 bottom-0 w-1 bg-brand-gold" />
                 <div class="relative z-10">

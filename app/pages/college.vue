@@ -14,7 +14,7 @@ import VieComponent from '~/components/collegeComponents/VieComponent.vue';
         <PresentationComponent />
         <PedagogieComponent />
         <AtoutComponent />
-        <VieComponent />
+        <!-- <VieComponent /> -->
         <EnseignantsComponent />
         <CtaComponent />
     </div>
