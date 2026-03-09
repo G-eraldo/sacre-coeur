@@ -2,7 +2,7 @@
 const { find } = useStrapi()
 
 const { data: videosData, error: videosError } = await useAsyncData(
-    'videos',
+    'videos-page',
     async () => {
         try {
             return await find("videos", { populate: "*" })
@@ -53,7 +53,7 @@ useSeoMeta({
                             :src="video.video[0].url" controls preload="metadata" />
                     </div>
                     <div class="p-6">
-                        <h2 class="text-lg font-bold text-brand-primary mb-2">{{ video.title }}</h2>
+                        <h2 class="text-lg font-bold text-brand-primary mb-2">{{ video.titre }}</h2>
                         <p v-if="video.description" class="text-gray-600 text-sm">{{ video.description }}</p>
                     </div>
                 </div>
