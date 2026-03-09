@@ -3,11 +3,12 @@ const { find } = useStrapi()
 
 const activeTab = ref('visite')
 
-const { data: response, error } = await useAsyncData('videos', () =>
+const { data: response, error } = useAsyncData('videos', () =>
     find('videos', {
         fields: ['titre'],
         populate: { video: true }
-    })
+    }),
+    { lazy: true }
 )
 
 const videos = computed(() => response.value?.data ?? [])
