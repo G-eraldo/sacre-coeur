@@ -3,7 +3,7 @@ const { find } = useStrapi()
 
 const activeTab = ref('visite')
 
-const { data: response, error } = useAsyncData('videos', () =>
+const { data: response, error } = useAsyncData('home-videos', () =>
     find('videos', {
         fields: ['titre'],
         populate: { video: true }
