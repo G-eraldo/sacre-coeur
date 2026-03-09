@@ -60,9 +60,9 @@ function getPdfPreview(url) {
 
                         <div class="relative overflow-hidden aspect-4/3 bg-gray-50">
                             <NuxtLink :to="getViewerUrl(pdf.document[0].url)" target="_blank" external
-                                :aria-label="`Aperçu du document : ${pdf.title}`" class="block w-full h-full">
+                                :aria-label="`Aperçu du document : ${pdf.titre}`" class="block w-full h-full">
                                 <NuxtImg :src="getPdfPreview(pdf.document[0].url)"
-                                    :alt="`Aperçu du document : ${pdf.title}`" format="webp" quality="80" loading="lazy"
+                                    :alt="`Aperçu du document : ${pdf.titre}`" format="webp" quality="80" loading="lazy"
                                     sizes="320px md:384px lg:384px"
                                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
 
@@ -79,7 +79,7 @@ function getPdfPreview(url) {
                         <CardHeader class="pt-6 px-6 pb-0">
                             <div class="flex items-start justify-between gap-4">
                                 <CardTitle class="font-serif text-xl text-brand-primary mb-2 leading-snug">
-                                    {{ pdf.title }}
+                                    {{ pdf.titre }}
                                 </CardTitle>
                                 <FileText class="w-5 h-5 text-brand-gold shrink-0 mt-1" />
                             </div>
