@@ -23,13 +23,13 @@
 
                     <div class="flex flex-col sm:flex-row lg:flex-col gap-3 shrink-0">
                         <Button as-child variant="outline"
-                            class="border-white text-white px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-brand-primary hover:border-white transition-all rounded-sm">
+                            class="border-brand-primary text-brand-primary px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-brand-gold hover:text-white hover:border-brand-gold transition-all rounded-sm">
                             <NuxtLink to="/pre-inscription"
                                 aria-label="Accéder au formulaire d'inscription pour mon enfant">
                                 Pré-inscrire mon enfant</NuxtLink>
                         </Button>
                         <Button as-child variant="outline"
-                            class="border-white text-white px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-brand-primary hover:border-white transition-all rounded-sm">
+                            class="border-brand-primary text-brand-primary px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-brand-gold hover:text-white hover:border-brand-gold transition-all rounded-sm">
                             <NuxtLink to="/contact" aria-label="En savoir plus sur l'Institution du Sacré-Cœur">Nous
                                 contacter</NuxtLink>
                         </Button>

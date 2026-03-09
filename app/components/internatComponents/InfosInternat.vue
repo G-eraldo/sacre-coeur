@@ -1,6 +1,15 @@
-<script setup lang="ts">
+<script setup>
 import { LucideClock, LucideUsers } from 'lucide-vue-next';
 
+const { find } = useStrapi()
+
+const { data: response, pending, error } = await useAsyncData('internats', () =>
+    find('internats', {
+        fields: ['nom', 'personnel'],
+    })
+)
+
+const liste = computed(() => response.value?.data || [])
 </script>
 
 <template>
@@ -37,16 +46,19 @@ import { LucideClock, LucideUsers } from 'lucide-vue-next';
                     </div>
                     <h2 class="text-3xl font-serif text-brand-primary">L'Équipe Pédagogique</h2>
                 </div>
-                <div class="space-y-4 text-gray-700 leading-relaxed">
-                    <div
+                <div v-if="pending" class="space-y-2">
+                    <div v-for="i in 5" :key="i" class="h-16 w-full rounded-sm bg-[#e8e0d5] animate-pulse" />
+                </div>
+
+                <!-- Erreur -->
+                <div v-else-if="error" class="text-red-500 text-sm p-4">
+                    Impossible de charger les classes. ({{ error?.statusCode }})
+                </div>
+                <div v-else class="space-y-4 text-gray-700 leading-relaxed">
+                    <div v-for="personnel in liste" :key="personnel.id"
                         class="py-5 flex items-center justify-between group hover:bg-brand-warm transition-all px-6 rounded-sm border-b border-[#f0ebe3]">
-                        <span class=" font-bold text-brand-gold tracking-wide">Internat Fille et Primaire</span>
-                        <span class="text-gray-700 font-serif">Mme Gomes Ana</span>
-                    </div>
-                    <div
-                        class="py-5 flex items-center justify-between group hover:bg-brand-warm transition-all px-6 rounded-sm border-b border-[#f0ebe3]">
-                        <span class=" font-bold text-brand-gold tracking-wide">Internat Garçon</span>
-                        <span class="text-gray-700 font-serif">M. Goulliart Grégory</span>
+                        <span class=" font-bold text-brand-gold tracking-wide">{{ personnel.nom }}</span>
+                        <span class="text-gray-700 font-serif">{{ personnel.personnel }}</span>
                     </div>
                 </div>
             </div>

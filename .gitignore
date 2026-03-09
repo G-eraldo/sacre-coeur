@@ -24,3 +24,6 @@ logs
 !.env.example
 
 .kombai
+
+# Visite virtuelle - tiles lourdes
+public/visite/app-files/tiles/

@@ -2,12 +2,12 @@
 import { LucideClock, LucideUsers } from 'lucide-vue-next';
 
 const enseignants = [
-    { class: "Coordination", teacher: "Mme LEFÈVRE" },
-    { class: "Anglais", teacher: "Mme BOURGY" },
-    { class: "EPS", teacher: "M. MERCIER" },
-    { class: "Histoire Géo", teacher: "M. SECQ" },
-    { class: "Physique Chimie", teacher: "Mme LOULIA" },
-    { class: "Technologie", teacher: "M. BOUCHER" },
+    { class: "Coordination", teacher: "Madame LEFÈVRE Clarisse" },
+    { class: "Anglais", teacher: "Madame BOURGY" },
+    { class: "EPS", teacher: "Monsieur MERCIER" },
+    { class: "Histoire Géo", teacher: "Monsieur SECQ" },
+    { class: "Physique Chimie", teacher: "Madame LOULIA" },
+    { class: "Technologie", teacher: "Monsieur BOUCHER" },
     { class: "SVT", teacher: "Mme DESGROUX" },
     { class: "Arts Plastiques", teacher: "Mme MERCURI" },
 ]
