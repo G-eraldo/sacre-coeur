@@ -5,8 +5,7 @@ const activeTab = ref('visite')
 
 const { data: response, error } = useAsyncData('videos-home', () =>
     find('videos', {
-        fields: ['titre'],
-        populate: { video: true }
+        populate: "*"
     })
 )
 
@@ -58,7 +57,7 @@ watch(videos, (newVideos) => {
                         <path stroke-linecap="round" stroke-linejoin="round"
                             d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
                     </svg>
-                    Visite virtuelle de l'interat
+                    Visite virtuelle de l'internat
                 </button>
                 <button
                     class="flex items-center gap-2 px-6 py-3 text-sm font-bold uppercase tracking-wider transition-all duration-200 border-b-2 -mb-px cursor-pointer"
