@@ -36,7 +36,7 @@ watchEffect(() => {
             <div class="flex gap-1 mb-8 border-b border-gray-200">
 
                 <button
-                    class="flex items-center gap-2 px-6 py-3 text-sm font-bold uppercase tracking-wider transition-all duration-200 border-b-2 -mb-px"
+                    class="flex items-center gap-2 px-6 py-3 text-sm font-bold uppercase tracking-wider transition-all duration-200 border-b-2 -mb-px cursor-pointer"
                     :class="activeTab === 'visite'
                         ? 'border-brand-primary text-brand-primary'
                         : 'border-transparent text-gray-400 hover:text-brand-primary hover:border-brand-gold'"
@@ -46,10 +46,23 @@ watchEffect(() => {
                         <path stroke-linecap="round" stroke-linejoin="round"
                             d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
                     </svg>
-                    Visite virtuelle
+                    Visite virtuelle de l'école
                 </button>
                 <button
-                    class="flex items-center gap-2 px-6 py-3 text-sm font-bold uppercase tracking-wider transition-all duration-200 border-b-2 -mb-px"
+                    class="flex items-center gap-2 px-6 py-3 text-sm font-bold uppercase tracking-wider transition-all duration-200 border-b-2 -mb-px cursor-pointer"
+                    :class="activeTab === 'internat'
+                        ? 'border-brand-primary text-brand-primary'
+                        : 'border-transparent text-gray-400 hover:text-brand-primary hover:border-brand-gold'"
+                    @click="activeTab = 'internat'">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                    </svg>
+                    Visite virtuelle de l'interat
+                </button>
+                <button
+                    class="flex items-center gap-2 px-6 py-3 text-sm font-bold uppercase tracking-wider transition-all duration-200 border-b-2 -mb-px cursor-pointer"
                     :class="activeTab === 'temoignages'
                         ? 'border-brand-primary text-brand-primary'
                         : 'border-transparent text-gray-400 hover:text-brand-primary hover:border-brand-gold'"
@@ -136,6 +149,10 @@ watchEffect(() => {
                 </p>
             </div>
 
+            <!-- Contenu : Internat -->
+            <div v-show="activeTab === 'internat'">
+                <p class="text-center">En cours de développement</p>
+            </div>
         </div>
     </section>
 </template>
