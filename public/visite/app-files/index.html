@@ -1,199 +1,215 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-<title>Project Title</title>
-<meta charset="utf-8">
-<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
-<style> @-ms-viewport { width: device-width; } </style>
-<link rel="stylesheet" href="vendor/reset.min.css">
-<link rel="stylesheet" href="style.css">
-</head>
-<body class="multiple-scenes ">
+  <head>
+    <title>Project Title</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui"
+    />
+    <style>
+      @-ms-viewport {
+        width: device-width;
+      }
+    </style>
+    <link rel="stylesheet" href="vendor/reset.min.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="multiple-scenes">
+    <div id="pano"></div>
 
-<div id="pano"></div>
+    <div id="sceneList">
+      <ul class="scenes">
+        <a href="javascript:void(0)" class="scene" data-id="0-porche">
+          <li class="text">Porche</li>
+        </a>
+        <a href="javascript:void(0)" class="scene" data-id="1-entreeprincipale">
+          <li class="text">Entrée Principale</li>
+        </a>
+        <a href="javascript:void(0)" class="scene" data-id="2-administration">
+          <li class="text">Administration</li>
+        </a>
+        <a href="javascript:void(0)" class="scene" data-id="3-courcentrale">
+          <li class="text">Cour Centrale</li>
+        </a>
+        <a href="javascript:void(0)" class="scene" data-id="30-preau">
+          <li class="text">Préau</li>
+        </a>
 
-<div id="sceneList">
-  <ul class="scenes">
-    
-      <a href="javascript:void(0)" class="scene" data-id="0-porche">
-        <li class="text">Porche</li>
-      </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="1-entreeprincipale">
-        <li class="text">EntreePrincipale</li>
-      </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="2-administration">
-        <li class="text">Administration</li>
-      </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="3-courcentrale">
-        <li class="text">CourCentrale</li>
-      </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="4-self">
-        <li class="text">Self</li>
-      </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="5-cantine">
-        <li class="text">Cantine</li>
-      </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="6-cdi">
-        <li class="text">CDI</li>
-      </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="7-bibliothequeprimaire">
-        <li class="text">BibliothequePrimaire</li>
-      </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="8-segpa">
-        <li class="text">Segpa</li>
-      </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="9-segpa2">
-        <li class="text">Segpa2</li>
-      </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="10-cp_ce1">
-        <li class="text">CP_CE1</li>
-      </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="11-ce1_ce2">
-        <li class="text">CE1_CE2</li>
-      </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="12-salleinformatique">
-        <li class="text">Salleinformatique</li>
-      </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="13-5eme">
-        <li class="text">5eme</li>
-      </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="14-4eme">
-        <li class="text">4eme</li>
-      </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="15-3eme">
-        <li class="text">3eme</li>
-      </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="16-6eme">
-        <li class="text">6eme</li>
-      </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="17-ce2_cm1">
-        <li class="text">CE2_CM1</li>
-      </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="18-college">
-        <li class="text">College</li>
-      </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="19-courmaternelle">
-        <li class="text">CourMaternelle</li>
-      </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="20-dortoirmaternelle">
-        <li class="text">DortoirMaternelle</li>
-      </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="21-garderie">
-        <li class="text">Garderie</li>
-      </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="22-jeux">
-        <li class="text">Jeux</li>
-      </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="23-laboratoire">
-        <li class="text">Laboratoire</li>
-      </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="24-ms">
-        <li class="text">MS</li>
-      </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="25-gs">
-        <li class="text">GS</li>
-      </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="26-tps_ps">
-        <li class="text">TPS_PS</li>
-      </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="27-maternelletoilettes">
-        <li class="text">MaternelleToilettes</li>
-      </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="28-maternelle">
-        <li class="text">Maternelle</li>
-      </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="29-musique">
-        <li class="text">Musique</li>
-      </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="30-preau">
-        <li class="text">Preau</li>
-      </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="31-uliscollege">
-        <li class="text">UlisCollege</li>
-      </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="32-toilettes">
-        <li class="text">Toilettes</li>
-      </a>
-    
-  </ul>
-</div>
+        <a href="javascript:void(0)" class="scene" data-id="28-maternelle">
+          <li class="text">Maternelle</li>
+        </a>
+        <a href="javascript:void(0)" class="scene" data-id="19-courmaternelle">
+          <li class="text">Cour Maternelle</li>
+        </a>
+        <a href="javascript:void(0)" class="scene" data-id="26-tps_ps">
+          <li class="text">TPS-PS</li>
+        </a>
+        <a href="javascript:void(0)" class="scene" data-id="24-ms">
+          <li class="text">MS</li>
+        </a>
+        <a href="javascript:void(0)" class="scene" data-id="25-gs">
+          <li class="text">GS</li>
+        </a>
+        <a
+          href="javascript:void(0)"
+          class="scene"
+          data-id="20-dortoirmaternelle"
+        >
+          <li class="text">Dortoir Maternelle</li>
+        </a>
+        <a href="javascript:void(0)" class="scene" data-id="21-garderie">
+          <li class="text">Garderie</li>
+        </a>
+        <a href="javascript:void(0)" class="scene" data-id="22-jeux">
+          <li class="text">Jeux</li>
+        </a>
+        <a
+          href="javascript:void(0)"
+          class="scene"
+          data-id="27-maternelletoilettes"
+        >
+          <li class="text">Maternelle Toilettes</li>
+        </a>
 
-<div id="titleBar">
-  <h1 class="sceneName"></h1>
-</div>
+        <a
+          href="javascript:void(0)"
+          class="scene"
+          data-id="7-bibliothequeprimaire"
+        >
+          <li class="text">Bibliotheque Primaire</li>
+        </a>
+        <a href="javascript:void(0)" class="scene" data-id="10-cp_ce1">
+          <li class="text">CP-CE1</li>
+        </a>
+        <a href="javascript:void(0)" class="scene" data-id="11-ce1_ce2">
+          <li class="text">CE1-CE2</li>
+        </a>
+        <a href="javascript:void(0)" class="scene" data-id="17-ce2_cm1">
+          <li class="text">CE2-CM1</li>
+        </a>
 
-<a href="javascript:void(0)" id="autorotateToggle">
-  <img class="icon off" src="img/play.png">
-  <img class="icon on" src="img/pause.png">
-</a>
+        <a href="javascript:void(0)" class="scene" data-id="18-college">
+          <li class="text">Collège</li>
+        </a>
+        <a href="javascript:void(0)" class="scene" data-id="16-6eme">
+          <li class="text">6ème</li>
+        </a>
+        <a href="javascript:void(0)" class="scene" data-id="13-5eme">
+          <li class="text">5ème</li>
+        </a>
+        <a href="javascript:void(0)" class="scene" data-id="14-4eme">
+          <li class="text">4ème</li>
+        </a>
+        <a href="javascript:void(0)" class="scene" data-id="15-3eme">
+          <li class="text">3ème</li>
+        </a>
+        <a href="javascript:void(0)" class="scene" data-id="31-uliscollege">
+          <li class="text">Ulis Collège</li>
+        </a>
+        <a href="javascript:void(0)" class="scene" data-id="8-segpa">
+          <li class="text">Segpa</li>
+        </a>
+        <a href="javascript:void(0)" class="scene" data-id="9-segpa2">
+          <li class="text">Segpa2</li>
+        </a>
 
-<a href="javascript:void(0)" id="fullscreenToggle">
-  <img class="icon off" src="img/fullscreen.png">
-  <img class="icon on" src="img/windowed.png">
-</a>
+        <a href="javascript:void(0)" class="scene" data-id="6-cdi">
+          <li class="text">CDI</li>
+        </a>
+        <a
+          href="javascript:void(0)"
+          class="scene"
+          data-id="12-salleinformatique"
+        >
+          <li class="text">Salle informatique</li>
+        </a>
+        <a href="javascript:void(0)" class="scene" data-id="23-laboratoire">
+          <li class="text">Laboratoire</li>
+        </a>
+        <a href="javascript:void(0)" class="scene" data-id="29-musique">
+          <li class="text">Musique</li>
+        </a>
 
-<a href="javascript:void(0)" id="sceneListToggle">
-  <img class="icon off" src="img/expand.png">
-  <img class="icon on" src="img/collapse.png">
-</a>
+        <a href="javascript:void(0)" class="scene" data-id="4-self">
+          <li class="text">Self</li>
+        </a>
+        <a href="javascript:void(0)" class="scene" data-id="5-cantine">
+          <li class="text">Cantine</li>
+        </a>
+        <a href="javascript:void(0)" class="scene" data-id="32-toilettes">
+          <li class="text">Toilettes</li>
+        </a>
+      </ul>
+    </div>
 
-<a href="javascript:void(0)" id="viewUp" class="viewControlButton viewControlButton-1">
-  <img class="icon" src="img/up.png">
-</a>
-<a href="javascript:void(0)" id="viewDown" class="viewControlButton viewControlButton-2">
-  <img class="icon" src="img/down.png">
-</a>
-<a href="javascript:void(0)" id="viewLeft" class="viewControlButton viewControlButton-3">
-  <img class="icon" src="img/left.png">
-</a>
-<a href="javascript:void(0)" id="viewRight" class="viewControlButton viewControlButton-4">
-  <img class="icon" src="img/right.png">
-</a>
-<a href="javascript:void(0)" id="viewIn" class="viewControlButton viewControlButton-5">
-  <img class="icon" src="img/plus.png">
-</a>
-<a href="javascript:void(0)" id="viewOut" class="viewControlButton viewControlButton-6">
-  <img class="icon" src="img/minus.png">
-</a>
+    <div id="titleBar">
+      <h1 class="sceneName"></h1>
+    </div>
 
-<script src="vendor/screenfull.min.js" ></script>
-<script src="vendor/bowser.min.js" ></script>
-<script src="vendor/marzipano.js" ></script>
+    <a href="javascript:void(0)" id="autorotateToggle">
+      <img class="icon off" src="img/play.png" />
+      <img class="icon on" src="img/pause.png" />
+    </a>
 
-<script src="data.js"></script>
-<script src="index.js"></script>
+    <a href="javascript:void(0)" id="fullscreenToggle">
+      <img class="icon off" src="img/fullscreen.png" />
+      <img class="icon on" src="img/windowed.png" />
+    </a>
 
-</body>
+    <a href="javascript:void(0)" id="sceneListToggle">
+      <img class="icon off" src="img/expand.png" />
+      <img class="icon on" src="img/collapse.png" />
+    </a>
+
+    <a
+      href="javascript:void(0)"
+      id="viewUp"
+      class="viewControlButton viewControlButton-1"
+    >
+      <img class="icon" src="img/up.png" />
+    </a>
+    <a
+      href="javascript:void(0)"
+      id="viewDown"
+      class="viewControlButton viewControlButton-2"
+    >
+      <img class="icon" src="img/down.png" />
+    </a>
+    <a
+      href="javascript:void(0)"
+      id="viewLeft"
+      class="viewControlButton viewControlButton-3"
+    >
+      <img class="icon" src="img/left.png" />
+    </a>
+    <a
+      href="javascript:void(0)"
+      id="viewRight"
+      class="viewControlButton viewControlButton-4"
+    >
+      <img class="icon" src="img/right.png" />
+    </a>
+    <a
+      href="javascript:void(0)"
+      id="viewIn"
+      class="viewControlButton viewControlButton-5"
+    >
+      <img class="icon" src="img/plus.png" />
+    </a>
+    <a
+      href="javascript:void(0)"
+      id="viewOut"
+      class="viewControlButton viewControlButton-6"
+    >
+      <img class="icon" src="img/minus.png" />
+    </a>
+
+    <script src="vendor/screenfull.min.js"></script>
+    <script src="vendor/bowser.min.js"></script>
+    <script src="vendor/marzipano.js"></script>
+
+    <script src="data.js"></script>
+    <script src="index.js"></script>
+  </body>
 </html>
