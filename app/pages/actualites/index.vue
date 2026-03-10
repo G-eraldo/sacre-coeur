@@ -65,7 +65,7 @@ function formatDate(dateStr) {
                 <Card v-for="item in actualites?.data" :key="item.id"
                     class="lg:w-96 w-full mx-auto mb-12 p-4 lg:p-6 lg:mb-16 hover:scale-[1.02] transition-transform duration-300 ease-in-out">
                     <CardHeader>
-                        <div class="flex items-start justify-between gap-2 mb-1">
+                        <div class="flex items-center justify-between gap-2 mb-1">
                             <CardTitle class="font-sans">{{ item.titre }}</CardTitle>
                             <span
                                 class="bg-brand-primary text-white px-2 py-1 rounded-sm text-[10px] font-bold uppercase tracking-widest shadow-sm shrink-0 whitespace-nowrap">

@@ -38,7 +38,7 @@ function formatDate(dateStr) {
                 </div>
 
                 <!-- Loading -->
-                <div v-if="pending" class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+                <div v-if="pending" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
                     <Skeleton v-for="i in 3" :key="i" class="h-96 w-full rounded-lg" />
                 </div>
 
@@ -49,39 +49,37 @@ function formatDate(dateStr) {
                     </Alert>
                 </div>
 
-                <!-- Liste -->
-                <div v-else class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <Card v-for="item in actualites?.data" :key="item.id"
-                        class="lg:w-96 w-full mx-auto mb-12 p-4 lg:p-6 lg:mb-16 hover:scale-[1.02] transition-transform duration-300 ease-in-out">
-                        <NuxtLink :to="`/actualites/${item.slug}`" class="flex flex-col gap-4">
-                            <CardHeader>
-                                <div class="flex items-center justify-between gap-2 mb-1">
-                                    <CardTitle class="font-sans">{{ item.titre }}</CardTitle>
-                                    <span
-                                        class="bg-brand-primary text-white px-2 py-1 rounded-sm text-[10px] font-bold uppercase tracking-widest shadow-sm shrink-0 whitespace-nowrap">
-                                        {{ formatDate(item.publishedAt) }}
-                                    </span>
-                                </div>
-                                <CardDescription>{{ item.description }}</CardDescription>
-                            </CardHeader>
+                        class="relative lg:w-96 w-full mx-auto mb-12 p-4 lg:p-6 lg:mb-16 hover:scale-[1.02] transition-transform duration-300 ease-in-out">
+                        <CardHeader>
+                            <div class="flex items-center justify-between gap-2 mb-1">
+                                <CardTitle class="font-sans">{{ item.titre }}</CardTitle>
+                                <span
+                                    class="bg-brand-primary text-white px-2 py-1 rounded-sm text-[10px] font-bold uppercase tracking-widest shadow-sm shrink-0 whitespace-nowrap">
+                                    {{ formatDate(item.publishedAt) }}
+                                </span>
+                            </div>
+                            <CardDescription class="h-24">{{ item.description }}</CardDescription>
+                        </CardHeader>
 
-                            <CardContent>
-                                <NuxtImg v-if="item.images?.[0]" :src="item.images[0].url"
-                                    :alt="item.images[0].alternativeText || item.titre" format="webp" quality="80"
-                                    loading="lazy" sizes="320px md:384px lg:384px"
-                                    class="w-full h-48 object-cover rounded-lg" />
-                            </CardContent>
+                        <CardContent>
+                            <NuxtImg v-if="item.images?.[0]" :src="item.images[0].url"
+                                :alt="item.images[0].alternativeText || item.titre" format="webp" quality="80"
+                                loading="lazy" sizes="320px md:384px lg:384px"
+                                class="w-full h-48 object-cover rounded-lg" />
+                        </CardContent>
 
-                            <CardFooter class="flex justify-center">
-                                <Button as-child variant="link"
-                                    class="p-0 h-auto font-bold text-brand-primary hover:text-brand-gold group/btn">
-                                    <NuxtLink :to="`/actualites/${item.slug}`" class="flex items-center gap-2">
-                                        Lire la suite
-                                        <span class="group-hover/btn:translate-x-1 transition-transform">→</span>
-                                    </NuxtLink>
-                                </Button>
-                            </CardFooter>
-                        </NuxtLink>
+                        <CardFooter class="flex justify-center">
+                            <Button as-child variant="link"
+                                class="p-0 h-auto font-bold text-brand-primary hover:text-brand-gold group/btn">
+                                <NuxtLink :to="`/actualites/${item.slug}`"
+                                    class="flex items-center gap-2 after:absolute after:inset-0 after:z-10 after:content-['']">
+                                    Lire la suite
+                                    <span class="group-hover/btn:translate-x-1 transition-transform">→</span>
+                                </NuxtLink>
+                            </Button>
+                        </CardFooter>
                     </Card>
                 </div>
 
