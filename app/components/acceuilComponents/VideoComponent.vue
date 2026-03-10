@@ -25,16 +25,16 @@ watch(videos, (newVideos) => {
 
 
             <div class="mb-8">
-                <h2 class="text-4xl lg:text-5xl font-serif text-brand-primary tracking-tight">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif text-brand-primary tracking-tight">
                     Découvrir l'école
                 </h2>
             </div>
 
             <!-- Onglets -->
-            <div class="flex gap-1 mb-8 border-b border-gray-200">
-
+            <div
+                class="flex gap-1 mb-8 border-b border-gray-200 overflow-x-auto scrollbar-hide -mx-6 px-6 sm:mx-0 sm:px-0">
                 <button
-                    class="flex items-center gap-2 px-6 py-3 text-sm font-bold uppercase tracking-wider transition-all duration-200 border-b-2 -mb-px cursor-pointer"
+                    class="flex items-center gap-2 px-6 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-200 border-b-2 -mb-px cursor-pointer shrink-0 whitespace-nowrap"
                     :class="activeTab === 'visite'
                         ? 'border-brand-primary text-brand-primary'
                         : 'border-transparent text-gray-400 hover:text-brand-primary hover:border-brand-gold'"
@@ -44,10 +44,10 @@ watch(videos, (newVideos) => {
                         <path stroke-linecap="round" stroke-linejoin="round"
                             d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
                     </svg>
-                    Visite virtuelle de l'école
+                    Visite de l'école
                 </button>
                 <button
-                    class="flex items-center gap-2 px-6 py-3 text-sm font-bold uppercase tracking-wider transition-all duration-200 border-b-2 -mb-px cursor-pointer"
+                    class="flex items-center gap-2 px-6 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-200 border-b-2 -mb-px cursor-pointer shrink-0 whitespace-nowrap"
                     :class="activeTab === 'internat'
                         ? 'border-brand-primary text-brand-primary'
                         : 'border-transparent text-gray-400 hover:text-brand-primary hover:border-brand-gold'"
@@ -57,10 +57,10 @@ watch(videos, (newVideos) => {
                         <path stroke-linecap="round" stroke-linejoin="round"
                             d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
                     </svg>
-                    Visite virtuelle de l'internat
+                    Visite de l'internat
                 </button>
                 <button
-                    class="flex items-center gap-2 px-6 py-3 text-sm font-bold uppercase tracking-wider transition-all duration-200 border-b-2 -mb-px cursor-pointer"
+                    class="flex items-center gap-2 px-6 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-200 border-b-2 -mb-px cursor-pointer shrink-0 whitespace-nowrap"
                     :class="activeTab === 'temoignages'
                         ? 'border-brand-primary text-brand-primary'
                         : 'border-transparent text-gray-400 hover:text-brand-primary hover:border-brand-gold'"
@@ -132,11 +132,11 @@ watch(videos, (newVideos) => {
             <div v-show="activeTab === 'visite'">
                 <div class="rounded-xl overflow-hidden shadow-lg border border-gray-100">
                     <ClientOnly>
-                        <iframe src="/visite/app-files/index.html" width="100%" height="600"
+                        <iframe src="/visite/app-files/index.html" class="w-full h-112.5 sm:h-137.5 lg:h-162.5"
                             style="border:none; display:block;" title="Visite virtuelle de l'Institution Sacré-Cœur"
                             allowfullscreen />
                         <template #fallback>
-                            <div class="w-full h-96 bg-gray-100 flex items-center justify-center">
+                            <div class="w-full h-112.5 bg-gray-100 flex items-center justify-center">
                                 <p class="text-gray-400">Chargement de la visite...</p>
                             </div>
                         </template>
