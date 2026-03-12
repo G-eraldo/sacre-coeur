@@ -1,5 +1,4 @@
 <script setup>
-import { onMounted } from 'vue';
 import Alert from '~/components/ui/alert/Alert.vue';
 import AlertDescription from '~/components/ui/alert/AlertDescription.vue';
 import Skeleton from '~/components/ui/skeleton/Skeleton.vue';
@@ -13,9 +12,6 @@ useSeoMeta({
     ogType: 'website',
 })
 
-onMounted(() => {
-    console.log('Page Actualités montée');
-});
 
 const { find } = useStrapi()
 
