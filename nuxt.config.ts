@@ -62,4 +62,5 @@ export default defineNuxtConfig({
       version: "v5",
     },
   },
+  debug: true,
 });

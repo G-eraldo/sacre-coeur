@@ -12,11 +12,16 @@ const { data: response, error } = useAsyncData('videos-home', () =>
 const videos = computed(() => response.value?.data ?? [])
 const selectedVideo = ref(null)
 
+onMounted(() => {
+    if (videos.value.length > 0) {
+        selectedVideo.value = videos.value[0]
+    }
+})
 watch(videos, (newVideos) => {
     if (!selectedVideo.value && newVideos.length > 0) {
         selectedVideo.value = newVideos[0]
     }
-}, { immediate: true })
+})
 </script>
 
 <template>
