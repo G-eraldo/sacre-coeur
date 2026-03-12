@@ -30,7 +30,6 @@ watch(videos, (newVideos) => {
                 </h2>
             </div>
 
-            <!-- Onglets -->
             <div
                 class="flex gap-1 mb-8 border-b border-gray-200 overflow-x-auto scrollbar-hide -mx-6 px-6 sm:mx-0 sm:px-0">
                 <button
@@ -72,7 +71,6 @@ watch(videos, (newVideos) => {
                 </button>
             </div>
 
-            <!-- Contenu : Témoignages -->
             <div v-show="activeTab === 'temoignages'">
                 <div v-if="error" class="text-gray-500 text-center py-12">
                     <p>Les témoignages ne sont pas disponibles pour le moment.</p>
@@ -81,7 +79,6 @@ watch(videos, (newVideos) => {
                     <p>Aucun témoignage disponible.</p>
                 </div>
                 <div v-else class="flex flex-col lg:flex-row gap-6">
-                    <!-- Vidéo principale -->
                     <div class="flex-1">
                         <div class="rounded-xl overflow-hidden bg-black shadow-lg">
                             <video v-if="selectedVideo?.video?.length > 0" :key="selectedVideo.id"
@@ -94,7 +91,6 @@ watch(videos, (newVideos) => {
                         </h3>
                     </div>
 
-                    <!-- Miniatures -->
                     <div
                         class="flex lg:flex-col flex-row gap-4 lg:w-64 overflow-x-auto lg:overflow-y-auto lg:max-h-100">
                         <div v-for="video in videos.filter(v => v.id !== selectedVideo?.id)" :key="video.id"
@@ -128,7 +124,6 @@ watch(videos, (newVideos) => {
                 </div>
             </div>
 
-            <!-- Contenu : Visite virtuelle -->
             <div v-show="activeTab === 'visite'">
                 <div class="rounded-xl overflow-hidden shadow-lg border border-gray-100">
                     <ClientOnly>
@@ -147,9 +142,22 @@ watch(videos, (newVideos) => {
                 </p>
             </div>
 
-            <!-- Contenu : Internat -->
             <div v-show="activeTab === 'internat'">
-                <p class="text-center">En cours de développement</p>
+                <div class="rounded-xl overflow-hidden shadow-lg border border-gray-100">
+                    <ClientOnly>
+                        <iframe src="/internat/app-files/index.html" class="w-full h-112.5 sm:h-137.5 lg:h-162.5"
+                            style="border:none; display:block;"
+                            title="Visite virtuelle de l'internat de l'Institution Sacré-Cœur" allowfullscreen />
+                        <template #fallback>
+                            <div class="w-full h-112.5 bg-gray-100 flex items-center justify-center">
+                                <p class="text-gray-400">Chargement de la visite...</p>
+                            </div>
+                        </template>
+                    </ClientOnly>
+                </div>
+                <p class="text-sm text-gray-400 text-center mt-3 italic">
+                    Cliquez et faites glisser pour explorer — cliquez sur les flèches pour vous déplacer
+                </p>
             </div>
         </div>
     </section>

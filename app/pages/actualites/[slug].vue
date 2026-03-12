@@ -19,7 +19,11 @@ const { data: articles, error } = await useAsyncData(
     })
 )
 
-const article = computed(() => articles.value?.data?.[0] ?? null)
+const article = computed(() => {
+    const item = articles.value?.data?.[0] ?? null
+    if (item && item.slug !== route.params.slug) return null
+    return item
+})
 
 if (!article.value && !error.value) {
     throw createError({ statusCode: 404, statusMessage: 'Actualité non trouvée' })
@@ -47,14 +51,14 @@ function formatDate(dateStr) {
 <template>
     <section class="pt-40 lg:pt-56 pb-20 bg-brand-warm min-h-screen">
 
-        <!-- Erreur -->
+
         <Alert v-if="error" variant="destructive" class="max-w-xl mx-auto">
             <AlertDescription>Impossible de charger cette actualité.</AlertDescription>
         </Alert>
 
         <Card v-else-if="article" class="max-w-7xl mx-auto px-6 py-12">
 
-            <!-- En-tête -->
+
             <div class="mb-10">
                 <span
                     class="bg-brand-primary text-white px-2 py-1 rounded-sm text-[10px] font-bold uppercase tracking-widest shadow-sm">
@@ -64,15 +68,25 @@ function formatDate(dateStr) {
                 <p class="text-lg text-gray-600">{{ article.description }}</p>
             </div>
 
-            <!-- Galerie photos -->
-            <div v-if="article.images?.length"
-                :class="article.images.length === 1 ? 'w-full' : 'grid grid-cols-1 md:grid-cols-2 gap-4'" class="mb-12">
-                <NuxtImg v-for="img in article.images" :key="img.url" :src="img.url"
-                    :alt="img.alternativeText || article.titre" format="webp" quality="80" loading="lazy"
-                    class="w-full rounded-lg object-cover aspect-video" />
-            </div>
 
-            <!-- Sections dynamiques (optionnelles) -->
+            <div v-if="article.images?.length === 1" class='w-full mb-12'>
+                <NuxtImg :src="article.images[0].url" :alt="article.images[0].alternativeText || article.titre"
+                    format="webp" quality="80" loading="lazy" class="w-full rounded-lg object-cover aspect-video" />
+            </div>
+            <Carousel v-else class="w-full mb-12" :opts="{ loop: true }">
+                <div class="sr-only" aria-live="polite" aria-atomic="true">
+                    Diapositive {{ currentSlideIndex + 1 }} sur {{ article.images.length }} : {{ article.titre }}
+                </div>
+                <CarouselContent>
+                    <CarouselItem v-for="img in article.images" :key="img.id">
+                        <NuxtImg :src="img.url" :alt="img.alternativeText || article.titre" format="webp" quality="80"
+                            loading="lazy" class="w-full rounded-lg object-cover aspect-video" />
+                    </CarouselItem>
+                </CarouselContent>
+                <CarouselPrevious />
+                <CarouselNext />
+            </Carousel>
+
             <div v-if="article.contenu?.length" class="space-y-10">
                 <div v-for="(section, i) in article.contenu" :key="i" class="space-y-4">
                     <h2 v-if="section.titre_section" class="text-2xl md:text-3xl font-serif text-brand-primary">
@@ -83,7 +97,7 @@ function formatDate(dateStr) {
                 </div>
             </div>
 
-            <!-- Retour -->
+
             <div class="mt-16 border-t pt-8">
                 <Button as-child variant="link"
                     class="p-0 h-auto font-bold text-brand-primary hover:text-brand-gold group/btn transition-colors">

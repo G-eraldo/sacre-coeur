@@ -57,10 +57,7 @@ const currentSlide = computed(() => images[currentSlideIndex.value])
 
 <template>
     <Carousel class="w-full mt-20 lg:h-full" :opts="{ loop: true }"
-        :plugins="[Autoplay({ delay: 5000, stopOnInteraction: false })]"
-        :set-api="onSetApi">
-
-        <!-- Accessible live region for screen readers -->
+        :plugins="[Autoplay({ delay: 5000, stopOnInteraction: false })]" :set-api="onSetApi">
         <div class="sr-only" aria-live="polite" aria-atomic="true">
             Diapositive {{ currentSlideIndex + 1 }} sur {{ images.length }} : {{ currentSlide.title }}
         </div>

@@ -1,5 +1,8 @@
 <script setup>
 import { onMounted } from 'vue';
+import Alert from '~/components/ui/alert/Alert.vue';
+import AlertDescription from '~/components/ui/alert/AlertDescription.vue';
+import Skeleton from '~/components/ui/skeleton/Skeleton.vue';
 
 useSeoMeta({
     title: 'Voyages',
@@ -14,64 +17,72 @@ onMounted(() => {
     console.log('Page Actualités montée');
 });
 
-const actualite = [
-    {
-        title: "Voyage 1",
-        description: "Description 1",
-        date: "5 Mai 2022",
-        slug: "voyage-1",
-        image: "https://res.cloudinary.com/dlnbsf2ed/image/upload/v1770732109/istockphoto-538358776-612x612_tgjawy.jpg"
-    },
-    {
-        title: "Voyage 2",
-        description: "Description 2",
-        date: "5 Mai 2022",
-        slug: "voyage-2",
-        image: "https://res.cloudinary.com/dlnbsf2ed/image/upload/v1770732087/istockphoto-538358346-612x612_t6lmw0.jpg"
-    },
-    {
-        title: "Voyage 3",
-        description: "Description 3",
-        date: "5 Mai 2022",
-        slug: "voyage-3",
-        image: "https://res.cloudinary.com/dlnbsf2ed/image/upload/v1770732067/view-young-students-attending-school_nozrjy.jpg"
-    }
-]
+const { find } = useStrapi()
+
+const { data: voyages, pending, error } = await useAsyncData('voyages-list', () =>
+    find('voyages', {
+        fields: ['titre', 'description', 'publishedAt', 'slug'],
+        populate: {
+            images: { fields: ['url', 'alternativeText'] }
+        },
+        filters: { publishedAt: { $notNull: true } },
+        sort: ['publishedAt:desc']
+    })
+)
+
+function formatDate(dateStr) {
+    if (!dateStr) return ''
+    return new Date(dateStr).toLocaleDateString('fr-FR', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+    }).toUpperCase()
+}
 </script>
 
 <template>
     <section class="pt-40 lg:pt-56 pb-20 bg-brand-warm min-h-screen">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
-                <p class="text-xs font-bold uppercase tracking-[0.3em] text-brand-gold mb-3">Actualités</p>
+                <p class="text-xs font-bold uppercase tracking-[0.3em] text-brand-gold mb-3">Voyages</p>
                 <h2 class="text-4xl md:text-5xl font-bold text-brand-primary mb-6">Les voyages de notre communauté
                 </h2>
                 <p class="text-gray-600 max-w-2xl mx-auto">Découvrez les voyages de notre communauté.</p>
             </div>
+            <div v-if="pending" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <Skeleton v-for="i in 3" :key="i" class="h-96 w-full rounded-lg" />
+            </div>
 
+            <Alert v-else-if="error" variant="destructive" class="max-w-xl mx-auto">
+                <AlertDescription>Impossible de charger les voyages.</AlertDescription>
+            </Alert>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <Card v-for="(item, index) in actualite" :key="index"
-                    class="lg:w-96 w-full mx-auto mb-12 p-4 lg:p-6 lg:mb-16 hover:scale-[1.02] transition-transform duration-300 ease-in-out">
+            <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <Card v-for="item in voyages?.data" :key="item.id"
+                    class="relative lg:w-96 w-full mx-auto mb-12 p-4 lg:p-6 lg:mb-16 hover:scale-[1.02] transition-transform duration-300 ease-in-out">
                     <CardHeader>
-                        <CardTitle class="font-sans">{{ item.title }}</CardTitle>
-                        <CardDescription class="h-24">{{ item.description }}</CardDescription>
-                        <div class="relative">
-                            <div class="absolute bottom-24 right-2 bg-brand-primary text-white px-3 py-1 rounded-sm text-[10px] font-bold
-                uppercase tracking-widest shadow-sm">
-                                {{ item.date }}
-                            </div>
+                        <div class="flex items-center justify-between gap-2 mb-1">
+                            <CardTitle class="font-sans">{{ item.titre }}</CardTitle>
+                            <span
+                                class="bg-brand-primary text-white px-2 py-1 rounded-sm text-[10px] font-bold uppercase tracking-widest shadow-sm shrink-0 whitespace-nowrap">
+                                {{ formatDate(item.publishedAt) }}
+                            </span>
                         </div>
+                        <CardDescription class="h-24">{{ item.description }}</CardDescription>
                     </CardHeader>
 
                     <CardContent>
-                        <NuxtImg :src="item.image" :alt="item.title" format="webp" quality="80" loading="lazy"
-                            sizes="320px md:384px lg:384px" class="w-full h-48 object-cover rounded-lg" />
+                        <NuxtImg v-if="item.images?.[0]" :src="item.images[0].url"
+                            :alt="item.images[0].alternativeText || item.titre" format="webp" quality="80"
+                            loading="lazy" sizes="320px md:384px lg:384px"
+                            class="w-full h-48 object-cover rounded-lg" />
                     </CardContent>
+
                     <CardFooter class="flex justify-center">
                         <Button as-child variant="link"
                             class="p-0 h-auto font-bold text-brand-primary hover:text-brand-gold group/btn">
-                            <NuxtLink :to="`/actualites/${item.slug}`" class="flex items-center gap-2">
+                            <NuxtLink :to="`/voyages/${item.slug}`"
+                                class="flex items-center gap-2 after:absolute after:inset-0 after:z-10 after:content-['']">
                                 Lire la suite
                                 <span class="group-hover/btn:translate-x-1 transition-transform">→</span>
                             </NuxtLink>

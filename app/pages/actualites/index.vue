@@ -50,20 +50,17 @@ function formatDate(dateStr) {
                 <p class="text-gray-600 max-w-2xl mx-auto">Découvrez les actualités de notre communauté.</p>
             </div>
 
-            <!-- Loading -->
             <div v-if="pending" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <Skeleton v-for="i in 3" :key="i" class="h-96 w-full rounded-lg" />
             </div>
 
-            <!-- Erreur -->
             <Alert v-else-if="error" variant="destructive" class="max-w-xl mx-auto">
                 <AlertDescription>Impossible de charger les actualités.</AlertDescription>
             </Alert>
 
-            <!-- Liste -->
             <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <Card v-for="item in actualites?.data" :key="item.id"
-                    class="lg:w-96 w-full mx-auto mb-12 p-4 lg:p-6 lg:mb-16 hover:scale-[1.02] transition-transform duration-300 ease-in-out">
+                    class="relative lg:w-96 w-full mx-auto mb-12 p-4 lg:p-6 lg:mb-16 hover:scale-[1.02] transition-transform duration-300 ease-in-out">
                     <CardHeader>
                         <div class="flex items-center justify-between gap-2 mb-1">
                             <CardTitle class="font-sans">{{ item.titre }}</CardTitle>
@@ -85,7 +82,8 @@ function formatDate(dateStr) {
                     <CardFooter class="flex justify-center">
                         <Button as-child variant="link"
                             class="p-0 h-auto font-bold text-brand-primary hover:text-brand-gold group/btn">
-                            <NuxtLink :to="`/actualites/${item.slug}`" class="flex items-center gap-2">
+                            <NuxtLink :to="`/actualites/${item.slug}`"
+                                class="flex items-center gap-2 after:absolute after:inset-0 after:z-10 after:content-['']">
                                 Lire la suite
                                 <span class="group-hover/btn:translate-x-1 transition-transform">→</span>
                             </NuxtLink>
