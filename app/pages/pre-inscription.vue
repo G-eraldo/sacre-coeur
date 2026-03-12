@@ -30,6 +30,9 @@ const isUlis = ref(false)
 const isExterne = ref(false)
 const isDemiPensionnaire = ref(false)
 
+const segpa = ['CP', 'CE1', 'CE2', 'CM1', 'CM2', '6ème', '5ème', '4ème', '3ème']
+const ulis = ['6ème', '5ème', '4ème', '3ème']
+
 watch(isExterne, (newValue) => {
     if (newValue) {
         isDemiPensionnaire.value = false
@@ -148,31 +151,28 @@ async function submitForm() {
                                 </SelectContent>
                             </Select>
                         </div>
-                        <div v-if="classeSouhaite === 'CP' || classeSouhaite === 'CE1' || classeSouhaite === 'CE2' || classeSouhaite === 'CM1' || classeSouhaite === 'CM2' || classeSouhaite === '6ème' || classeSouhaite === '5ème' || classeSouhaite === '4ème' || classeSouhaite === '3ème'"
-                            class="flex items-center space-x-2">
+                        <div v-if="segpa.includes(classeSouhaite)" class="flex items-center space-x-2">
                             <Checkbox id="segpa" v-model="isSegpa" />
-                            <Label html-for="segpa" class="text-xs font-bold uppercase tracking-widest text-gray-600">
+                            <Label for="segpa" class="text-xs font-bold uppercase tracking-widest text-gray-600">
                                 Je souhaite inscrire mon enfant en SEGPA
                             </Label>
                         </div>
-                        <div v-if="classeSouhaite === '6ème' || classeSouhaite === '5ème' || classeSouhaite === '4ème' || classeSouhaite === '3ème'"
-                            class="flex items-center space-x-2">
+                        <div v-if="ulis.includes(classeSouhaite)" class="flex items-center space-x-2">
                             <Checkbox id="ulis" v-model="isUlis" />
-                            <Label html-for="ulis" class="text-xs font-bold uppercase tracking-widest text-gray-600">
+                            <Label for="ulis" class="text-xs font-bold uppercase tracking-widest text-gray-600">
                                 Je souhaite inscrire mon enfant en ULIS
                             </Label>
                         </div>
                         <div class="flex justify-around items-center space-x-2">
                             <div class="flex items-center space-x-2">
                                 <Checkbox id="externe" v-model="isExterne" />
-                                <Label html-for="externe"
-                                    class="text-xs font-bold uppercase tracking-widest text-gray-600">
+                                <Label for="externe" class="text-xs font-bold uppercase tracking-widest text-gray-600">
                                     Externe
                                 </Label>
                             </div>
                             <div class="flex items-center space-x-2">
                                 <Checkbox id="demiPensionnaire" v-model="isDemiPensionnaire" />
-                                <Label html-for="demiPensionnaire"
+                                <Label for="demiPensionnaire"
                                     class="text-xs font-bold uppercase tracking-widest text-gray-600">
                                     Demi-pensionnaire
                                 </Label>
