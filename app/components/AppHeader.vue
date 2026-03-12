@@ -1,5 +1,5 @@
 <!-- eslint-disable vue/first-attribute-linebreak -->
-<script setup lang="ts">
+<script setup>
 import { BookMarkedIcon, BookOpenIcon, ChurchIcon, GraduationCapIcon, HomeIcon, InfoIcon, MenuIcon, PhoneIcon, SchoolIcon, XIcon } from 'lucide-vue-next';
 import { onMounted, onUnmounted, ref } from 'vue';
 

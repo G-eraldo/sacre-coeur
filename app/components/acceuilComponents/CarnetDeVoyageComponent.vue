@@ -47,7 +47,7 @@ function formatDate(dateStr) {
                 </div>
                 <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
                     <Card v-for="voyage in voyages?.data" :key="voyage.id"
-                        class="lg:w-96 w-full mx-auto p-4 lg:p-6 hover:scale-[1.02] transition-transform duration-300 ease-in-out">
+                        class="relative lg:w-96 w-full mx-auto p-4 lg:p-6 hover:scale-[1.02] transition-transform duration-300 ease-in-out">
                         <CardHeader>
                             <div class="flex items-center justify-between gap-2 mb-1">
                                 <CardTitle class="font-sans">{{ voyage.titre }}</CardTitle>
