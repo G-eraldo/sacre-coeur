@@ -73,7 +73,7 @@ function formatDate(dateStr) {
                 <NuxtImg :src="article.images[0].url" :alt="article.images[0].alternativeText || article.titre"
                     format="webp" quality="80" loading="lazy" class="w-full rounded-lg object-cover aspect-video" />
             </div>
-            <Carousel v-else class="w-full mb-12" :opts="{ loop: true }">
+            <Carousel v-else class="w-full lg:mb-8" :opts="{ loop: true }">
                 <div class="sr-only" aria-live="polite" aria-atomic="true">
                     Diapositive {{ currentSlideIndex + 1 }} sur {{ article.images.length }} : {{ article.titre }}
                 </div>
@@ -83,9 +83,12 @@ function formatDate(dateStr) {
                             loading="lazy" class="w-full rounded-lg object-cover aspect-video" />
                     </CarouselItem>
                 </CarouselContent>
-                <CarouselPrevious />
-                <CarouselNext />
+                <CarouselPrevious class="hidden md:flex" />
+                <CarouselNext class="hidden md:flex" />
             </Carousel>
+            <p class="text-sm text-gray-400 text-center italic lg:hidden">
+                Glissez pour explorer les photos de l'actualité
+            </p>
 
             <div v-if="article.contenu?.length" class="space-y-10">
                 <div v-for="(section, i) in article.contenu" :key="i" class="space-y-4">

@@ -5,7 +5,16 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 export default defineEventHandler(async (event) => {
   try {
     const body = await readBody(event);
-    const { name, phone, email, classeSouhaite } = body;
+    const {
+      name,
+      phone,
+      email,
+      classeSouhaite,
+      isSegpa,
+      isUlis,
+      isExterne,
+      isDemiPensionnaire,
+    } = body;
 
     const data = await resend.emails.send({
       from: "contact@lafabriqueducode.fr",
@@ -97,6 +106,12 @@ export default defineEventHandler(async (event) => {
                         color: #444;
                         line-height: 1.8;
                     }
+                    .message-checkbox {
+                        font-family: 'Merriweather', serif;
+                        color: #6C1C23;
+                        font-size: 18px;
+                        margin-bottom: 15px;
+                    }
                     .footer {
                         padding: 20px;
                         text-align: center;
@@ -133,6 +148,15 @@ export default defineEventHandler(async (event) => {
                         
                         <h3 class="message-title">Classe souhaitée :</h3>
                         <div class="message-content">${classeSouhaite}</div>
+
+                        <h3 class="message-checkbox">Je souhaite inscrire mon enfant en SEGPA</h3>
+                        <div class="message-content">${isSegpa ? "Oui" : "Non"}</div>
+
+                        <h3 class="message-checkbox">Je souhaite inscrire mon enfant en ULIS</h3>
+                        <div class="message-content">${isUlis ? "Oui" : "Non"}</div>
+
+                        <h3 class="message-checkbox">Régime scolaire :</h3>
+                        <div class="message-content">${isExterne ? "Externe" : isDemiPensionnaire ? "Demi-pensionnaire" : ""}</div>
                     </div>
 
                     <div class="footer">

@@ -1,8 +1,9 @@
 <script setup>
 
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 import { toast } from 'vue-sonner';
 import Button from '~/components/ui/button/Button.vue';
+import Checkbox from '~/components/ui/checkbox/Checkbox.vue';
 import Input from '~/components/ui/input/Input.vue';
 import Label from '~/components/ui/label/Label.vue';
 import Select from '~/components/ui/select/Select.vue';
@@ -24,6 +25,22 @@ const name = ref('')
 const email = ref('')
 const phone = ref('')
 const classeSouhaite = ref('')
+const isSegpa = ref(false)
+const isUlis = ref(false)
+const isExterne = ref(false)
+const isDemiPensionnaire = ref(false)
+
+watch(isExterne, (newValue) => {
+    if (newValue) {
+        isDemiPensionnaire.value = false
+    }
+})
+
+watch(isDemiPensionnaire, (newValue) => {
+    if (newValue) {
+        isExterne.value = false
+    }
+})
 
 async function submitForm() {
     try {
@@ -33,7 +50,11 @@ async function submitForm() {
                 name: name.value,
                 email: email.value,
                 phone: phone.value,
-                classeSouhaite: classeSouhaite.value
+                classeSouhaite: classeSouhaite.value,
+                isSegpa: isSegpa.value,
+                isUlis: isUlis.value,
+                isExterne: isExterne.value,
+                isDemiPensionnaire: isDemiPensionnaire.value
             })
         })
         if (response.success) {
@@ -41,6 +62,10 @@ async function submitForm() {
             email.value = ''
             phone.value = ''
             classeSouhaite.value = ''
+            isSegpa.value = false
+            isUlis.value = false
+            isExterne.value = false
+            isDemiPensionnaire.value = false
             toast.success('Votre message a bien été envoyé !', {
                 description: 'Nous vous contacterons dans les plus brefs délais pour fixer un rendez-vous.',
             })
@@ -122,6 +147,38 @@ async function submitForm() {
                                     <SelectItem value="3ème">3ème</SelectItem>
                                 </SelectContent>
                             </Select>
+                        </div>
+                        <div v-if="classeSouhaite === 'CP' || classeSouhaite === 'CE1' || classeSouhaite === 'CE2' || classeSouhaite === 'CM1' || classeSouhaite === 'CM2' || classeSouhaite === '6ème' || classeSouhaite === '5ème' || classeSouhaite === '4ème' || classeSouhaite === '3ème'"
+                            class="flex items-center space-x-2">
+                            <Checkbox id="segpa" v-model="isSegpa" />
+                            <Label html-for="segpa" class="text-xs font-bold uppercase tracking-widest text-gray-600">
+                                Je souhaite inscrire mon enfant en SEGPA
+                            </Label>
+                        </div>
+                        <div v-if="classeSouhaite === '6ème' || classeSouhaite === '5ème' || classeSouhaite === '4ème' || classeSouhaite === '3ème'"
+                            class="flex items-center space-x-2">
+                            <Checkbox id="ulis" v-model="isUlis" />
+                            <Label html-for="ulis" class="text-xs font-bold uppercase tracking-widest text-gray-600">
+                                Je souhaite inscrire mon enfant en ULIS
+                            </Label>
+                        </div>
+                        <div class="flex justify-around items-center space-x-2">
+                            <div class="flex items-center space-x-2">
+                                <Checkbox id="externe" v-model="isExterne" />
+                                <Label html-for="externe"
+                                    class="text-xs font-bold uppercase tracking-widest text-gray-600">
+                                    Externe
+                                </Label>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <Checkbox id="demiPensionnaire" v-model="isDemiPensionnaire" />
+                                <Label html-for="demiPensionnaire"
+                                    class="text-xs font-bold uppercase tracking-widest text-gray-600">
+                                    Demi-pensionnaire
+                                </Label>
+                            </div>
+
+
                         </div>
 
                         <Button
