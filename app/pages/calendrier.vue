@@ -1,5 +1,6 @@
 <script setup>
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import TempsFortCard from '~/components/calendrier/TempsFortCard.vue'
 import VacancesCard from '~/components/calendrier/VacancesCard.vue'
 
 useSeoMeta({
@@ -13,6 +14,7 @@ useSeoMeta({
 const ZONE = 'Zone B'
 const VACANCES_API = 'https://data.education.gouv.fr/api/explore/v2.1/catalog/datasets/fr-en-calendrier-scolaire/records'
 const FERIES_API = 'https://calendrier.api.gouv.fr/jours-feries/metropole'
+const { find } = useStrapi()
 
 // ─── État ──────────────────────────────────────────────────────────────────────
 const anneeSelectionnee = ref('')
@@ -32,11 +34,8 @@ const { data: anneesData } = await useAsyncData('annees-scolaires', async () => 
 // Initialiser l'année par défaut selon la date actuelle
 if (anneesData.value?.length && !anneeSelectionnee.value) {
     const currentYear = now.getFullYear()
-    const currentMonth = now.getMonth() // 0 = Janvier
+    const currentMonth = now.getMonth()
 
-    // Année scolaire : Septembre à Août
-    // Si on est en Septembre (8) ou plus tard, l'année est "2025-2026"
-    // Si on est avant Septembre, l'année est "2024-2025"
     let defaultAnnee = ""
     if (currentMonth >= 8) {
         defaultAnnee = `${currentYear}-${currentYear + 1}`
@@ -44,7 +43,6 @@ if (anneesData.value?.length && !anneeSelectionnee.value) {
         defaultAnnee = `${currentYear - 1}-${currentYear}`
     }
 
-    // Chercher si cette année existe dans les data, sinon prendre la première
     if (anneesData.value.includes(defaultAnnee)) {
         anneeSelectionnee.value = defaultAnnee
     } else {
@@ -60,14 +58,13 @@ const { data: calendrierData, pending, error } = await useAsyncData(
 
         // 1. Récupérer les vacances
         const vUrl = new URL(VACANCES_API)
-        // Breteuil (Oise) dépend de l'Académie d'Amiens (Zone B)
+
         vUrl.searchParams.set('where', `zones="${ZONE}" AND annee_scolaire="${anneeSelectionnee.value}" AND location="Amiens"`)
         vUrl.searchParams.set('limit', '50')
         vUrl.searchParams.set('order_by', 'start_date ASC')
         const vacancesRes = await $fetch(vUrl.toString())
 
         let allEvents = (vacancesRes.results || [])
-            // On exclut les enseignants pour n'avoir que les dates élèves
             .filter(v => v.population !== 'Enseignants')
             .map(v => ({
                 ...v,
@@ -75,7 +72,6 @@ const { data: calendrierData, pending, error } = await useAsyncData(
                 id: `v-${v.description}-${v.start_date}`
             }))
 
-        // 2. Récupérer les jours fériés pour les années concernées
         try {
             const [startYear, endYear] = anneeSelectionnee.value.split('-')
             const yearsToFetch = [startYear, endYear]
@@ -90,20 +86,17 @@ const { data: calendrierData, pending, error } = await useAsyncData(
                     id: `f-${date}`
                 }))
 
-                // Filtrer pour ne garder que ceux dans l'année scolaire (septembre à août)
-                // ET supprimer le 14 juillet et le 15 août
                 const filteredFeries = feriesEvents.filter(f => {
                     const d = new Date(f.start_date)
-                    const m = d.getMonth() // 0-11
+                    const m = d.getMonth()
                     const day = d.getDate()
                     const y = d.getFullYear().toString()
 
-                    // Exclure 14/07 et 15/08
                     if (m === 6 && day === 14) return false
                     if (m === 7 && day === 15) return false
 
-                    if (y === startYear) return m >= 8 // À partir de septembre
-                    if (y === endYear) return m <= 7 // Jusqu'à août
+                    if (y === startYear) return m >= 8
+                    if (y === endYear) return m <= 7
                     return false
                 })
 
@@ -113,13 +106,37 @@ const { data: calendrierData, pending, error } = await useAsyncData(
             console.error('Erreur jours fériés:', e)
         }
 
-        // Trier par date
+        // 3. Récupérer les temps forts depuis Strapi
+        try {
+            const tempsFortRes = await find('temps-forts', {
+                filters: { annee_scolaire: { $eq: anneeSelectionnee.value } },
+                fields: ['titre', 'type', 'start_date', 'end_date', 'description', 'annee_scolaire'],
+                sort: 'start_date:asc',
+                pagination: { pageSize: 100, page: 1 }
+            })
+
+            const tempsFortEvents = (tempsFortRes.data || []).map(tf => ({
+                id: `tf-${tf.documentId}`,
+                description: tf.titre,
+                start_date: tf.start_date,
+                end_date: tf.end_date || tf.start_date,
+                type: tf.type || 'temps-fort',
+                details: tf.description || null,
+                annee_scolaire: tf.annee_scolaire
+            }))
+
+            allEvents = [...allEvents, ...tempsFortEvents]
+        } catch (e) {
+            console.error('Erreur temps forts Strapi:', e)
+            // On ne bloque pas si Strapi est indisponible
+        }
+
         return allEvents.sort((a, b) => new Date(a.start_date) - new Date(b.start_date))
     },
     { watch: [anneeSelectionnee] }
 )
 
-// ─── Helpers ───────────────────────────────────────────────────────────────────
+
 function isPassed(event) {
     return new Date(event.end_date || event.start_date) < now
 }
@@ -127,12 +144,9 @@ function isPassed(event) {
 function isCurrent(event) {
     const start = new Date(event.start_date)
     const end = new Date(event.end_date || event.start_date)
-    // Pour un jour férié, on ajoute 23h59 pour la fin de journée
     if (event.type === 'ferie') end.setHours(23, 59, 59)
     return start <= now && end >= now
 }
-
-// ─── Prochains événements ─────────────────────────────────────────────────────
 const prochainEvenement = computed(() => {
     if (!calendrierData.value) return null
     return calendrierData.value.find(e => new Date(e.start_date) > now) ?? null
@@ -149,11 +163,9 @@ const eventEnCours = computed(() => {
     return calendrierData.value.find(e => isCurrent(e)) ?? null
 })
 
-// Filtrer les doublons (notamment pour les vacances d'été) et cacher les événements passés
 const finalEvents = computed(() => {
     if (!calendrierData.value) return []
 
-    // 1. Déduplication par description et date de début
     const uniqueEvents = []
     const seen = new Set()
 
@@ -165,8 +177,6 @@ const finalEvents = computed(() => {
         }
     }
 
-    // 2. Filtrer les événements passés uniquement si on est sur l'année en cours ou future
-    // Si on regarde une année passée, on montre tout (archive)
     const [startYear] = anneeSelectionnee.value.split('-')
     const currentYear = now.getFullYear()
     const currentMonth = now.getMonth()
@@ -186,7 +196,6 @@ const finalEvents = computed(() => {
 
 <template>
     <div class="min-h-screen bg-brand-warm/30 pb-20">
-        <!-- Hero Section Premium -->
         <section class="pt-40 lg:pt-56 pb-20 bg-brand-warm relative overflow-hidden text-center">
             <div class="max-w-7xl mx-auto px-6 relative z-10">
                 <span class="inline-block text-brand-gold font-bold tracking-[0.3em] uppercase text-xs mb-6">
@@ -205,24 +214,26 @@ const finalEvents = computed(() => {
             </div>
         </section>
 
-        <!-- Contenu principal -->
         <div class="max-w-5xl mx-auto px-6 -mt-10 relative z-20">
 
-            <!-- Countdown / Status Card -->
             <div class="mb-12">
                 <div v-if="eventEnCours"
                     class="bg-brand-primary text-white p-8 rounded-2xl shadow-2xl flex flex-col md:flex-row items-center gap-8 border border-white/10 group overflow-hidden relative">
                     <div class="text-6xl animate-bounce">🎉</div>
                     <div class="text-center md:text-left flex-1">
                         <h2 class="text-2xl font-serif mb-2">{{ eventEnCours.description }}</h2>
-                        <p class="text-white/70 font-sans">Profitez bien de cette période de repos !</p>
+                        <p class="text-white/70 font-sans">
+                            {{ ['temps-fort', 'evenement', 'pont'].includes(eventEnCours.type)
+                                ? eventEnCours.details || 'Un moment important à l\'Institution !'
+                                : 'Profitez bien de cette période de repos !' }}
+                        </p>
                     </div>
                     <div class="flex flex-col items-center md:items-end">
                         <span class="text-[10px] uppercase tracking-widest font-bold opacity-60 mb-1">Se termine
                             le</span>
                         <span class="text-xl font-serif text-brand-gold">{{ new
                             Date(eventEnCours.end_date).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long' })
-                        }}</span>
+                            }}</span>
                     </div>
                 </div>
 
@@ -257,6 +268,22 @@ const finalEvents = computed(() => {
                             class="px-3 py-1 bg-brand-gold/10 text-brand-gold text-xs rounded-full font-sans uppercase tracking-widest font-bold">Zone
                             B</span>
                     </h2>
+                    <!-- Légende temps forts -->
+                    <div class="flex flex-wrap gap-2 mt-3">
+                        <span v-for="(legende, key) in legendeTypes" :key="key"
+                            class="inline-flex items-center gap-1.5 px-3 py-1 text-[10px] font-bold uppercase tracking-wider rounded-full border"
+                            :class="legende.color">
+                            {{ legende.label }}
+                        </span>
+                        <span
+                            class="inline-flex items-center gap-1.5 px-3 py-1 text-[10px] font-bold uppercase tracking-wider rounded-full border bg-brand-warm text-brand-primary border-brand-primary/20">
+                            Vacances
+                        </span>
+                        <span
+                            class="inline-flex items-center gap-1.5 px-3 py-1 text-[10px] font-bold uppercase tracking-wider rounded-full border bg-brand-gold/10 text-brand-gold border-brand-gold/30">
+                            Jour Férié
+                        </span>
+                    </div>
                 </div>
 
                 <div class="flex items-center gap-4 bg-white p-2 rounded-xl border border-border">
@@ -322,14 +349,13 @@ const finalEvents = computed(() => {
                                 class="bg-brand-gold text-white text-[8px] font-bold px-2 py-0.5 rounded-full">
                                 Aujourd'hui</div>
                         </div>
-
-                        <!-- Vacances (Large Card) -->
+                        <TempsFortCard v-else-if="['temps-fort', 'pont', 'evenement'].includes(event.type)"
+                            :event="event" :is-passed="isPassed(event)" :is-current="isCurrent(event)" />
                         <VacancesCard v-else :vacance="event" :is-passed="isPassed(event)"
                             :is-current="isCurrent(event)" />
                     </template>
                 </template>
 
-                <!-- No Data -->
                 <div v-else
                     class="bg-white border border-border p-20 rounded-2xl text-center text-muted-foreground shadow-sm">
                     <Icon name="lucide:calendar-x-2" class="w-12 h-12 mx-auto mb-4 opacity-20" />
@@ -337,7 +363,6 @@ const finalEvents = computed(() => {
                 </div>
             </div>
 
-            <!-- Footer Notes -->
             <div class="mt-16 text-center space-y-4">
                 <p class="text-[10px] text-muted-foreground font-sans uppercase tracking-[0.2em]">
                     Données officielles certifiées — Académie d'Amiens (Zone B)
