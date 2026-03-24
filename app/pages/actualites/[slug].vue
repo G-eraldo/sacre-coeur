@@ -1,4 +1,5 @@
 <script setup>
+import { ArrowLeft, ArrowRight } from 'lucide-vue-next'
 import Alert from '~/components/ui/alert/Alert.vue'
 import AlertDescription from '~/components/ui/alert/AlertDescription.vue'
 
@@ -91,9 +92,11 @@ function onSetApi(api) {
                     </CarouselItem>
                 </CarouselContent>
                 <CarouselPrevious class="hidden md:flex">
+                    <ArrowLeft class="size-6" />
                     <span class="sr-only">Diapositive précédente</span>
                 </CarouselPrevious>
                 <CarouselNext class="hidden md:flex">
+                    <ArrowRight class="size-6" />
                     <span class="sr-only">Diapositive suivante</span>
                 </CarouselNext>
             </Carousel>
