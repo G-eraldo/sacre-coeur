@@ -255,7 +255,7 @@ const finalEvents = computed(() => {
                             le</span>
                         <span class="text-xl font-serif text-brand-gold">{{ new
                             Date(eventEnCours.end_date).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long' })
-                        }}</span>
+                            }}</span>
                     </div>
                 </div>
 
@@ -292,7 +292,7 @@ const finalEvents = computed(() => {
 
                     <div class="flex flex-wrap gap-2 mt-3">
                         <button v-for="(legende, key) in legendeTypes" :key="key"
-                            class="inline-flex items-center gap-1.5 px-3 py-1 text-[10px] font-bold uppercase tracking-wider rounded-full border transition-all duration-200"
+                            class="inline-flex items-center gap-1.5 px-3 py-1 text-[10px] font-bold uppercase tracking-wider rounded-full border transition-all duration-200 cursor-pointer"
                             :class="[
                                 legende.color,
                                 filtreType === key ? 'ring-2 ring-brand-gold ring-offset-2 opacity-100 scale-105' : 'opacity-70 hover:opacity-100'
