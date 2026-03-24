@@ -21,17 +21,17 @@ import { computed, ref } from 'vue';
 
 const images = [
     {
-        url: 'https://res.cloudinary.com/dlnbsf2ed/image/upload/v1770716886/istockphoto-477206590-612x612_fykq0x.jpg',
+        url: 'https://res.cloudinary.com/dlnbsf2ed/image/upload/w_1920,h_1080,c_fill/v1770716886/istockphoto-477206590-612x612_fykq0x.jpg',
         title: 'Bâtir l\'avenir ensemble',
         subtitle: 'Une communauté éducative où chaque élève est accompagné avec confiance, engagement et bienveillance de la maternelle au collège.'
     },
     {
-        url: 'https://res.cloudinary.com/dlnbsf2ed/image/upload/v1770716886/istockphoto-1410950079-612x612_mgnu4e.jpg',
+        url: 'https://res.cloudinary.com/dlnbsf2ed/image/upload/w_1920,h_1080,c_fill/v1770716886/istockphoto-1410950079-612x612_mgnu4e.jpg',
         title: 'Bienveillance',
         subtitle: 'Un cadre d\'apprentissage unique pour s\'épanouir et réussir son parcours scolaire.'
     },
     {
-        url: 'https://res.cloudinary.com/dlnbsf2ed/image/upload/v1770716887/istockphoto-1355040546-612x612_o55gfe.jpg',
+        url: 'https://res.cloudinary.com/dlnbsf2ed/image/upload/w_1920,h_1080,c_fill/v1770716887/istockphoto-1355040546-612x612_o55gfe.jpg',
         title: 'L\'esprit Sacré-Cœur',
         subtitle: 'Plus qu\'une école, un lieu de vie et de partage pour nos futurs citoyens.'
     }

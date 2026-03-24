@@ -21,6 +21,13 @@ onMounted(() => {
 
 onUnmounted(() => {
     window.removeEventListener('scroll', handleScroll)
+    document.body.style.overflow = ''
+})
+
+watch(isOpen, (val) => {
+    if (import.meta.client) {
+        document.body.style.overflow = val ? 'hidden' : ''
+    }
 })
 
 const navLinks = [
@@ -60,7 +67,7 @@ const navLinks = [
             <div class="flex items-center gap-4">
                 <!-- Mobile Toggle -->
                 <button class="lg:hidden text-white" :aria-label="isOpen ? 'Fermer le menu' : 'Ouvrir le menu'"
-                    :aria-expanded="isOpen" aria-controls="mobile-menu" @click="toggle">
+                    :aria-expanded="isOpen" :aria-hidden="!isScrolled" aria-controls="mobile-menu" @click="toggle">
                     <XIcon v-if="isOpen" aria-hidden="true" />
                     <MenuIcon v-else aria-hidden="true" />
                 </button>
@@ -79,7 +86,7 @@ const navLinks = [
                     </NuxtLink>
                 </div>
                 <button class="mr-4 lg:hidden" :aria-label="isOpen ? 'Fermer le menu' : 'Ouvrir le menu'"
-                    :aria-expanded="isOpen" aria-controls="mobile-menu" @click="toggle">
+                    :aria-expanded="isOpen" :aria-hidden="isScrolled" aria-controls="mobile-menu" @click="toggle">
                     <XIcon v-if="isOpen" aria-hidden="true" />
                     <MenuIcon v-else aria-hidden="true" />
                 </button>
@@ -94,6 +101,9 @@ const navLinks = [
                 :aria-current="route.path === link.to ? 'page' : undefined">{{ link.title }}</NuxtLink>
         </nav>
 
+        <!-- Mobile Drawer Backdrop -->
+        <div v-if="isOpen" class="fixed inset-0 bg-black/50 z-40 lg:hidden" @click="isOpen = false" />
+
         <!-- Mobile Drawer -->
         <Transition
             enter-active-class="transition-all duration-300 ease-out"
@@ -102,7 +112,7 @@ const navLinks = [
             enter-to-class="opacity-100 translate-y-0"
             leave-from-class="opacity-100 translate-y-0"
             leave-to-class="opacity-0 -translate-y-2">
-            <div v-show="isOpen" id="mobile-menu" class="lg:hidden bg-white shadow-xl py-6">
+            <div v-show="isOpen" id="mobile-menu" class="lg:hidden bg-white shadow-xl py-6 relative z-50">
                 <div class="grid grid-cols-2 gap-x-4 gap-y-4 px-6">
                     <NuxtLink v-for="link in navLinks" :key="link.id" class="link-mobile border-b border-gray-50 pb-2"
                         :to="link.to" :aria-current="route.path === link.to ? 'page' : undefined"

@@ -5,7 +5,7 @@ import Skeleton from '~/components/ui/skeleton/Skeleton.vue'
 
 const { find } = useStrapi()
 
-const { data: actualites, pending, error } = await useAsyncData('actualites-home', () =>
+const { data: actualites, pending, error } = useAsyncData('actualites-home', () =>
     find('actualites', {
         fields: ['titre', 'description', 'publishedAt', 'slug'],
         populate: {
@@ -53,13 +53,13 @@ function formatDate(dateStr) {
                         class="relative lg:w-96 w-full mx-auto mb-12 p-4 lg:p-6 lg:mb-16 hover:scale-[1.02] transition-transform duration-300 ease-in-out">
                         <CardHeader>
                             <div class="flex items-center justify-between gap-2 mb-1">
-                                <CardTitle class="font-sans">{{ actualite.titre }}</CardTitle>
+                                <CardTitle>{{ actualite.titre }}</CardTitle>
                                 <span
                                     class="bg-brand-primary text-white px-2 py-1 rounded-sm text-[10px] font-bold uppercase tracking-widest shadow-sm shrink-0 whitespace-nowrap">
                                     {{ formatDate(actualite.publishedAt) }}
                                 </span>
                             </div>
-                            <CardDescription class="h-24">{{ actualite.description }}</CardDescription>
+                            <CardDescription class="line-clamp-3">{{ actualite.description }}</CardDescription>
                         </CardHeader>
 
                         <CardContent>

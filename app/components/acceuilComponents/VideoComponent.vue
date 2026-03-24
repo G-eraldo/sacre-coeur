@@ -1,4 +1,7 @@
 <script setup>
+import { useIntersectionObserver } from '@vueuse/core'
+import { Home, PlayCircle, School } from 'lucide-vue-next'
+
 const { find } = useStrapi()
 
 const activeTab = ref('visite')
@@ -16,6 +19,27 @@ const { data: response, error } = useAsyncData('videos-home', () =>
 
 const videos = computed(() => response.value?.data ?? [])
 const selectedVideo = ref(null)
+
+const visiteTarget = ref(null)
+const internatTarget = ref(null)
+const isVisiteLoaded = ref(false)
+const isInternatLoaded = ref(false)
+
+useIntersectionObserver(
+    visiteTarget,
+    ([{ isIntersecting }]) => {
+        if (isIntersecting) isVisiteLoaded.value = true
+    },
+    { threshold: 0.1 }
+)
+
+useIntersectionObserver(
+    internatTarget,
+    ([{ isIntersecting }]) => {
+        if (isIntersecting) isInternatLoaded.value = true
+    },
+    { threshold: 0.1 }
+)
 
 onMounted(() => {
     if (videos.value.length > 0) {
@@ -40,48 +64,39 @@ watch(videos, (newVideos) => {
                 </h2>
             </div>
 
-            <div
-                class="flex gap-1 mb-8 border-b border-gray-200 overflow-x-auto scrollbar-hide -mx-6 px-6 sm:mx-0 sm:px-0">
-                <button
+            <div class="flex gap-1 mb-8 border-b border-gray-200 overflow-x-auto scrollbar-hide -mx-6 px-6 sm:mx-0 sm:px-0"
+                role="tablist" aria-label="Contenu multimédia : Visites virtuelles et Témoignages">
+                <button id="tab-visite"
                     class="flex items-center gap-2 px-6 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-200 border-b-2 -mb-px cursor-pointer shrink-0 whitespace-nowrap"
-                    :class="activeTab === 'visite'
+                    role="tab" :aria-selected="activeTab === 'visite'" aria-controls="panel-visite" :class="activeTab === 'visite'
                         ? 'border-brand-primary text-brand-primary'
                         : 'border-transparent text-gray-600  hover:text-brand-primary hover:border-brand-gold'"
                     @click="activeTab = 'visite'">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-                    </svg>
+                    <School class="w-4 h-4" />
                     Visite de l'école
                 </button>
-                <button
+                <button id="tab-internat"
                     class="flex items-center gap-2 px-6 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-200 border-b-2 -mb-px cursor-pointer shrink-0 whitespace-nowrap"
-                    :class="activeTab === 'internat'
+                    role="tab" :aria-selected="activeTab === 'internat'" aria-controls="panel-internat" :class="activeTab === 'internat'
                         ? 'border-brand-primary text-brand-primary'
                         : 'border-transparent text-gray-600  hover:text-brand-primary hover:border-brand-gold'"
                     @click="activeTab = 'internat'">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-                    </svg>
+                    <Home class="w-4 h-4" />
                     Visite de l'internat
                 </button>
-                <button
+                <button id="tab-temoignages"
                     class="flex items-center gap-2 px-6 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-200 border-b-2 -mb-px cursor-pointer shrink-0 whitespace-nowrap"
-                    :class="activeTab === 'temoignages'
+                    role="tab" :aria-selected="activeTab === 'temoignages'" aria-controls="panel-temoignages" :class="activeTab === 'temoignages'
                         ? 'border-brand-primary text-brand-primary'
                         : 'border-transparent text-gray-600 hover:text-brand-primary hover:border-brand-gold'"
                     @click="activeTab = 'temoignages'">
-                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M8 5v14l11-7z" />
-                    </svg>
+                    <PlayCircle class="w-4 h-4" />
                     Témoignages
                 </button>
             </div>
 
-            <div v-show="activeTab === 'temoignages'">
+            <div v-show="activeTab === 'temoignages'" id="panel-temoignages" role="tabpanel"
+                aria-labelledby="tab-temoignages">
                 <div v-if="error" class="text-gray-500 text-center py-12">
                     <p>Les témoignages ne sont pas disponibles pour le moment.</p>
                 </div>
@@ -134,17 +149,22 @@ watch(videos, (newVideos) => {
                 </div>
             </div>
 
-            <div v-if="activeTab === 'visite'">
-                <div class="rounded-xl overflow-hidden shadow-lg border border-gray-100">
+            <div v-if="activeTab === 'visite'" id="panel-visite" ref="visiteTarget" role="tabpanel"
+                aria-labelledby="tab-visite">
+                <div
+                    class="rounded-xl overflow-hidden shadow-lg border border-gray-100 bg-gray-50 aspect-video lg:aspect-auto">
                     <ClientOnly>
-                        <iframe src="/visite/app-files/index.html" class="w-full h-112.5 sm:h-137.5 lg:h-162.5"
-                            style="border:none; display:block;" title="Visite virtuelle de l'Institution Sacré-Cœur"
-                            allowfullscreen />
+                        <iframe v-if="isVisiteLoaded" src="/visite/app-files/index.html"
+                            class="w-full h-112.5 sm:h-137.5 lg:h-162.5" style="border:none; display:block;"
+                            title="Visite virtuelle de l'Institution Sacré-Cœur" allowfullscreen />
                         <template #fallback>
                             <div class="w-full h-112.5 bg-gray-100 flex items-center justify-center">
                                 <p class="text-gray-400">Chargement de la visite...</p>
                             </div>
                         </template>
+                        <div v-if="!isVisiteLoaded" class="w-full h-112.5 bg-gray-100 flex items-center justify-center">
+                            <p class="text-gray-400 italic">Défilez pour charger la visite virtuelle</p>
+                        </div>
                     </ClientOnly>
                 </div>
                 <p class="text-sm text-gray-600 text-center mt-3 italic">
@@ -152,17 +172,23 @@ watch(videos, (newVideos) => {
                 </p>
             </div>
 
-            <div v-if="activeTab === 'internat'">
-                <div class="rounded-xl overflow-hidden shadow-lg border border-gray-100">
+            <div v-if="activeTab === 'internat'" id="panel-internat" ref="internatTarget" role="tabpanel"
+                aria-labelledby="tab-internat">
+                <div
+                    class="rounded-xl overflow-hidden shadow-lg border border-gray-100 bg-gray-50 aspect-video lg:aspect-auto">
                     <ClientOnly>
-                        <iframe src="/internat/app-files/index.html" class="w-full h-112.5 sm:h-137.5 lg:h-162.5"
-                            style="border:none; display:block;"
+                        <iframe v-if="isInternatLoaded" src="/internat/app-files/index.html"
+                            class="w-full h-112.5 sm:h-137.5 lg:h-162.5" style="border:none; display:block;"
                             title="Visite virtuelle de l'internat de l'Institution Sacré-Cœur" allowfullscreen />
                         <template #fallback>
                             <div class="w-full h-112.5 bg-gray-100 flex items-center justify-center">
                                 <p class="text-gray-400">Chargement de la visite...</p>
                             </div>
                         </template>
+                        <div v-if="!isInternatLoaded"
+                            class="w-full h-112.5 bg-gray-100 flex items-center justify-center">
+                            <p class="text-gray-400 italic">Défilez pour charger la visite virtuelle</p>
+                        </div>
                     </ClientOnly>
                 </div>
                 <p class="text-sm text-gray-600 text-center mt-3 italic">
