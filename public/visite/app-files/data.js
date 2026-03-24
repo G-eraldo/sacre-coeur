@@ -795,10 +795,29 @@ var APP_DATA = {
           target: "8-segpa",
         },
         {
-          yaw: -2.4032143755326434,
-          pitch: 0.35972893272833595,
+          yaw: 3.8, // ← ajuste la position horizontale
+          pitch: 0.1, // ← ajuste la position verticale
           rotation: 0,
-          target: "22-jeux",
+          target: "33-maphotoplat", // ← l'id de ta scène photo
+        },
+      ],
+      infoHotspots: [],
+    },
+    {
+      id: "33-maphotoplat",
+      name: "CM2",
+      flat: true,
+      imageUrl: "tiles/CM2.jpg",
+      imageWidth: 1170,
+      imageHeight: 878,
+      initialViewParameters: { x: 0.5, y: 0.5, zoom: 1.3 },
+      linkHotspots: [
+        {
+          // hotspot retour vers la scène 360°
+          x: 0.1,
+          y: 0.6,
+          rotation: 250,
+          target: "17-ce2_cm1",
         },
       ],
       infoHotspots: [],
