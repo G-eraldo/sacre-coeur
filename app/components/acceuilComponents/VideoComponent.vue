@@ -134,7 +134,7 @@ watch(videos, (newVideos) => {
                 </div>
             </div>
 
-            <div v-show="activeTab === 'visite'">
+            <div v-if="activeTab === 'visite'">
                 <div class="rounded-xl overflow-hidden shadow-lg border border-gray-100">
                     <ClientOnly>
                         <iframe src="/visite/app-files/index.html" class="w-full h-112.5 sm:h-137.5 lg:h-162.5"
@@ -152,7 +152,7 @@ watch(videos, (newVideos) => {
                 </p>
             </div>
 
-            <div v-show="activeTab === 'internat'">
+            <div v-if="activeTab === 'internat'">
                 <div class="rounded-xl overflow-hidden shadow-lg border border-gray-100">
                     <ClientOnly>
                         <iframe src="/internat/app-files/index.html" class="w-full h-112.5 sm:h-137.5 lg:h-162.5"

@@ -25,6 +25,12 @@ function formatDate(dateStr) {
         year: 'numeric'
     }).toUpperCase()
 }
+
+function getCloudinaryPublicId(url) {
+    if (!url) return ''
+    const match = url.match(/\/upload\/(?:v\d+\/)?(.+)$/)
+    return match ? match[1] : url
+}
 </script>
 
 <template>
@@ -45,6 +51,7 @@ function formatDate(dateStr) {
                         <AlertDescription>Impossible de charger les voyages.</AlertDescription>
                     </Alert>
                 </div>
+
                 <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
                     <Card v-for="voyage in voyages?.data" :key="voyage.id"
                         class="relative lg:w-96 w-full mx-auto p-4 lg:p-6 hover:scale-[1.02] transition-transform duration-300 ease-in-out">
@@ -60,10 +67,10 @@ function formatDate(dateStr) {
                         </CardHeader>
 
                         <CardContent>
-                            <NuxtImg v-if="voyage.images?.[0]" :src="voyage.images[0].url"
-                                :alt="voyage.images[0].alternativeText || voyage.titre" format="webp" quality="80"
-                                loading="lazy" sizes="320px md:384px lg:384px"
-                                class="w-full h-48 object-cover rounded-lg" />
+                            <NuxtImg v-if="voyage.images?.[0]" :src="getCloudinaryPublicId(voyage.images[0].url)"
+                                :alt="voyage.images[0].alternativeText || voyage.titre" provider="cloudinary"
+                                format="webp" quality="70" loading="lazy" width="384" height="192"
+                                sizes="320px md:384px lg:384px" class="w-full h-48 object-cover rounded-lg" />
                         </CardContent>
 
                         <CardFooter class="flex justify-center">
@@ -78,6 +85,7 @@ function formatDate(dateStr) {
                         </CardFooter>
                     </Card>
                 </div>
+
                 <div class="flex justify-center">
                     <Button as-child
                         class="bg-brand-primary hover:bg-brand-gold text-white px-8 py-4 text-xs font-bold uppercase rounded-sm">
