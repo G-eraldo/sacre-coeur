@@ -68,7 +68,7 @@ const currentSlide = computed(() => images[currentSlideIndex.value])
                 <div class="absolute inset-0 w-full h-full">
                     <NuxtImg :src="slide.url" :alt="slide.title" :loading="index === 0 ? 'eager' : 'lazy'"
                         :fetchpriority="index === 0 ? 'high' : 'auto'" format="webp" quality="80"
-                        sizes="100vw sm:100vw md:100vw lg:100vw" class="w-full h-full object-cover brightness-[0.7]" />
+                        sizes="100vw" class="w-full h-full object-cover brightness-[0.7]" />
                     <div class="absolute inset-0 bg-linear-to-b from-black/40 via-transparent to-black/60" />
                 </div>
 

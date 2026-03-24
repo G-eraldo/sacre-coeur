@@ -5,7 +5,12 @@ const activeTab = ref('visite')
 
 const { data: response, error } = useAsyncData('videos-home', () =>
     find('videos', {
-        populate: "*"
+        fields: ['titre'],
+        populate: {
+            video: {
+                fields: ['url']
+            }
+        }
     })
 )
 

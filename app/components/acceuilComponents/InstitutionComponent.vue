@@ -51,7 +51,7 @@
                         <NuxtImg
                             src="https://res.cloudinary.com/dlnbsf2ed/image/upload/v1770720141/pexels-pixabay-265076_bden5m.jpg"
                             alt="Campus de l'Institution du Sacré-Cœur de Breteuil" format="webp" quality="80"
-                            loading="lazy" sizes="100vw lg:600px" class="w-full h-auto object-cover" />
+                            loading="lazy" sizes="100vw lg:800px" class="w-full h-auto object-cover" />
                     </div>
                 </div>
             </div>

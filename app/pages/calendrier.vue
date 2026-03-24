@@ -51,7 +51,7 @@ if (anneesData.value?.length && !anneeSelectionnee.value) {
 }
 
 // ─── Fetch des vacances et jours fériés ────────────────────────────────────────
-const { data: calendrierData, pending, error } = await useAsyncData(
+const { data: calendrierData, pending, error, refresh } = await useAsyncData(
     () => `calendrier-complet-${anneeSelectionnee.value}`,
     async () => {
         if (!anneeSelectionnee.value) return []
@@ -146,6 +146,14 @@ function isCurrent(event) {
     const end = new Date(event.end_date || event.start_date)
     if (event.type === 'ferie') end.setHours(23, 59, 59)
     return start <= now && end >= now
+}
+
+const legendeTypes = {
+    'temps-fort': { label: 'Temps Fort', color: 'bg-brand-primary/10 text-brand-primary border-brand-primary/20 whitespace-nowrap' },
+    'evenement': { label: 'Événement', color: 'bg-blue-50 text-blue-700 border-blue-200 whitespace-nowrap' },
+    'pont': { label: 'Pont', color: 'bg-emerald-50 text-emerald-700 border-emerald-200 whitespace-nowrap' },
+    'voyage': { label: 'Voyage', color: 'bg-indigo-50 text-indigo-700 border-indigo-200 whitespace-nowrap' },
+    'epreuve': { label: 'Épreuve', color: 'bg-rose-50 text-rose-700 border-rose-200 whitespace-nowrap' }
 }
 const prochainEvenement = computed(() => {
     if (!calendrierData.value) return null

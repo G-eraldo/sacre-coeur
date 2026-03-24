@@ -36,6 +36,7 @@ const presentation = {
                 <NuxtImg
                     src="https://res.cloudinary.com/dlnbsf2ed/image/upload/v1770720141/pexels-pixabay-265076_bden5m.jpg"
                     alt="Bâtiment Sacré-Cœur"
+                    format="webp" quality="80" loading="lazy" sizes="100vw lg:800px"
                     class="hidden lg:block relative z-10 w-full h-125 object-cover rounded-sm shadow-xl" />
             </div>
         </div>

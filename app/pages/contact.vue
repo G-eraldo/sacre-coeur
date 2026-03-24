@@ -107,6 +107,13 @@ async function submitForm() {
                             class="w-full bg-brand-primary text-white py-6 text-xs font-bold uppercase tracking-[0.2em] hover:bg-brand-primary-dark transition-all rounded-sm shadow-lg shadow-brand-primary/10">
                             Envoyer le message
                         </Button>
+                        <p class="text-xs text-gray-500 text-center mt-4">
+                            Les données renseignées dans ce formulaire sont utilisées uniquement pour répondre à votre
+                            demande. Pour en savoir plus sur la gestion de vos données personnelles et exercer vos
+                            droits,
+                            consultez notre <NuxtLink to="/politique-confidentialite" class="text-brand-primary">
+                                Politique de confidentialité</NuxtLink>.
+                        </p>
                     </form>
                 </div>
             </Card>

@@ -44,7 +44,7 @@ const navLinks = [
             <div class="flex items-center gap-3" :class="isScrolled ? '' : 'hidden'">
                 <NuxtLink to="/" class="flex items-center gap-3">
                     <NuxtImg src="/logo4.png" alt="Logo de l'Institution du Sacré-Cœur de Breteuil" width="32"
-                        height="32" class="bg-white rounded p-0.5" />
+                        height="32" class="bg-white rounded p-0.5" loading="eager" fetchpriority="high" />
                     <span class="text-lg font-serif font-bold tracking-tight sm:block">Sacré-Cœur de Breteuil</span>
                 </NuxtLink>
             </div>

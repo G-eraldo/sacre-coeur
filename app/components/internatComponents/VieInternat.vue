@@ -35,6 +35,7 @@ const vieInternat = [
                     class="lg:w-96 w-full mx-auto mb-12 p-4 lg:p-6 lg:mb-16 hover:scale-[1.02] transition-transform duration-300 ease-in-out">
                     <div class="h-64 overflow-hidden relative">
                         <NuxtImg :src="item.image" :alt="item.title"
+                            format="webp" quality="80" loading="lazy" sizes="100vw md:400px"
                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                     </div>
                     <h3

@@ -2,7 +2,8 @@
     <section class="pt-40 lg:pt-56 pb-20 bg-brand-warm relative overflow-hidden text-center">
         <NuxtImg
             src="https://res.cloudinary.com/dlnbsf2ed/image/upload/v1770716886/istockphoto-477206590-612x612_fykq0x.jpg"
-            alt="SEGPA Sacré-Coeur" class="absolute inset-0 w-full h-full object-cover" format="webp" quality="80" />
+            alt="SEGPA Sacré-Coeur" class="absolute inset-0 w-full h-full object-cover" format="webp" quality="80" 
+            loading="eager" fetchpriority="high" />
         <div class="absolute inset-0 bg-black/40 shadow-inner" />
 
         <div class="max-w-7xl mx-auto px-6 relative z-10">

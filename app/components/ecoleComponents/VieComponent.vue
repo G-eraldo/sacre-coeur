@@ -36,6 +36,7 @@ const vieEcole = [
                 <div v-for="item in vieEcole" :key="item.title" class="group">
                     <div class="relative mb-6 overflow-hidden rounded-sm shadow-md">
                         <NuxtImg :src="item.image" :alt="item.title"
+                            format="webp" quality="80" loading="lazy" sizes="100vw md:400px"
                             class="w-full aspect-4/5 object-cover group-hover:scale-105 transition-transform duration-700" />
                         <div
                             class="absolute top-4 left-4 bg-brand-primary text-white px-3 py-1 rounded-sm text-[10px] font-bold uppercase tracking-widest shadow-sm">
