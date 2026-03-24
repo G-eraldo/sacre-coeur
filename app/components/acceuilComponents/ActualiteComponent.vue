@@ -25,11 +25,7 @@ function formatDate(dateStr) {
         year: 'numeric'
     }).toUpperCase()
 }
-function getCloudinaryPublicId(url) {
-    if (!url) return ''
-    const match = url.match(/\/upload\/(?:v\d+\/)?(.+)$/)
-    return match ? match[1] : url
-}
+
 </script>
 
 <template>
@@ -67,7 +63,7 @@ function getCloudinaryPublicId(url) {
                         </CardHeader>
 
                         <CardContent>
-                            <NuxtImg v-if="actualite.images?.[0]" :src="getCloudinaryPublicId(actualite.images[0].url)"
+                            <NuxtImg v-if="actualite.images?.[0]" :src="actualite.images[0].url"
                                 :alt="actualite.images[0].alternativeText || actualite.titre" format="webp" quality="80"
                                 loading="lazy" sizes="320px md:384px lg:384px"
                                 class="w-full h-48 object-cover rounded-lg" />
