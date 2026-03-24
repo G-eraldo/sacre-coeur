@@ -151,8 +151,7 @@ watch(videos, (newVideos) => {
 
             <div v-if="activeTab === 'visite'" id="panel-visite" ref="visiteTarget" role="tabpanel"
                 aria-labelledby="tab-visite">
-                <div
-                    class="rounded-xl overflow-hidden shadow-lg border border-gray-100 bg-gray-50 aspect-video lg:aspect-auto">
+                <div class="rounded-xl overflow-hidden shadow-lg border border-gray-100 bg-gray-50 aspect-auto">
                     <ClientOnly>
                         <iframe v-if="isVisiteLoaded" src="/visite/app-files/index.html"
                             class="w-full h-112.5 sm:h-137.5 lg:h-162.5" style="border:none; display:block;"
@@ -174,8 +173,7 @@ watch(videos, (newVideos) => {
 
             <div v-if="activeTab === 'internat'" id="panel-internat" ref="internatTarget" role="tabpanel"
                 aria-labelledby="tab-internat">
-                <div
-                    class="rounded-xl overflow-hidden shadow-lg border border-gray-100 bg-gray-50 aspect-video lg:aspect-auto">
+                <div class="rounded-xl overflow-hidden shadow-lg border border-gray-100 bg-gray-50 aspect-auto">
                     <ClientOnly>
                         <iframe v-if="isInternatLoaded" src="/internat/app-files/index.html"
                             class="w-full h-112.5 sm:h-137.5 lg:h-162.5" style="border:none; display:block;"
