@@ -46,7 +46,7 @@ watch(videos, (newVideos) => {
                     class="flex items-center gap-2 px-6 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-200 border-b-2 -mb-px cursor-pointer shrink-0 whitespace-nowrap"
                     :class="activeTab === 'visite'
                         ? 'border-brand-primary text-brand-primary'
-                        : 'border-transparent text-gray-400 hover:text-brand-primary hover:border-brand-gold'"
+                        : 'border-transparent text-gray-600  hover:text-brand-primary hover:border-brand-gold'"
                     @click="activeTab = 'visite'">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -59,7 +59,7 @@ watch(videos, (newVideos) => {
                     class="flex items-center gap-2 px-6 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-200 border-b-2 -mb-px cursor-pointer shrink-0 whitespace-nowrap"
                     :class="activeTab === 'internat'
                         ? 'border-brand-primary text-brand-primary'
-                        : 'border-transparent text-gray-400 hover:text-brand-primary hover:border-brand-gold'"
+                        : 'border-transparent text-gray-600  hover:text-brand-primary hover:border-brand-gold'"
                     @click="activeTab = 'internat'">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -72,7 +72,7 @@ watch(videos, (newVideos) => {
                     class="flex items-center gap-2 px-6 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-200 border-b-2 -mb-px cursor-pointer shrink-0 whitespace-nowrap"
                     :class="activeTab === 'temoignages'
                         ? 'border-brand-primary text-brand-primary'
-                        : 'border-transparent text-gray-400 hover:text-brand-primary hover:border-brand-gold'"
+                        : 'border-transparent text-gray-600 hover:text-brand-primary hover:border-brand-gold'"
                     @click="activeTab = 'temoignages'">
                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M8 5v14l11-7z" />
@@ -147,7 +147,7 @@ watch(videos, (newVideos) => {
                         </template>
                     </ClientOnly>
                 </div>
-                <p class="text-sm text-gray-400 text-center mt-3 italic">
+                <p class="text-sm text-gray-600 text-center mt-3 italic">
                     Cliquez et faites glisser pour explorer — cliquez sur les flèches pour vous déplacer
                 </p>
             </div>
@@ -165,7 +165,7 @@ watch(videos, (newVideos) => {
                         </template>
                     </ClientOnly>
                 </div>
-                <p class="text-sm text-gray-400 text-center mt-3 italic">
+                <p class="text-sm text-gray-600 text-center mt-3 italic">
                     Cliquez et faites glisser pour explorer — cliquez sur les flèches pour vous déplacer
                 </p>
             </div>
