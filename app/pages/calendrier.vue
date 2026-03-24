@@ -18,6 +18,7 @@ const { find } = useStrapi()
 
 // ─── État ──────────────────────────────────────────────────────────────────────
 const anneeSelectionnee = ref('')
+const filtreType = ref(null)
 const now = new Date()
 
 // ─── Fetch des années disponibles ─────────────────────────────────────────────
@@ -152,7 +153,7 @@ const legendeTypes = {
     'evenement': { label: 'Événement', color: 'bg-blue-50 text-blue-700 border-blue-200 whitespace-nowrap' },
     'pont': { label: 'Pont', color: 'bg-emerald-50 text-emerald-700 border-emerald-200 whitespace-nowrap' },
     'voyage': { label: 'Voyage', color: 'bg-indigo-50 text-indigo-700 border-indigo-200 whitespace-nowrap' },
-    'epreuve': { label: 'Épreuve', color: 'bg-rose-50 text-rose-700 border-rose-200 whitespace-nowrap' }
+    'epreuve': { label: 'Épreuves', color: 'bg-rose-50 text-rose-700 border-rose-200 whitespace-nowrap' }
 }
 const prochainEvenement = computed(() => {
     if (!calendrierData.value) return null
@@ -170,13 +171,27 @@ const eventEnCours = computed(() => {
     return calendrierData.value.find(e => isCurrent(e)) ?? null
 })
 
+function toggleFiltre(type) {
+    if (filtreType.value === type) {
+        filtreType.value = null
+    } else {
+        filtreType.value = type
+    }
+}
+
 const finalEvents = computed(() => {
     if (!calendrierData.value) return []
+
+    let filtered = calendrierData.value
+
+    if (filtreType.value) {
+        filtered = filtered.filter(e => e.type === filtreType.value)
+    }
 
     const uniqueEvents = []
     const seen = new Set()
 
-    for (const event of calendrierData.value) {
+    for (const event of filtered) {
         const key = `${event.description}-${event.start_date}`
         if (!seen.has(key)) {
             seen.add(key)
@@ -240,7 +255,7 @@ const finalEvents = computed(() => {
                             le</span>
                         <span class="text-xl font-serif text-brand-gold">{{ new
                             Date(eventEnCours.end_date).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long' })
-                            }}</span>
+                        }}</span>
                     </div>
                 </div>
 
@@ -266,7 +281,6 @@ const finalEvents = computed(() => {
                 </div>
             </div>
 
-            <!-- Filtres et Header Liste -->
             <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
                 <div>
                     <h2 class="text-3xl font-serif text-brand-dark inline-flex items-center gap-3">
@@ -275,21 +289,30 @@ const finalEvents = computed(() => {
                             class="px-3 py-1 bg-brand-gold/10 text-brand-gold text-xs rounded-full font-sans uppercase tracking-widest font-bold">Zone
                             B</span>
                     </h2>
-                    <!-- Légende temps forts -->
+
                     <div class="flex flex-wrap gap-2 mt-3">
-                        <span v-for="(legende, key) in legendeTypes" :key="key"
-                            class="inline-flex items-center gap-1.5 px-3 py-1 text-[10px] font-bold uppercase tracking-wider rounded-full border"
-                            :class="legende.color">
+                        <button v-for="(legende, key) in legendeTypes" :key="key"
+                            class="inline-flex items-center gap-1.5 px-3 py-1 text-[10px] font-bold uppercase tracking-wider rounded-full border transition-all duration-200"
+                            :class="[
+                                legende.color,
+                                filtreType === key ? 'ring-2 ring-brand-gold ring-offset-2 opacity-100 scale-105' : 'opacity-70 hover:opacity-100'
+                            ]" @click="toggleFiltre(key)">
                             {{ legende.label }}
-                        </span>
-                        <span
-                            class="inline-flex items-center gap-1.5 px-3 py-1 text-[10px] font-bold uppercase tracking-wider rounded-full border bg-brand-warm text-brand-primary border-brand-primary/20">
+                        </button>
+                        <button
+                            class="inline-flex items-center gap-1.5 px-3 py-1 text-[10px] font-bold uppercase tracking-wider rounded-full border bg-brand-warm text-brand-primary border-brand-primary/20 transition-all duration-200"
+                            :class="[
+                                filtreType === 'vacances' ? 'ring-2 ring-brand-gold ring-offset-2 opacity-100 scale-105' : 'opacity-70 hover:opacity-100'
+                            ]" @click="toggleFiltre('vacances')">
                             Vacances
-                        </span>
-                        <span
-                            class="inline-flex items-center gap-1.5 px-3 py-1 text-[10px] font-bold uppercase tracking-wider rounded-full border bg-brand-gold/10 text-brand-gold border-brand-gold/30">
+                        </button>
+                        <button
+                            class="inline-flex items-center gap-1.5 px-3 py-1 text-[10px] font-bold uppercase tracking-wider rounded-full border bg-brand-gold/10 text-brand-gold border-brand-gold/30 transition-all duration-200"
+                            :class="[
+                                filtreType === 'ferie' ? 'ring-2 ring-brand-gold ring-offset-2 opacity-100 scale-105' : 'opacity-70 hover:opacity-100'
+                            ]" @click="toggleFiltre('ferie')">
                             Jour Férié
-                        </span>
+                        </button>
                     </div>
                 </div>
 
@@ -309,15 +332,12 @@ const finalEvents = computed(() => {
                 </div>
             </div>
 
-            <!-- Grille des événements -->
             <div class="grid grid-cols-1 gap-6">
-                <!-- Loading State -->
                 <div v-if="pending" class="space-y-4">
                     <div v-for="i in 6" :key="i"
                         class="h-32 rounded-xl bg-white border border-border animate-pulse shadow-sm" />
                 </div>
 
-                <!-- Error State -->
                 <div v-else-if="error" class="bg-red-50 border border-red-100 p-12 rounded-2xl text-center space-y-4">
                     <div class="text-4xl">📡</div>
                     <h3 class="text-xl font-serif text-red-900">Communication interrompue</h3>
@@ -330,7 +350,6 @@ const finalEvents = computed(() => {
                     </button>
                 </div>
 
-                <!-- Content -->
                 <template v-else-if="finalEvents.length">
                     <template v-for="event in finalEvents" :key="event.id">
                         <div v-if="event.type === 'ferie'"

@@ -41,7 +41,7 @@ const duration = computed(() => {
         </div>
         <div v-else-if="!isPassed"
             class="absolute top-0 right-0 bg-brand-primary text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-bl-lg z-10">
-            À venir
+            Vacances
         </div>
 
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">

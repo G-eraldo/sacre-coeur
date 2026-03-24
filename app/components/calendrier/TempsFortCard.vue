@@ -6,11 +6,11 @@ const props = defineProps({
 })
 
 const typeConfig = {
-    'temps-fort': { label: 'Temps fort' },
-    'pont': { label: 'Pont' },
-    'evenement': { label: 'Événement' },
-    'voyage': { label: 'Voyage' },
-    'epreuve': { label: 'Épreuve' }
+    'temps-fort': { label: 'Temps Fort', color: 'bg-brand-primary/10 text-brand-primary border-brand-primary/20 whitespace-nowrap' },
+    'evenement': { label: 'Événement', color: 'bg-blue-50 text-blue-700 border-blue-200 whitespace-nowrap' },
+    'pont': { label: 'Pont', color: 'bg-emerald-50 text-emerald-700 border-emerald-200 whitespace-nowrap' },
+    'voyage': { label: 'Voyage', color: 'bg-indigo-50 text-indigo-700 border-indigo-200 whitespace-nowrap' },
+    'epreuve': { label: 'Épreuves', color: 'bg-rose-50 text-rose-700 border-rose-200 whitespace-nowrap' }
 }
 
 const config = computed(() => typeConfig[props.event.type] || typeConfig['evenement'])
@@ -43,7 +43,8 @@ const duration = computed(() => {
             En cours
         </div>
         <div v-else-if="!isPassed"
-            class="absolute top-0 right-0 bg-brand-primary text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-bl-lg z-10">
+            class="absolute top-0 right-0 text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-bl-lg z-10"
+            :class="config.color">
             {{ config.label }}
         </div>
 
@@ -81,13 +82,3 @@ const duration = computed(() => {
         </div>
     </div>
 </template>
-
-<style scoped>
-.font-serif {
-    font-family: var(--font-serif, serif);
-}
-
-.font-sans {
-    font-family: var(--font-sans, sans-serif);
-}
-</style>
