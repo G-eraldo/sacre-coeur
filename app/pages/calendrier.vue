@@ -223,7 +223,7 @@ const finalEvents = computed(() => {
                     <div class="text-center md:text-left flex-1">
                         <h2 class="text-2xl font-serif mb-2">{{ eventEnCours.description }}</h2>
                         <p class="text-white/70 font-sans">
-                            {{ ['temps-fort', 'evenement', 'pont'].includes(eventEnCours.type)
+                            {{ ['temps-fort', 'evenement', 'pont', 'voyage', 'epreuve'].includes(eventEnCours.type)
                                 ? eventEnCours.details || 'Un moment important à l\'Institution !'
                                 : 'Profitez bien de cette période de repos !' }}
                         </p>
@@ -349,7 +349,8 @@ const finalEvents = computed(() => {
                                 class="bg-brand-gold text-white text-[8px] font-bold px-2 py-0.5 rounded-full">
                                 Aujourd'hui</div>
                         </div>
-                        <TempsFortCard v-else-if="['temps-fort', 'pont', 'evenement'].includes(event.type)"
+                        <TempsFortCard
+                            v-else-if="['temps-fort', 'pont', 'evenement', 'voyage', 'epreuve'].includes(event.type)"
                             :event="event" :is-passed="isPassed(event)" :is-current="isCurrent(event)" />
                         <VacancesCard v-else :vacance="event" :is-passed="isPassed(event)"
                             :is-current="isCurrent(event)" />
