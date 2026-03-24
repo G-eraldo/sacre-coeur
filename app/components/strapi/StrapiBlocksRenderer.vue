@@ -36,11 +36,11 @@ defineProps({
         </template>
       </p>
 
-      <!-- Titres -->
-      <h1 v-else-if="block.type === 'heading' && block.level === 1"
-        class="text-4xl lg:text-5xl font-serif text-brand-primary mt-12 mb-6 tracking-tight">
+      <!-- Titres (Shifting levels to avoid duplicate h1) -->
+      <h2 v-else-if="block.type === 'heading' && block.level === 1"
+        class="text-3xl lg:text-4xl font-serif text-brand-primary mt-12 mb-6 tracking-tight">
         <template v-for="(child, childIndex) in block.children" :key="childIndex">{{ child.text }}</template>
-      </h1>
+      </h2>
       <h2 v-else-if="block.type === 'heading' && block.level === 2"
         class="text-3xl lg:text-4xl font-serif text-brand-primary mt-10 mb-5 tracking-tight">
         <template v-for="(child, childIndex) in block.children" :key="childIndex">{{ child.text }}</template>

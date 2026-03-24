@@ -13,7 +13,9 @@ import {
     Euro,
     ExternalLink,
     GraduationCap,
-    Phone
+    Phone,
+    ArrowLeft,
+    ArrowRight
 } from 'lucide-vue-next';
 import { computed, ref } from 'vue';
 
@@ -68,7 +70,8 @@ const currentSlide = computed(() => images[currentSlideIndex.value])
                 <div class="absolute inset-0 w-full h-full">
                     <NuxtImg :src="slide.url" :alt="slide.title" :loading="index === 0 ? 'eager' : 'lazy'"
                         :fetchpriority="index === 0 ? 'high' : 'auto'" format="webp" quality="80"
-                        sizes="100vw" class="w-full h-full object-cover brightness-[0.7]" />
+                        sizes="xs:100vw sm:100vw md:100vw lg:100vw xl:100vw" width="1920" height="1080"
+                        class="w-full h-full object-cover brightness-[0.7]" provider="cloudinary" />
                     <div class="absolute inset-0 bg-linear-to-b from-black/40 via-transparent to-black/60" />
                 </div>
 
@@ -117,9 +120,15 @@ const currentSlide = computed(() => images[currentSlideIndex.value])
         <!-- Custom Navigation Arrows -->
         <div class="hidden lg:block">
             <CarouselPrevious
-                class="absolute left-0 top-1/2 -translate-y-1/2 h-24 w-12 rounded-none bg-black/20 border-none hover:bg-black/40 text-white transition-all translate-x-0" />
+                class="absolute left-0 top-1/2 -translate-y-1/2 h-24 w-12 rounded-none bg-black/20 border-none hover:bg-black/40 text-white transition-all translate-x-0">
+                <ArrowLeft class="size-6" />
+                <span class="sr-only">Diapositive précédente</span>
+            </CarouselPrevious>
             <CarouselNext
-                class="absolute right-0 top-1/2 -translate-y-1/2 h-24 w-12 rounded-none bg-black/20 border-none hover:bg-black/40 text-white transition-all translate-x-0" />
+                class="absolute right-0 top-1/2 -translate-y-1/2 h-24 w-12 rounded-none bg-black/20 border-none hover:bg-black/40 text-white transition-all translate-x-0">
+                <ArrowRight class="size-6" />
+                <span class="sr-only">Diapositive suivante</span>
+            </CarouselNext>
         </div>
     </Carousel>
 </template>

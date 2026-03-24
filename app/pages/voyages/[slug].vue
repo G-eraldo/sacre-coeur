@@ -46,6 +46,13 @@ function formatDate(dateStr) {
         year: 'numeric'
     }).toUpperCase()
 }
+
+const currentSlideIndex = ref(0)
+function onSetApi(api) {
+    api.on('select', () => {
+        currentSlideIndex.value = api.selectedScrollSnap()
+    })
+}
 </script>
 
 <template>
@@ -71,7 +78,7 @@ function formatDate(dateStr) {
                 <NuxtImg :src="voyage.images[0].url" :alt="voyage.images[0].alternativeText || voyage.titre"
                     format="webp" quality="80" loading="lazy" class="w-full rounded-lg object-cover aspect-video" />
             </div>
-            <Carousel v-else class="w-full lg:mb-8" :opts="{ loop: true }">
+            <Carousel v-else class="w-full lg:mb-8" :opts="{ loop: true }" :set-api="onSetApi">
                 <div class="sr-only" aria-live="polite" aria-atomic="true">
                     Diapositive {{ currentSlideIndex + 1 }} sur {{ voyage.images.length }} : {{ voyage.titre }}
                 </div>
@@ -81,8 +88,12 @@ function formatDate(dateStr) {
                             loading="lazy" class="w-full rounded-lg object-cover aspect-video" />
                     </CarouselItem>
                 </CarouselContent>
-                <CarouselPrevious class="hidden md:flex" />
-                <CarouselNext class="hidden md:flex" />
+                <CarouselPrevious class="hidden md:flex">
+                    <span class="sr-only">Diapositive précédente</span>
+                </CarouselPrevious>
+                <CarouselNext class="hidden md:flex">
+                    <span class="sr-only">Diapositive suivante</span>
+                </CarouselNext>
             </Carousel>
             <p class="text-sm text-gray-400 text-center italic lg:hidden">
                 Glissez pour explorer les photos du voyage

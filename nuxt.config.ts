@@ -3,6 +3,13 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
+  app: {
+    head: {
+      htmlAttrs: {
+        lang: "fr",
+      },
+    },
+  },
   modules: [
     "@nuxt/eslint",
     "@nuxt/icon",
@@ -11,6 +18,14 @@ export default defineNuxtConfig({
     "@nuxtjs/strapi",
     "@nuxtjs/seo",
   ],
+
+  image: {
+    cloudinary: {
+      baseURL: "https://res.cloudinary.com/dlnbsf2ed/image/upload/",
+    },
+    quality: 80,
+    format: ["webp", "avif"],
+  },
 
   site: {
     url: "https://demo-sacre-coeur.vercel.app",
