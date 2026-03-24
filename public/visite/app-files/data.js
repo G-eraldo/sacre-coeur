@@ -795,10 +795,10 @@ var APP_DATA = {
           target: "8-segpa",
         },
         {
-          yaw: 3.8, // ← ajuste la position horizontale
-          pitch: 0.1, // ← ajuste la position verticale
+          yaw: 3.8,
+          pitch: 0.20067977780460566,
           rotation: 0,
-          target: "33-maphotoplat", // ← l'id de ta scène photo
+          target: "33-maphotoplat",
         },
       ],
       infoHotspots: [],
