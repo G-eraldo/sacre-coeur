@@ -69,5 +69,3 @@ const horaires = {
         </div>
     </section>
 </template>
-
-<style scoped></style>

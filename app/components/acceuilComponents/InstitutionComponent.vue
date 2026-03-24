@@ -1,12 +1,7 @@
-<script setup>
-
-</script>
-
 <template>
     <section class="w-full py-12 lg:py-20">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-                <!-- Left: Text Content -->
                 <div class="space-y-8">
                     <h2 class="text-4xl lg:text-5xl font-serif text-brand-primary tracking-tight">
                         Sacré-Cœur Breteuil

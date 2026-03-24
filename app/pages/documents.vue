@@ -14,5 +14,3 @@ useSeoMeta({
 <template>
     <DocumentsComponent />
 </template>
-
-<style scoped></style>

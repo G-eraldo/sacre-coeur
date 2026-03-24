@@ -95,9 +95,9 @@ import { ExternalLink, Mail, MapPin, Phone } from 'lucide-vue-next';
 
                     <ul class="space-y-2">
                         <li v-for="(link, i) in [
-                            { label: 'Inscriptions', to: '/', external: false },
-                            { label: 'Ecole directe', to: '/', external: true },
-                            { label: 'E-Sidoc', to: '/', external: true },
+                            { label: 'Pré-inscriptions', to: '/pre-inscription', external: false },
+                            { label: 'Ecole directe', to: 'https://www.ecoledirecte.com/login?cameFrom=%2FAccueil', external: true },
+                            { label: 'E-Sidoc', to: 'https://0601153c.esidoc.fr/', external: true },
                             { label: 'Apel', to: 'https://www.apel.fr/', external: true },
                         ]" :key="i">
                             <NuxtLink :to="link.to" :target="link.external ? '_blank' : undefined"
@@ -113,13 +113,3 @@ import { ExternalLink, Mail, MapPin, Phone } from 'lucide-vue-next';
         </div>
     </section>
 </template>
-
-<style scoped>
-.font-serif {
-    font-family: var(--font-serif, serif);
-}
-
-.font-sans {
-    font-family: var(--font-sans, sans-serif);
-}
-</style>

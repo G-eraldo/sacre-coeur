@@ -172,5 +172,3 @@ watch(videos, (newVideos) => {
         </div>
     </section>
 </template>
-
-<style scoped></style>

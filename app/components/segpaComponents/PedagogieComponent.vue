@@ -48,5 +48,3 @@ const projetPedagogique = {
         </div>
     </section>
 </template>
-
-<style scoped></style>

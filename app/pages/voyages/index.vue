@@ -97,5 +97,3 @@ function formatDate(dateStr) {
 
     </section>
 </template>
-
-<style scoped></style>

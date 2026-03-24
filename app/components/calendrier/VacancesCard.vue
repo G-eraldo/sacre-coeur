@@ -14,7 +14,6 @@ const props = defineProps({
     }
 })
 
-// Formater les dates
 const formatDate = (dateStr) => {
     return new Date(dateStr).toLocaleDateString('fr-FR', {
         day: 'numeric',
@@ -23,7 +22,6 @@ const formatDate = (dateStr) => {
     })
 }
 
-// Calculer la durée
 const duration = computed(() => {
     const start = new Date(props.vacance.start_date)
     const end = new Date(props.vacance.end_date)
@@ -36,7 +34,7 @@ const duration = computed(() => {
 <template>
     <div class="group relative bg-white border border-border rounded-xl p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 overflow-hidden"
         :class="{ 'opacity-60 grayscale-[0.5]': isPassed, 'border-brand-gold/50 ring-1 ring-brand-gold/20': isCurrent }">
-        <!-- Badge Status -->
+
         <div v-if="isCurrent"
             class="absolute top-0 right-0 bg-brand-gold text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-bl-lg z-10">
             En cours
@@ -71,10 +69,6 @@ const duration = computed(() => {
                     repos</span>
             </div>
         </div>
-
-        <!-- Decorative elements -->
-        <div
-            class="absolute -bottom-6 -right-6 w-24 h-24 bg-brand-warm rounded-full opacity-50 group-hover:scale-150 transition-transform duration-500 z-0" />
     </div>
 </template>
 

@@ -128,7 +128,6 @@ const { data: calendrierData, pending, error, refresh } = await useAsyncData(
             allEvents = [...allEvents, ...tempsFortEvents]
         } catch (e) {
             console.error('Erreur temps forts Strapi:', e)
-            // On ne bloque pas si Strapi est indisponible
         }
 
         return allEvents.sort((a, b) => new Date(a.start_date) - new Date(b.start_date))
@@ -334,7 +333,6 @@ const finalEvents = computed(() => {
                 <!-- Content -->
                 <template v-else-if="finalEvents.length">
                     <template v-for="event in finalEvents" :key="event.id">
-                        <!-- Jour Férié (Mini Card) -->
                         <div v-if="event.type === 'ferie'"
                             class="flex items-center gap-4 px-6 py-4 bg-white/50 border border-dashed border-brand-gold/30 rounded-xl relative group overflow-hidden"
                             :class="{ 'opacity-50 grayscale': isPassed(event) }">
@@ -352,7 +350,6 @@ const finalEvents = computed(() => {
                                     }) }}
                                 </span>
                             </div>
-                            <!-- Small status badge -->
                             <div v-if="isCurrent(event)"
                                 class="bg-brand-gold text-white text-[8px] font-bold px-2 py-0.5 rounded-full">
                                 Aujourd'hui</div>

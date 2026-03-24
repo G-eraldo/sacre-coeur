@@ -15,7 +15,7 @@ const liste = computed(() => response.value?.data || [])
 <template>
     <section class="py-24 px-6 md:px-12 max-w-7xl mx-auto">
         <div class="grid lg:grid-cols-2 gap-12">
-            <!-- Horaire et Situation -->
+
             <Card class="bg-brand-primary rounded-sm shadow-sm p-10 text-white relative overflow-hidden">
                 <div class="flex items-center gap-4 mb-4">
                     <div class="absolute left-0 top-0 bottom-0 w-1 bg-brand-gold" />
@@ -38,7 +38,6 @@ const liste = computed(() => response.value?.data || [])
                 </div>
             </Card>
 
-            <!-- L'Equipe -->
             <div class="flex flex-col justify-center">
                 <div class="flex items-center gap-4 mb-10">
                     <div class="w-12 h-12 bg-brand-warm rounded-full flex items-center justify-center">
@@ -50,7 +49,6 @@ const liste = computed(() => response.value?.data || [])
                     <div v-for="i in 5" :key="i" class="h-16 w-full rounded-sm bg-[#e8e0d5] animate-pulse" />
                 </div>
 
-                <!-- Erreur -->
                 <div v-else-if="error" class="text-red-500 text-sm p-4">
                     Impossible de charger les classes. ({{ error?.statusCode }})
                 </div>
@@ -65,9 +63,3 @@ const liste = computed(() => response.value?.data || [])
         </div>
     </section>
 </template>
-
-<style scoped>
-.font-serif {
-    font-family: var(--font-serif, serif);
-}
-</style>

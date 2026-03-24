@@ -32,7 +32,6 @@ const presentation = {
                     </div>
                 </div>
 
-                <!-- Bloc Pourquoi choisir l'internat -->
                 <div class="p-8 bg-brand-warm rounded-sm border border-brand-gold/20 mt-8">
                     <h3 class="text-xl font-serif text-brand-primary mb-4">{{ presentation.highlight.title }}</h3>
                     <p class="text-gray-600 leading-relaxed italic">"{{ presentation.highlight.text }}"</p>
@@ -44,12 +43,9 @@ const presentation = {
                     class="absolute -top-4 -left-4 w-full h-full border-2 border-brand-gold opacity-20 transform -translate-x-2 -translate-y-2" />
                 <NuxtImg
                     src="https://res.cloudinary.com/dlnbsf2ed/image/upload/v1770716886/istockphoto-1410950079-612x612_mgnu4e.jpg"
-                    alt="Vie à l'internat" 
-                    format="webp" quality="80" loading="lazy" sizes="100vw lg:800px"
+                    alt="Vie à l'internat" format="webp" quality="80" loading="lazy" sizes="100vw lg:800px"
                     class="relative z-10 w-full h-125 object-cover rounded-sm shadow-xl" />
             </div>
         </div>
     </section>
 </template>
-
-<style scoped></style>

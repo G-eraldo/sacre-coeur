@@ -35,17 +35,13 @@ useSeoMeta({
                 </p>
             </div>
 
-            <!-- Error state -->
             <div v-if="videosError" class="text-gray-500 text-center py-12">
                 <p>Les témoignages ne sont pas disponibles pour le moment.</p>
             </div>
-
-            <!-- Empty state -->
             <div v-else-if="videos.length === 0" class="text-gray-500 text-center py-12">
                 <p>Aucun témoignage disponible.</p>
             </div>
 
-            <!-- Videos grid -->
             <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
                 <div v-for="video in videos" :key="video.id" class="bg-white rounded-xl shadow-lg overflow-hidden">
                     <div class="relative pb-[56.25%] h-0">

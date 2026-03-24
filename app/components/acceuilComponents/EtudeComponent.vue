@@ -89,5 +89,3 @@ const educationLevels = [
         </div>
     </section>
 </template>
-
-<style scoped></style>

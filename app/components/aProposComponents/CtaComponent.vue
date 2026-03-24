@@ -1,7 +1,3 @@
-<script setup>
-
-</script>
-
 <template>
     <section class="py-24 px-6 bg-brand-warm">
         <div class="max-w-5xl mx-auto">

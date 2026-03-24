@@ -76,7 +76,8 @@ useSeoMeta({
                                 <li>traiter les demandes de pré-inscription ;</li>
                                 <li>assurer le suivi des échanges avec les familles et les personnes ayant pris contact
                                     avec l’établissement ;</li>
-                                <li>garantir le bon fonctionnement, la sécurité et l’amélioration technique du site.</li>
+                                <li>garantir le bon fonctionnement, la sécurité et l’amélioration technique du site.
+                                </li>
                             </ul>
                             <p class="mt-4">
                                 Les données ne sont pas utilisées à des fins commerciales ou de prospection sans base
@@ -105,7 +106,8 @@ useSeoMeta({
                             </p>
                             <p class="mt-2">
                                 Elles peuvent également être transmises à des prestataires techniques intervenant pour
-                                l’hébergement du site, la maintenance technique, l’envoi des formulaires ou la messagerie,
+                                l’hébergement du site, la maintenance technique, l’envoi des formulaires ou la
+                                messagerie,
                                 uniquement dans la mesure nécessaire à l’exécution de leur prestation et sous obligation
                                 de confidentialité.
                             </p>
@@ -115,7 +117,8 @@ useSeoMeta({
                         </section>
 
                         <section>
-                            <h2 class="text-2xl font-bold text-brand-primary mb-4">6. Transferts hors Union européenne</h2>
+                            <h2 class="text-2xl font-bold text-brand-primary mb-4">6. Transferts hors Union européenne
+                            </h2>
                             <p>
                                 Dans la mesure du possible, les données sont hébergées et traitées au sein de l’Union
                                 européenne.
@@ -147,7 +150,8 @@ useSeoMeta({
                         </section>
 
                         <section>
-                            <h2 class="text-2xl font-bold text-brand-primary mb-4">8. Caractère obligatoire des informations</h2>
+                            <h2 class="text-2xl font-bold text-brand-primary mb-4">8. Caractère obligatoire des
+                                informations</h2>
                             <p>
                                 Les champs signalés comme obligatoires dans les formulaires doivent être renseignés afin
                                 de permettre le traitement de la demande.
@@ -211,7 +215,8 @@ useSeoMeta({
                         </section>
 
                         <section>
-                            <h2 class="text-2xl font-bold text-brand-primary mb-4">12. Réclamation auprès de la CNIL</h2>
+                            <h2 class="text-2xl font-bold text-brand-primary mb-4">12. Réclamation auprès de la CNIL
+                            </h2>
                             <p>
                                 Si une personne estime, après avoir contacté l’établissement, que ses droits ne sont pas
                                 respectés, elle peut adresser une réclamation à la Commission Nationale de
@@ -236,5 +241,3 @@ useSeoMeta({
         </section>
     </div>
 </template>
-
-<style scoped></style>

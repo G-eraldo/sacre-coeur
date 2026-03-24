@@ -1,7 +1,3 @@
-<script setup>
-
-</script>
-
 <template>
     <section class="pt-40 lg:pt-56 pb-20 bg-brand-warm relative overflow-hidden text-center">
         <div class="max-w-7xl mx-auto px-6 relative z-10">
@@ -21,13 +17,3 @@
         </div>
     </section>
 </template>
-
-<style scoped>
-.font-serif {
-    font-family: var(--font-serif, serif);
-}
-
-.font-sans {
-    font-family: var(--font-sans, sans-serif);
-}
-</style>

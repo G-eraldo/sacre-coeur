@@ -27,5 +27,3 @@ useSeoMeta({
         <CtaComponent />
     </div>
 </template>
-
-<style scoped></style>
