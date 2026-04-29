@@ -17,6 +17,7 @@ export default defineNuxtConfig({
     "shadcn-nuxt",
     "@nuxtjs/strapi",
     "@nuxtjs/seo",
+    "@nuxt/fonts",
   ],
 
   image: {
@@ -46,13 +47,23 @@ export default defineNuxtConfig({
       logo: "/logo4.png",
     },
   },
-  ogImage: {
-    defaults: {
-      component: "Default",
-    },
-  },
   css: ["~/assets/css/main.css"],
   vite: {
+    optimizeDeps: {
+      include: [
+        "@vue/devtools-core",
+        "@vue/devtools-kit",
+        "lucide-vue-next",
+        "vue-sonner",
+        "clsx",
+        "tailwind-merge",
+        "@vueuse/core",
+        "embla-carousel-autoplay",
+        "class-variance-authority",
+        "reka-ui",
+        "embla-carousel-vue",
+      ],
+    },
     plugins: [tailwindcss()],
   },
   shadcn: {
@@ -76,5 +87,15 @@ export default defineNuxtConfig({
       admin: "/admin",
       version: "v5",
     },
+  },
+  fonts: {
+    families: [
+      {
+        name: "Merriweather",
+        provider: "google",
+        weights: [400, 700],
+        global: true,
+      },
+    ],
   },
 });
