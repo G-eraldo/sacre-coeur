@@ -9,7 +9,7 @@ const educationLevels = [
             "Préparation au Cambridge proposé dès le CM2",
             "Classe dehors en toute petite section",
         ],
-        image: "https://res.cloudinary.com/dlnbsf2ed/image/upload/v1770720141/pexels-pixabay-265076_bden5m.jpg",
+        image: "https://res.cloudinary.com/dlnbsf2ed/image/upload/v1779258797/MS_htkcoz.png",
         url: "/l-ecole"
     },
     {
@@ -19,7 +19,7 @@ const educationLevels = [
             "Lorem ipsum dolor sit amet consectetur.",
             "Lorem ipsum dolor sit amet consectetur."
         ],
-        image: "https://res.cloudinary.com/dlnbsf2ed/image/upload/v1770716887/istockphoto-1355040546-612x612_o55gfe.jpg",
+        image: "https://res.cloudinary.com/dlnbsf2ed/image/upload/v1779258799/Labo_ayjyxv.png",
         url: "/college"
     },
     {
@@ -29,7 +29,7 @@ const educationLevels = [
             "Lorem ipsum dolor sit amet consectetur.",
             "Lorem ipsum dolor sit amet consectetur.",
         ],
-        image: "https://res.cloudinary.com/dlnbsf2ed/image/upload/v1770716886/istockphoto-477206590-612x612_fykq0x.jpg",
+        image: "https://res.cloudinary.com/dlnbsf2ed/image/upload/v1779258797/Segpa_a%CC%80_Saint_Vincent_de_Paul_rzfly7.jpg",
         url: "/segpa"
     },
     {
@@ -39,7 +39,7 @@ const educationLevels = [
             "Lorem ipsum dolor sit amet consectetur.",
             "Lorem ipsum dolor sit amet consectetur.",
         ],
-        image: "https://res.cloudinary.com/dlnbsf2ed/image/upload/v1770716886/istockphoto-1410950079-612x612_mgnu4e.jpg",
+        image: "https://res.cloudinary.com/dlnbsf2ed/image/upload/v1779261762/internat_loyev7.png",
         url: "/internat"
     }
 ]

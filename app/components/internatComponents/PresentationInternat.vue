@@ -1,7 +1,7 @@
 <script setup>
 const presentation = {
     title: "Vivre au Sacré-Cœur",
-    description: "L'internat du Sacré-Cœur est un lieu de vie, d'étude et d'épanouissement. Situé au cœur de Breteuil, il accueille les élèves du primaire et du collège dans un environnement familial et sécurisant, favorisant la réussite scolaire et l'apprentissage de l'autonomie.",
+    description: "Du CE2 à la 3ème, l’internat est bien plus qu’un simple hébergement : c’est un véritable lieu de vie, structurant et chaleureux, où les élèves apprennent l’autonomie, le respect des règles et le plaisir de partager le quotidien avec leurs camarades. Pour beaucoup, l’internat est un tremplin vers une plus grande confiance en eux et une meilleure réussite scolaire.",
     points: [
         "Un accueil mixte pour garçons et filles",
         "Encadrement par une équipe éducative dédiée",
@@ -41,8 +41,7 @@ const presentation = {
             <div class="hidden lg:block lg:relative lg:mt-12">
                 <div
                     class="absolute -top-4 -left-4 w-full h-full border-2 border-brand-gold opacity-20 transform -translate-x-2 -translate-y-2" />
-                <NuxtImg
-                    src="https://res.cloudinary.com/dlnbsf2ed/image/upload/v1770716886/istockphoto-1410950079-612x612_mgnu4e.jpg"
+                <NuxtImg src="https://res.cloudinary.com/dlnbsf2ed/image/upload/v1779261762/internat_loyev7.png"
                     alt="Vie à l'internat" format="webp" quality="80" loading="lazy" sizes="100vw lg:800px"
                     class="relative z-10 w-full h-125 object-cover rounded-sm shadow-xl" />
             </div>

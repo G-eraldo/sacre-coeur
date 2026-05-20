@@ -8,30 +8,30 @@ import {
 } from '@/components/ui/carousel';
 import Autoplay from 'embla-carousel-autoplay';
 import {
+    ArrowLeft,
+    ArrowRight,
     Calendar,
     ClipboardList,
     Euro,
     ExternalLink,
     GraduationCap,
-    Phone,
-    ArrowLeft,
-    ArrowRight
+    Phone
 } from 'lucide-vue-next';
 import { computed, ref } from 'vue';
 
 const images = [
     {
-        url: 'https://res.cloudinary.com/dlnbsf2ed/image/upload/w_1920,h_1080,c_fill/v1770716886/istockphoto-477206590-612x612_fykq0x.jpg',
+        url: 'https://res.cloudinary.com/dlnbsf2ed/image/upload/v1779258793/IMG-20260506-WA0000_b1w9da.jpg',
         title: 'Bâtir l\'avenir ensemble',
         subtitle: 'Une communauté éducative où chaque élève est accompagné avec confiance, engagement et bienveillance de la maternelle au collège.'
     },
     {
-        url: 'https://res.cloudinary.com/dlnbsf2ed/image/upload/w_1920,h_1080,c_fill/v1770716886/istockphoto-1410950079-612x612_mgnu4e.jpg',
+        url: 'https://res.cloudinary.com/dlnbsf2ed/image/upload/v1779258799/Labo_ayjyxv.png',
         title: 'Bienveillance',
         subtitle: 'Un cadre d\'apprentissage unique pour s\'épanouir et réussir son parcours scolaire.'
     },
     {
-        url: 'https://res.cloudinary.com/dlnbsf2ed/image/upload/w_1920,h_1080,c_fill/v1770716887/istockphoto-1355040546-612x612_o55gfe.jpg',
+        url: 'https://res.cloudinary.com/dlnbsf2ed/image/upload/v1779258797/CM2_ndqjao.png',
         title: 'L\'esprit Sacré-Cœur',
         subtitle: 'Plus qu\'une école, un lieu de vie et de partage pour nos futurs citoyens.'
     }
@@ -97,7 +97,7 @@ const currentSlide = computed(() => images[currentSlideIndex.value])
         </CarouselContent>
 
         <!-- Fixed Quick Links Bar -->
-        <div class="absolute bottom-5 lg:bottom-0 left-0 w-full z-20 pb-8 lg:pb-16 px-4">
+        <div class="absolute -bottom-5  lg:-bottom-10 left-0 w-full z-20 pb-8 lg:pb-16 px-4">
             <div class="max-w-7xl mx-auto border-t border-white/20 pt-6 lg:pt-12">
                 <div
                     class="grid grid-cols-3 md:flex md:flex-wrap justify-center items-center gap-y-8 gap-x-2 md:gap-8 lg:gap-12">

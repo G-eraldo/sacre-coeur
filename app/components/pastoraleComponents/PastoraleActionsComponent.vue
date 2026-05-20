@@ -5,17 +5,17 @@ const actions = [
     {
         title: "Temps Forts & Célébrations",
         text: "Des célébrations marquent l'année liturgique (Noël, Pâques), rassemblant élèves, parents et enseignants en lien avec la paroisse.",
-        image: "https://res.cloudinary.com/dlnbsf2ed/image/upload/v1770720141/pexels-pixabay-265076_bden5m.jpg"
+        image: "https://res.cloudinary.com/dlnbsf2ed/image/upload/v1779265718/IMG_9538_dxb2vc.jpg"
     },
     {
         title: "Première Communion",
         text: "Les élèves de CM1 ont la possibilité de se préparer à leur Première Communion, avec une prise en charge dédiée en dehors du temps scolaire.",
-        image: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80&w=800"
+        image: "https://res.cloudinary.com/dlnbsf2ed/image/upload/v1779265820/premiereCommunion_oyg9v4.jpg"
     },
     {
         title: "Actions de Solidarité",
         text: "Collectes de livres, visites en maison de retraite et correspondance avec des enfants d'Afrique pour cultiver le partage.",
-        image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=800"
+        image: "https://res.cloudinary.com/dlnbsf2ed/image/upload/v1779265941/solidarite_oreb88.jpg"
     }
 ]
 </script>

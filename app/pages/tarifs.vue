@@ -1,16 +1,254 @@
 <script setup>
-useSeoMeta({ title: "Tarifs — Bientôt disponible", ogImage: '/logo4.png' })
+import {
+    Card,
+    CardContent,
+    CardHeader,
+    CardTitle,
+} from '@/components/ui/card';
+import {
+    Table,
+    TableBody,
+    TableCell,
+    TableHead,
+    TableHeader,
+    TableRow,
+} from '@/components/ui/table';
+
+useSeoMeta({ title: "Tarifs — Institution du Sacré-Cœur", ogImage: '/logo4.png' })
 </script>
 
 <template>
-    <main id="main-content" class="pt-40 lg:pt-56 pb-20 min-h-screen bg-brand-warm flex items-center justify-center">
-        <div class="text-center px-6">
-            <p class="text-xs font-bold uppercase tracking-[0.3em] text-brand-gold mb-3">Bientôt disponible</p>
-            <h1 class="text-4xl lg:text-5xl font-serif text-brand-primary mb-6">Tarifs</h1>
-            <p class="text-gray-600 mb-8 max-w-md mx-auto">Les informations tarifaires seront disponibles prochainement. Pour toute demande, contactez-nous.</p>
-            <Button as-child class="bg-brand-primary text-white hover:bg-brand-primary-dark rounded-sm text-xs font-bold uppercase tracking-widest px-8 py-4">
-                <NuxtLink to="/contact">Nous contacter</NuxtLink>
-            </Button>
+    <main id="main-content" class="pt-40 lg:pt-56 pb-20 min-h-screen bg-brand-warm">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <p class="text-xs font-bold uppercase tracking-[0.3em] text-brand-gold mb-3">Institution du Sacré-Cœur
+                </p>
+                <h1 class="text-4xl lg:text-5xl font-serif text-brand-primary mb-4">Règlement Financier</h1>
+                <p class="text-2xl font-bold text-gray-700">2026/2027</p>
+            </div>
+
+            <div class="space-y-12">
+                <section>
+                    <h2 class="text-2xl font-serif text-brand-primary mb-6 border-b border-brand-gold/30 pb-2">
+                        <span class="text-brand-gold mr-2">I.</span> Tarifs Mensuels
+                    </h2>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <Card>
+                            <CardHeader class="pb-3">
+                                <CardTitle class="text-lg uppercase tracking-wide text-brand-primary">Contribution
+                                    Familiale</CardTitle>
+                            </CardHeader>
+                            <CardContent>
+                                <Table>
+                                    <TableBody>
+                                        <TableRow>
+                                            <TableCell class="font-medium">Maternelle</TableCell>
+                                            <TableCell class="text-right">77,50 €</TableCell>
+                                        </TableRow>
+                                        <TableRow>
+                                            <TableCell class="font-medium">Primaire</TableCell>
+                                            <TableCell class="text-right">82,50 €</TableCell>
+                                        </TableRow>
+                                        <TableRow>
+                                            <TableCell class="font-medium">Collège</TableCell>
+                                            <TableCell class="text-right">99,00 €</TableCell>
+                                        </TableRow>
+                                    </TableBody>
+                                </Table>
+                            </CardContent>
+                        </Card>
+
+                        <Card>
+                            <CardHeader class="pb-3">
+                                <CardTitle class="text-lg uppercase tracking-wide text-brand-primary">Complément
+                                    Demi-Pension</CardTitle>
+                            </CardHeader>
+                            <CardContent>
+                                <Table>
+                                    <TableBody>
+                                        <TableRow>
+                                            <TableCell class="font-medium">Maternelle</TableCell>
+                                            <TableCell class="text-right">83,00 €</TableCell>
+                                        </TableRow>
+                                        <TableRow>
+                                            <TableCell class="font-medium">Primaire</TableCell>
+                                            <TableCell class="text-right">102,00 €</TableCell>
+                                        </TableRow>
+                                        <TableRow>
+                                            <TableCell class="font-medium">Collège</TableCell>
+                                            <TableCell class="text-right">107,00 €</TableCell>
+                                        </TableRow>
+                                    </TableBody>
+                                </Table>
+                            </CardContent>
+                        </Card>
+
+                        <Card>
+                            <CardHeader class="pb-3">
+                                <CardTitle class="text-lg uppercase tracking-wide text-brand-primary">Complément
+                                    Internat</CardTitle>
+                            </CardHeader>
+                            <CardContent>
+                                <Table>
+                                    <TableBody>
+                                        <TableRow>
+                                            <TableCell class="font-medium">Primaire / Collège</TableCell>
+                                            <TableCell class="text-right">361,00 €</TableCell>
+                                        </TableRow>
+                                    </TableBody>
+                                </Table>
+                            </CardContent>
+                        </Card>
+
+                        <Card>
+                            <CardHeader class="pb-3">
+                                <CardTitle class="text-lg uppercase tracking-wide text-brand-primary">Cantine
+                                    Occasionnelle</CardTitle>
+                            </CardHeader>
+                            <CardContent>
+                                <Table>
+                                    <TableBody>
+                                        <TableRow>
+                                            <TableCell class="font-medium">Par repas</TableCell>
+                                            <TableCell class="text-right">7,50 €</TableCell>
+                                        </TableRow>
+                                    </TableBody>
+                                </Table>
+                            </CardContent>
+                        </Card>
+                    </div>
+
+                    <Card class="bg-white/50">
+                        <CardHeader class="pb-3">
+                            <CardTitle class="text-lg uppercase tracking-wide text-brand-primary mb-2">En résumé par
+                                mois</CardTitle>
+                            <p class="text-sm text-gray-600">
+                                <strong class="text-brand-gold">Les tarifs :</strong><br>
+                                - Forfait demi-pension additionner 1 + 2<br>
+                                - Forfait internat additionner 1 + 2 + 3
+                            </p>
+                        </CardHeader>
+                        <CardContent>
+                            <div class="overflow-x-auto">
+                                <Table>
+                                    <TableHeader>
+                                        <TableRow>
+                                            <TableHead class="w-37.5" />
+                                            <TableHead class="text-center">Externe</TableHead>
+                                            <TableHead class="text-center">Demi-pension</TableHead>
+                                            <TableHead class="text-center">Internat</TableHead>
+                                        </TableRow>
+                                    </TableHeader>
+                                    <TableBody>
+                                        <TableRow>
+                                            <TableCell class="font-medium">Maternelle</TableCell>
+                                            <TableCell class="text-center">77,50 €</TableCell>
+                                            <TableCell class="text-center">160,50 €</TableCell>
+                                            <TableCell class="text-center text-gray-400">x</TableCell>
+                                        </TableRow>
+                                        <TableRow>
+                                            <TableCell class="font-medium">Primaire</TableCell>
+                                            <TableCell class="text-center">82,50 €</TableCell>
+                                            <TableCell class="text-center">184,50 €</TableCell>
+                                            <TableCell class="text-center">545,50 €</TableCell>
+                                        </TableRow>
+                                        <TableRow>
+                                            <TableCell class="font-medium">Collège</TableCell>
+                                            <TableCell class="text-center">99,00 €</TableCell>
+                                            <TableCell class="text-center">206,00 €</TableCell>
+                                            <TableCell class="text-center">567,00 €</TableCell>
+                                        </TableRow>
+                                    </TableBody>
+                                </Table>
+                            </div>
+                        </CardContent>
+                    </Card>
+                </section>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <section>
+                        <h2 class="text-xl font-serif text-brand-primary mb-4 border-b border-brand-gold/30 pb-2">
+                            <span class="text-brand-gold mr-2">II.</span> Fournitures scolaires maternelle et primaire
+                        </h2>
+                        <Card>
+                            <CardContent class="pt-6">
+                                <Table>
+                                    <TableBody>
+                                        <TableRow>
+                                            <TableCell class="font-medium">Cycle I</TableCell>
+                                            <TableCell class="text-right">32,00 €</TableCell>
+                                        </TableRow>
+                                        <TableRow>
+                                            <TableCell class="font-medium">Cycle II</TableCell>
+                                            <TableCell class="text-right">43,00 €</TableCell>
+                                        </TableRow>
+                                        <TableRow>
+                                            <TableCell class="font-medium">Cycle III</TableCell>
+                                            <TableCell class="text-right">48,00 €</TableCell>
+                                        </TableRow>
+                                    </TableBody>
+                                </Table>
+                            </CardContent>
+                        </Card>
+                    </section>
+
+                    <section>
+                        <h2 class="text-xl font-serif text-brand-primary mb-4 border-b border-brand-gold/30 pb-2">
+                            <span class="text-brand-gold mr-2">III.</span> Cotisation APEL
+                        </h2>
+                        <Card>
+                            <CardContent class="pt-6">
+                                <Table>
+                                    <TableBody>
+                                        <TableRow>
+                                            <TableCell class="font-medium">Cotisation annuelle de l'APEL</TableCell>
+                                            <TableCell class="text-right font-bold">20,00 €</TableCell>
+                                        </TableRow>
+                                    </TableBody>
+                                </Table>
+                            </CardContent>
+                        </Card>
+                    </section>
+                </div>
+
+                <section>
+                    <h2 class="text-xl font-serif text-brand-primary mb-4 border-b border-brand-gold/30 pb-2">
+                        <span class="text-brand-gold mr-2">IV.</span> Droits d'Inscription
+                    </h2>
+                    <p class="text-sm font-bold text-center mb-6 text-gray-700 uppercase tracking-wide">
+                        (En cas de désistement ou de départ en cours d'année, cette somme reste acquise à
+                        l'établissement.)
+                    </p>
+                    <Card class="max-w-2xl mx-auto">
+                        <CardContent class="pt-6">
+                            <Table>
+                                <TableBody>
+                                    <TableRow>
+                                        <TableCell class="font-medium">Maternelle</TableCell>
+                                        <TableCell class="text-right">30,00 €</TableCell>
+                                    </TableRow>
+                                    <TableRow>
+                                        <TableCell class="font-medium">Primaire</TableCell>
+                                        <TableCell class="text-right">60,00 €</TableCell>
+                                    </TableRow>
+                                    <TableRow>
+                                        <TableCell class="font-medium">Collège</TableCell>
+                                        <TableCell class="text-right">80,00 €</TableCell>
+                                    </TableRow>
+                                    <TableRow>
+                                        <TableCell class="font-medium">Interne <span
+                                                class="text-xs text-gray-500 font-normal">(Primaire ou Collège)</span>
+                                        </TableCell>
+                                        <TableCell class="text-right">110,00 €</TableCell>
+                                    </TableRow>
+                                </TableBody>
+                            </Table>
+                        </CardContent>
+                    </Card>
+                </section>
+
+            </div>
         </div>
     </main>
 </template>

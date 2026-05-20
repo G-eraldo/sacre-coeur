@@ -8,12 +8,12 @@ const atouts = [
     {
         title: "Accompagnement",
         text: "Aide aux devoirs ciblée et soutien scolaire de 17h à 18h, trois jours par semaine.",
-        image: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80&w=800"
+        image: "https://res.cloudinary.com/dlnbsf2ed/image/upload/v1779266711/aide_cahj31.jpg"
     },
     {
         title: "Estime de Soi",
         text: "Travail mis en place avec une psychologue clinicienne sur l'Estime de Soi et la connaissance de soi.",
-        image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=800"
+        image: "https://res.cloudinary.com/dlnbsf2ed/image/upload/v1779258797/conseil_des_de%CC%81le%CC%81gue%CC%81s_primaires_xseruz.png"
     }
 ]
 </script>
