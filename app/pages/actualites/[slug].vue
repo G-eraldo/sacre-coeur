@@ -70,7 +70,7 @@ function onSetApi(api) {
             <div class="mb-10">
                 <span
                     class="bg-brand-primary text-white px-2 py-1 rounded-sm text-[10px] font-bold uppercase tracking-widest shadow-sm">
-                    {{ formatDate(article.publishedAt) }}
+                    {{ formatDate(article.date_evenement) }}
                 </span>
                 <h1 class="text-4xl md:text-5xl font-serif text-brand-primary mt-4 mb-3">{{ article.titre }}</h1>
                 <p class="text-lg text-gray-600">{{ article.description }}</p>

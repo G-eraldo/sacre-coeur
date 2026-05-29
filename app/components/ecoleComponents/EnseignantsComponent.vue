@@ -13,7 +13,7 @@ const { data: response, pending, error } = await useAsyncData('classes', () =>
 const liste = computed(() => response.value?.data || [])
 
 const horaires = {
-    garderie: "7h30 à 8h30 et 17h00 à 18h30",
+    garderie: "7h30 à 18h30",
     cours: "8h30 à 11h45 (APC 12h15) et 13h30 à 16h30",
     semaine: "Semaine de 4 jours"
 }
@@ -74,7 +74,7 @@ const horaires = {
                     <div v-for="classe in liste" :key="classe.id"
                         class="py-5 flex flex-col md:border-b md:border-[#f0ebe3] hover:bg-[#f0ebe3] px-4 -mx-4 rounded-sm transition-all duration-300">
                         <span class="text-[10px] font-bold uppercase tracking-widest text-brand-gold mb-1">{{ classe.nom
-                        }}</span>
+                            }}</span>
                         <span class="text-gray-700 font-serif">{{ classe.enseignant }}</span>
                     </div>
                 </div>

@@ -1,17 +1,16 @@
 <script setup>
 import { LucideClock, LucideUsers } from 'lucide-vue-next';
 
-const enseignants = [
-    { class: "Coordination", teacher: "Madame LEFÈVRE Clarisse" },
-    { class: "Anglais", teacher: "Madame BOURGY" },
-    { class: "EPS", teacher: "Monsieur MERCIER" },
-    { class: "Histoire Géo", teacher: "Monsieur SECQ" },
-    { class: "Physique Chimie", teacher: "Madame LOULIA" },
-    { class: "Technologie", teacher: "Monsieur BOUCHER" },
-    { class: "SVT", teacher: "Mme DESGROUX" },
-    { class: "Arts Plastiques", teacher: "Mme MERCURI" },
-]
+const { find } = useStrapi()
 
+const { data: response, pending, error } = await useAsyncData('segpas', () =>
+    find('segpas', {
+        fields: ['nom', 'professeur'],
+        sort: ['ordre:asc']
+    })
+)
+
+const liste = computed(() => response.value?.data || [])
 const horaires = {
     cours: "8h35 à 12h30 et 13h50 à 16h45",
     pro: "Le mardi au Lycée St Vincent de Paul",
@@ -58,11 +57,19 @@ const horaires = {
                     </div>
                     <h2 class="text-3xl font-serif text-brand-primary">L'Équipe Pédagogique</h2>
                 </div>
-                <div class="space-y-2">
-                    <div v-for="prof in enseignants" :key="prof.teacher"
-                        class="py-4 flex items-center justify-between group hover:bg-brand-warm transition-all px-6 rounded-sm border-b border-[#f0ebe3]">
-                        <span class="font-bold text-brand-gold tracking-wide text-sm">{{ prof.class }}</span>
-                        <span class="text-gray-700 font-serif">{{ prof.teacher }}</span>
+                <div v-if="pending" class="space-y-2">
+                    <div v-for="i in 5" :key="i" class="h-16 w-full rounded-sm bg-[#e8e0d5] animate-pulse" />
+                </div>
+
+                <div v-else-if="error" class="text-red-500 text-sm p-4">
+                    Impossible de charger les classes. ({{ error?.statusCode }})
+                </div>
+                <div v-else class="grid md:grid-cols-2 gap-x-8 gap-y-0 divide-y divide-[#f0ebe3] md:divide-y-0">
+                    <div v-for="matiere in liste" :key="matiere.id"
+                        class="py-5 flex flex-col md:border-b md:border-[#f0ebe3] hover:bg-[#f0ebe3] px-4 -mx-4 rounded-sm transition-all duration-300">
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-brand-gold mb-1">{{
+                            matiere.nom }}</span>
+                        <span class="text-gray-700 font-serif">{{ matiere.professeur }}</span>
                     </div>
                 </div>
             </div>

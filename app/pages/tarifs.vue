@@ -230,6 +230,66 @@ useSeoMeta({ title: "Tarifs — Institution du Sacré-Cœur", ogImage: '/logo4.p
                     </Card>
                 </section>
 
+                <section>
+                    <h2 class="text-xl font-serif text-brand-primary mb-4 border-b border-brand-gold/30 pb-2">
+                        <span class="text-brand-gold mr-2">V.</span> Garderie et Études Surveillées*
+                    </h2>
+                    <Card class="bg-white/50">
+                        <CardHeader class="pb-3">
+                            <CardTitle class="text-lg uppercase tracking-wide text-brand-primary">Garderie Périscolaire</CardTitle>
+                            <p class="text-sm text-gray-600">
+                                La garderie sera facturée par famille sur la base des tarifs mensuels ci-dessous :
+                            </p>
+                        </CardHeader>
+                        <CardContent>
+                            <div class="overflow-x-auto">
+                                <Table>
+                                    <TableHeader>
+                                        <TableRow>
+                                            <TableHead />
+                                            <TableHead class="text-center font-bold text-brand-primary">4 jours / semaine</TableHead>
+                                            <TableHead class="text-center font-bold text-brand-primary">3 jours / semaine</TableHead>
+                                            <TableHead class="text-center font-bold text-brand-primary">2 jours / semaine</TableHead>
+                                            <TableHead class="text-center font-bold text-brand-primary">1 jour / semaine</TableHead>
+                                        </TableRow>
+                                    </TableHeader>
+                                    <TableBody>
+                                        <TableRow>
+                                            <TableCell class="font-medium">Forfait mensuel Matin <span class="text-xs text-gray-500 font-normal">(7h30-8h10)</span></TableCell>
+                                            <TableCell class="text-center">21,40 € / mois</TableCell>
+                                            <TableCell class="text-center">15,30 € / mois</TableCell>
+                                            <TableCell class="text-center">10,20 € / mois</TableCell>
+                                            <TableCell class="text-center">5,10 € / mois</TableCell>
+                                        </TableRow>
+                                        <TableRow>
+                                            <TableCell class="font-medium">Forfait mensuel Soir <span class="text-xs text-gray-500 font-normal">(17h-18h30)</span></TableCell>
+                                            <TableCell class="text-center">40,80 € / mois</TableCell>
+                                            <TableCell class="text-center">30,60 € / mois</TableCell>
+                                            <TableCell class="text-center">20,40 € / mois</TableCell>
+                                            <TableCell class="text-center">10,20 € / mois</TableCell>
+                                        </TableRow>
+                                        <TableRow>
+                                            <TableCell class="font-medium">Forfait mensuel Matin et Soir</TableCell>
+                                            <TableCell class="text-center">61,20 € / mois</TableCell>
+                                            <TableCell class="text-center">45,90 € / mois</TableCell>
+                                            <TableCell class="text-center">30,60 € / mois</TableCell>
+                                            <TableCell class="text-center">15,30 € / mois</TableCell>
+                                        </TableRow>
+                                    </TableBody>
+                                </Table>
+                            </div>
+                            <div class="mt-6 pt-4 border-t border-brand-gold/10 space-y-2">
+                                <p class="text-sm text-gray-700">
+                                    <strong class="text-brand-primary">Garderie occasionnelle :</strong> carnet de 5 tickets 20 €
+                                </p>
+                                <p class="text-xs text-gray-500 italic">
+                                    * À compter de la rentrée 2026/2027, les études surveillées pour les élèves du primaire (de 17h00 à 18h00) seront facturées 4,50 €.
+                                </p>
+                            </div>
+                        </CardContent>
+                    </Card>
+                </section>
+
             </div>
         </div>
     </main>

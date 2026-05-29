@@ -1,22 +1,22 @@
 <script setup>
 const vieInternat = [
     {
-        title: "L'Internat Garçons & Filles",
-        text: "Des ailes séparées pour les garçons et les filles, assurant l'intimité de chacun tout en partageant des moments de convivialité en journée.",
-        image: "https://res.cloudinary.com/dlnbsf2ed/image/upload/v1770720141/pexels-pixabay-265076_bden5m.jpg"
+        title: "Un « chez soi » loin de chez soi",
+        text: "Loin d’être un simple dortoir, l’internat du Sacré-Cœur est un véritable lieu de vie. Les enfants y ont leurs habitudes, leurs repas partagés, leurs soirées encadrées, leurs espaces pour souffler. Les équipes veillent à ce que chaque élève se sente accueilli, accompagné et en sécurité. L’internat, c’est aussi apprendre à vivre avec les autres : partager l’espace, respecter les règles, prendre soin de ses camarades.",
+        image: "https://res.cloudinary.com/dlnbsf2ed/image/upload/v1780047955/received_1570690504155646_vzps7e.jpg"
 
 
     },
     {
-        title: "Projet Louis & Zélie Martin",
-        text: "Inspiré par le couple de saints Louis et Zélie Martin, notre projet pastoral met l'accent sur les valeurs familiales et l'accompagnement attentif de chaque jeune.",
-        image: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80&w=800"
+        title: "Un levier de réussite scolaire",
+        text: "La régularité du rythme internat — repas à heures fixes, études encadrées, coucher structuré — est souvent ce qui fait basculer un parcours scolaire dans le bon sens. Loin des distractions et accompagnés par des adultes disponibles, les élèves internats travaillent mieux, dorment mieux et arrivent en classe plus dispos. Pour beaucoup, c’est un vrai déclencheur de progrès.",
+        image: "https://res.cloudinary.com/dlnbsf2ed/image/upload/v1780047955/internat_etude_1_fsemgt.png"
 
 
     },
     {
-        title: "Vie Quotidienne & Études",
-        text: "Un emploi du temps équilibré entre cours, temps d'étude surveillée pour les devoirs, activités sportives et moments de détente.",
+        title: "Accessible dès le CE2 — une opportunité rare",
+        text: "L’internat du Sacré-Cœur est l’un des rares à accueillir des enfants dès le CE2. C’est une opportunité précieuse pour les familles éloignées géographiquement, les parents aux horaires décalés, ou ceux qui cherchent pour leur enfant un cadre plus structurant et stimulant. L’accueil y est adapté à l’âge : les plus jeunes bénéficient d’une attention particulière et d’un encadrement resserré.",
         image: "https://res.cloudinary.com/dlnbsf2ed/image/upload/v1779258799/noel_internat_pns38p.png"
     }
 ]

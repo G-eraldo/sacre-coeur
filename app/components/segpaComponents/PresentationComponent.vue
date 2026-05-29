@@ -1,7 +1,7 @@
 <script setup>
 const presentation = {
     title: "Présentation de la SEGPA",
-    description: "La Section d'Enseignement Général et Professionnel Adapté (SEGPA) s'adresse à des élèves présentant des difficultés scolaires graves et durables. Intégrée au collège, elle permet aux élèves de suivre une scolarité adaptée tout en participant à la vie de l'établissement.",
+    description: "La SEGPA du Sacré-Cœur, c’est un dispositif qui croit en chaque élève — y compris et surtoutceux que le système scolaire traditionnel a parfois blessés. Ici, on repart des forces de chaquejeune. On lui redonne le goût d’apprendre, le plaisir de réussir, et on lui ouvre des perspectivesconcrètes et valorisantes.",
     points: [
         "Un enseignement adapté aux rythmes de chacun",
         "Des classes à effectifs réduits (maximum 16 élèves)",
@@ -35,14 +35,34 @@ const presentation = {
                     </p>
                     <p class="text-xl font-serif text-brand-primary">{{ presentation.director }}</p>
                 </div>
+
+                <div class="bg-brand-warm/40 p-6 rounded-xl border-l-4 border-brand-gold mt-8 shadow-sm">
+                    <p class="italic text-brand-primary mb-4 text-lg font-serif">
+                        « Ici, on nous fait confiance. On ne nous regarde pas comme si on était moins que les autres. On
+                        nous donne envie d’essayer. »
+                    </p>
+                    <div>
+                        <p class="font-bold text-brand-primary text-lg">Un élève de SEGPA</p>
+                    </div>
+                </div>
             </div>
-            <div class="relative">
-                <div
-                    class="absolute -top-4 -left-4 w-full h-full border-2 border-brand-gold opacity-20 transform -translate-x-2 -translate-y-2" />
-                <NuxtImg
-                    src="https://res.cloudinary.com/dlnbsf2ed/image/upload/v1779258797/Segpa_a%CC%80_Saint_Vincent_de_Paul_rzfly7.jpg"
-                    alt="Vie en SEGPA" format="webp" quality="80" loading="lazy" sizes="100vw lg:800px"
-                    class="hidden lg:block relative z-10 w-full h-125 object-cover rounded-sm shadow-xl" />
+
+            <div class="hidden lg:block lg:sticky lg:top-32 pb-12">
+                <div class="relative group">
+                    <!-- Éléments de décoration -->
+                    <div
+                        class="absolute -inset-4 border-2 border-brand-gold/30 rounded-xl transition-all duration-500 group-hover:-inset-3" />
+                    <div
+                        class="absolute inset-0 bg-brand-primary/5 translate-x-4 translate-y-4 rounded-xl transition-transform duration-500 group-hover:translate-x-3 group-hover:translate-y-3" />
+
+                    <!-- Image Principale -->
+                    <div class="relative bg-white p-3 shadow-xl rounded-xl z-10">
+                        <NuxtImg
+                            src="https://res.cloudinary.com/dlnbsf2ed/image/upload/v1779258797/Segpa_a%CC%80_Saint_Vincent_de_Paul_rzfly7.jpg"
+                            alt="Intérieur de l'école" format="webp" quality="80" loading="lazy" sizes="100vw lg:800px"
+                            class="w-full h-125 object-cover rounded-lg" />
+                    </div>
+                </div>
             </div>
         </div>
     </section>

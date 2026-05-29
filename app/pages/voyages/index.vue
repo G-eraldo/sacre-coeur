@@ -18,12 +18,12 @@ const { find } = useStrapi()
 
 const { data: voyages, pending, error } = await useAsyncData('voyages-list', () =>
     find('voyages', {
-        fields: ['titre', 'description', 'publishedAt', 'slug'],
+        fields: ['titre', 'description', 'publishedAt', 'slug', 'date_evenement'],
         populate: {
             images: { fields: ['url', 'alternativeText'] }
         },
-        filters: { publishedAt: { $notNull: true } },
-        sort: ['publishedAt:desc']
+        filters: { date_evenement: { $notNull: true } },
+        sort: ['date_evenement:desc']
     })
 )
 
@@ -62,7 +62,7 @@ function formatDate(dateStr) {
                             <CardTitle class="font-sans">{{ item.titre }}</CardTitle>
                             <span
                                 class="bg-brand-primary text-white px-2 py-1 rounded-sm text-[10px] font-bold uppercase tracking-widest shadow-sm shrink-0 whitespace-nowrap">
-                                {{ formatDate(item.publishedAt) }}
+                                {{ formatDate(item.date_evenement) }}
                             </span>
                         </div>
                         <CardDescription class="h-24">{{ item.description }}</CardDescription>

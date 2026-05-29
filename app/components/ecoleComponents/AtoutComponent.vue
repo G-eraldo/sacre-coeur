@@ -1,9 +1,9 @@
 <script setup>
 const atouts = [
     {
-        title: "Le jardin à l'école",
-        text: "Séance préparation d'un épouvantail avec les élèves de la garderie. Les élèves sont ravis de reprendre ces moments concernant le jardin.",
-        image: "https://res.cloudinary.com/dlnbsf2ed/image/upload/v1770720141/pexels-pixabay-265076_bden5m.jpg"
+        title: "École en extérieur",
+        text: "L’Institution du Sacré-Cœur propose, en lien avec ses projets pédagogiques, des temps d’activités et d’enseignement réalisés en extérieur.",
+        image: "https://res.cloudinary.com/dlnbsf2ed/image/upload/v1780047958/ecole_dehors_2_bvs0co.jpg"
     },
     {
         title: "Accompagnement",

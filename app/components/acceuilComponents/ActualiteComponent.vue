@@ -7,12 +7,12 @@ const { find } = useStrapi()
 
 const { data: actualites, pending, error } = useAsyncData('actualites-home', () =>
     find('actualites', {
-        fields: ['titre', 'description', 'publishedAt', 'slug'],
+        fields: ['titre', 'description', 'publishedAt', 'slug', 'date_evenement'],
         populate: {
             images: { fields: ['url', 'alternativeText'] }
         },
-        filters: { publishedAt: { $notNull: true } },
-        sort: ['publishedAt:desc'],
+        filters: { date_evenement: { $notNull: true } },
+        sort: ['date_evenement:desc'],
         pagination: { pageSize: 3 }
     })
 )
@@ -56,17 +56,19 @@ function formatDate(dateStr) {
                                 <CardTitle>{{ actualite.titre }}</CardTitle>
                                 <span
                                     class="bg-brand-primary text-white px-2 py-1 rounded-sm text-[10px] font-bold uppercase tracking-widest shadow-sm shrink-0 whitespace-nowrap">
-                                    {{ formatDate(actualite.publishedAt) }}
+                                    {{ formatDate(actualite.date_evenement) }}
                                 </span>
                             </div>
                             <CardDescription class="line-clamp-3">{{ actualite.description }}</CardDescription>
                         </CardHeader>
 
                         <CardContent>
-                            <NuxtImg v-if="actualite.images?.[0]" :src="actualite.images[0].url"
-                                :alt="actualite.images[0].alternativeText || actualite.titre" format="webp" quality="80"
-                                loading="lazy" sizes="320px md:384px lg:384px"
-                                class="w-full h-48 object-cover rounded-lg" />
+                            <div class="w-full h-48 overflow-hidden rounded-lg">
+                                <NuxtImg v-if="actualite.images?.[0]" :src="actualite.images[0].url"
+                                    :alt="actualite.images[0].alternativeText || actualite.titre" format="webp"
+                                    quality="80" loading="lazy" sizes="320px md:384px lg:384px"
+                                    class="w-full h-full object-cover" />
+                            </div>
                         </CardContent>
 
                         <CardFooter class="flex justify-center">

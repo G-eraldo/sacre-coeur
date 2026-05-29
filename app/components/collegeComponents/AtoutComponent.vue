@@ -1,19 +1,19 @@
 <script setup>
 const atouts = [
     {
-        title: "Classe Bilangue",
-        text: "Dès la 6ème, nos élèves peuvent choisir la classe bilangue pour un apprentissage renforcé des langues étrangères.",
-        image: "https://res.cloudinary.com/dlnbsf2ed/image/upload/v1770720141/pexels-pixabay-265076_bden5m.jpg"
+        title: "Un parcours continu, sans rupture",
+        text: "Au Sacré-Cœur, l’entrée en 6ème n’est pas un saut dans l’inconnu. Les élèves qui ont grandi dans notre école primaire retrouvent des adultes qui les connaissent, un environnement familier et une communauté soudée. Pour les familles qui nous rejoignent en collège, l’accueil est personnalisé et le suivi immédiat.",
+        image: "https://res.cloudinary.com/dlnbsf2ed/image/upload/v1780047956/received_1389681735871320_itapmp.jpg"
     },
     {
-        title: "Inclusion & ULIS",
-        text: "Un dispositif dédié pour accompagner jusqu'à 12 élèves en situation de handicap, favorisant une scolarité inclusive.",
-        image: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80&w=800"
+        title: "Une ouverture sur le monde",
+        text: "Le collège prépare des jeunes capables de s’orienter dans un monde complexe. La certification Cambridge ouvre les portes des langues et de l’international. Les voyages scolaires, les projets interdisciplinaires et les partenariats locaux permettent aux élèves de dépasser les murs de la classe. Apprendre ici, c’est apprendre à se situer dans le monde.",
+        image: "https://res.cloudinary.com/dlnbsf2ed/image/upload/v1780047957/Cambridge_jiac6g.jpg"
     },
     {
-        title: "CDI & E-Sidoc",
-        text: "Un centre de documentation moderne avec accès au portail E-Sidoc pour la recherche et la culture.",
-        image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=800"
+        title: "Une taille humaine qui change tout",
+        text: "Avec 252 élèves au total, notre collège est à l’échelle juste. Les professeurs connaissent leurs élèves, les suivent dans la durée et adaptent leur accompagnement. Les difficultés sont repérées tôt, les progrès célébrés. Un élève qui a du potentiel mais manque de confiance trouvera ici le cadre pour le révéler. Un élève brillant sera poussé vers l’excellence.",
+        image: "https://res.cloudinary.com/dlnbsf2ed/image/upload/v1780047957/espagne_2025_g7v4c0.jpg"
     }
 ]
 </script>

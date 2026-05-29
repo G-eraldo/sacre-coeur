@@ -1,7 +1,7 @@
 <script setup>
 const presentation = {
     title: "Vivre et apprendre ensemble au Collège",
-    description: "Le Collège du Sacré-Cœur accueille les élèves dans un cadre structuré et bienveillant. Établissement privé catholique sous contrat d'État, nous proposons un parcours d'excellence accessible à tous, favorisant l'autonomie et le respect mutuel.",
+    description: "Le collège du Sacré-Cœur, c’est quatre années décisives dans un cadre que les élèves connaissent et où ils se sentent attendus. La continuité avec l’école primaire, la taille humaine de l’établissement et l’engagement de chaque enseignant font du collège un lieu où chaque jeune peut construire son parcours en confiance, sans jamais se sentir perdu dans la masse.",
     classes: [
         "Classes de la 6ème à la 3ème",
         "Section d'Enseignement Général et Professionnel Adapté (SEGPA)",
@@ -21,7 +21,7 @@ const presentation = {
                 <h2 class="text-3xl lg:text-4xl font-serif text-brand-primary">
                     {{ presentation.title }}
                 </h2>
-                <div class="space-y-6 text-gray-700 leading-relaxed text-lg">
+                <div class="space-y-6 text-gray-700 leading-relaxed text-m">
                     <p>{{ presentation.description }}</p>
                     <div class="grid gap-4">
                         <div v-for="item in presentation.classes" :key="item" class="flex items-center gap-3">
@@ -34,13 +34,34 @@ const presentation = {
                     <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-gold mb-2">Direction</p>
                     <p class="text-xl font-serif text-brand-primary">{{ presentation.director }}</p>
                 </div>
+
+                <div class="bg-brand-warm/40 p-6 rounded-xl border-l-4 border-brand-gold mt-8 shadow-sm">
+                    <p class="italic text-brand-primary mb-4 text-lg font-serif">
+                        « On ne laisse pas un élève décrocher sans réagir. L’équipe se parle, se concerte, et agit ensemble.
+                        »
+                    </p>
+                    <div>
+                        <p class="font-bold text-brand-primary text-lg">Un enseignant du collège</p>
+                    </div>
+                </div>
             </div>
-            <div class="relative">
-                <div
-                    class="absolute -top-4 -left-4 w-full h-full border-2 border-brand-gold opacity-20 transform -translate-x-2 -translate-y-2" />
-                <NuxtImg src="https://res.cloudinary.com/dlnbsf2ed/image/upload/v1779258799/Labo_ayjyxv.png"
-                    alt="Intérieur de l'école" format="webp" quality="80" loading="lazy" sizes="100vw lg:800px"
-                    class="hidden lg:block relative z-10 w-full h-125 object-cover rounded-sm shadow-xl" />
+
+            <div class="hidden lg:block lg:sticky lg:top-32 pb-12">
+                <div class="relative group">
+                    <!-- Éléments de décoration -->
+                    <div
+                        class="absolute -inset-4 border-2 border-brand-gold/30 rounded-xl transition-all duration-500 group-hover:-inset-3" />
+                    <div
+                        class="absolute inset-0 bg-brand-primary/5 translate-x-4 translate-y-4 rounded-xl transition-transform duration-500 group-hover:translate-x-3 group-hover:translate-y-3" />
+
+                    <!-- Image Principale -->
+                    <div class="relative bg-white p-3 shadow-xl rounded-xl z-10">
+                        <NuxtImg
+                            src="https://res.cloudinary.com/dlnbsf2ed/image/upload/v1779258799/Labo_ayjyxv.png"
+                            alt="Intérieur de l'école" format="webp" quality="80"
+                            loading="lazy" sizes="100vw lg:800px" class="w-full h-auto object-cover rounded-lg" />
+                    </div>
+                </div>
             </div>
         </div>
     </section>

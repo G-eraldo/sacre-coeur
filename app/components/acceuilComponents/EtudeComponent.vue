@@ -15,9 +15,9 @@ const educationLevels = [
     {
         title: "Collège",
         highlights: [
-            "Lorem ipsum dolor sit amet consectetur.",
-            "Lorem ipsum dolor sit amet consectetur.",
-            "Lorem ipsum dolor sit amet consectetur."
+            "Un parcours continu, sans rupture",
+            "Une ouverture sur le monde",
+            "Une taille humaine qui change tout"
         ],
         image: "https://res.cloudinary.com/dlnbsf2ed/image/upload/v1779258799/Labo_ayjyxv.png",
         url: "/college"
@@ -25,9 +25,9 @@ const educationLevels = [
     {
         title: "Segpa",
         highlights: [
-            "Lorem ipsum dolor sit amet consectetur.",
-            "Lorem ipsum dolor sit amet consectetur.",
-            "Lorem ipsum dolor sit amet consectetur.",
+            "Un tremplin, pas une voie de garage",
+            "Des ateliers concrets qui révèlent des talents",
+            "Une inclusion réelle dans l’établissement",
         ],
         image: "https://res.cloudinary.com/dlnbsf2ed/image/upload/v1779258797/Segpa_a%CC%80_Saint_Vincent_de_Paul_rzfly7.jpg",
         url: "/segpa"
@@ -35,9 +35,9 @@ const educationLevels = [
     {
         title: "Internat",
         highlights: [
-            "Lorem ipsum dolor sit amet consectetur.",
-            "Lorem ipsum dolor sit amet consectetur.",
-            "Lorem ipsum dolor sit amet consectetur.",
+            "Un « chez soi » loin de chez soi",
+            "Un levier de réussite scolaire",
+            "Accessible dès le CE2 — une opportunité rare",
         ],
         image: "https://res.cloudinary.com/dlnbsf2ed/image/upload/v1779261762/internat_loyev7.png",
         url: "/internat"
