@@ -83,24 +83,6 @@ useSeoMeta({ title: "Tarifs — Institution du Sacré-Cœur", ogImage: '/logo4.p
                                 </Table>
                             </CardContent>
                         </Card>
-
-                        <Card>
-                            <CardHeader class="pb-3">
-                                <CardTitle class="text-lg uppercase tracking-wide text-brand-primary">Complément
-                                    Internat</CardTitle>
-                            </CardHeader>
-                            <CardContent>
-                                <Table>
-                                    <TableBody>
-                                        <TableRow>
-                                            <TableCell class="font-medium">Primaire / Collège</TableCell>
-                                            <TableCell class="text-right">361,00 €</TableCell>
-                                        </TableRow>
-                                    </TableBody>
-                                </Table>
-                            </CardContent>
-                        </Card>
-
                         <Card>
                             <CardHeader class="pb-3">
                                 <CardTitle class="text-lg uppercase tracking-wide text-brand-primary">Cantine
