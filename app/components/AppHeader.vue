@@ -50,8 +50,8 @@ const navLinks = [
             :class="isScrolled ? 'h-18' : 'hidden'">
             <div class="flex items-center gap-3" :class="isScrolled ? '' : 'hidden'">
                 <NuxtLink to="/" class="flex items-center gap-3">
-                    <NuxtImg src="/logo4.png" alt="Logo de l'Institution du Sacré-Cœur de Breteuil" width="32"
-                        height="32" class="bg-white rounded p-0.5" loading="eager" fetchpriority="high" />
+                    <NuxtImg src="/logo4.png" alt="Logo de l'Institution du Sacré-Cœur de Breteuil" width="72"
+                        height="48" class="h-12 w-auto object-contain bg-white rounded p-1 shadow-sm" loading="eager" fetchpriority="high" />
                     <span class="text-lg font-serif font-bold tracking-tight sm:block">Sacré-Cœur de Breteuil</span>
                 </NuxtLink>
             </div>
@@ -61,7 +61,8 @@ const navLinks = [
                 class="hidden lg:flex items-center gap-8 transition-opacity duration-300"
                 :class="isScrolled ? 'opacity-100 h-16' : 'opacity-0 pointer-events-none w-0 h-0 overflow-hidden'">
                 <NuxtLink v-for="link in navLinks" :key="link.id" class="scroll-link hover:text-brand-gold"
-                    :to="link.to" :aria-current="route.path === link.to ? 'page' : undefined">{{ link.title }}</NuxtLink>
+                    :to="link.to" :aria-current="route.path === link.to ? 'page' : undefined">{{ link.title }}
+                </NuxtLink>
             </nav>
 
             <div class="flex items-center gap-4">
@@ -105,12 +106,9 @@ const navLinks = [
         <div v-if="isOpen" class="fixed inset-0 bg-black/50 z-40 lg:hidden" @click="isOpen = false" />
 
         <!-- Mobile Drawer -->
-        <Transition
-            enter-active-class="transition-all duration-300 ease-out"
-            leave-active-class="transition-all duration-200 ease-in"
-            enter-from-class="opacity-0 -translate-y-2"
-            enter-to-class="opacity-100 translate-y-0"
-            leave-from-class="opacity-100 translate-y-0"
+        <Transition enter-active-class="transition-all duration-300 ease-out"
+            leave-active-class="transition-all duration-200 ease-in" enter-from-class="opacity-0 -translate-y-2"
+            enter-to-class="opacity-100 translate-y-0" leave-from-class="opacity-100 translate-y-0"
             leave-to-class="opacity-0 -translate-y-2">
             <div v-show="isOpen" id="mobile-menu" class="lg:hidden bg-white shadow-xl py-6 relative z-50">
                 <div class="grid grid-cols-2 gap-x-4 gap-y-4 px-6">
