@@ -9,7 +9,7 @@ const { data: voyages, pending, error } = await useAsyncData('voyages-home', () 
     find('voyages', {
         fields: ['titre', 'description', 'publishedAt', 'slug', 'date_evenement'],
         populate: {
-            images: { fields: ['url', 'alternativeText'] }
+            images: { fields: ['url', 'alternativeText', 'mime', 'name'] }
         },
         filters: { date_evenement: { $notNull: true } },
         sort: ['date_evenement:desc'],
@@ -30,6 +30,10 @@ function getCloudinaryPublicId(url) {
     if (!url) return ''
     const match = url.match(/\/upload\/(?:v\d+\/)?(.+)$/)
     return match ? match[1] : url
+}
+
+function getCoverImage(images) {
+    return images?.find(img => img.mime?.startsWith('image/')) || null
 }
 </script>
 
@@ -66,9 +70,9 @@ function getCloudinaryPublicId(url) {
                             <CardDescription class="h-24">{{ voyage.description }}</CardDescription>
                         </CardHeader>
 
-                        <CardContent>
-                            <NuxtImg v-if="voyage.images?.[0]" :src="getCloudinaryPublicId(voyage.images[0].url)"
-                                :alt="voyage.images[0].alternativeText || voyage.titre" provider="cloudinary"
+                        <CardContent v-if="getCoverImage(voyage.images)">
+                            <NuxtImg :src="getCloudinaryPublicId(getCoverImage(voyage.images).url)"
+                                :alt="getCoverImage(voyage.images).alternativeText || voyage.titre" provider="cloudinary"
                                 format="webp" quality="70" loading="lazy" width="384" height="192"
                                 sizes="320px md:384px lg:384px" class="w-full h-48 object-cover rounded-lg" />
                         </CardContent>

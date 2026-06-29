@@ -20,7 +20,7 @@ const { data: voyages, pending, error } = await useAsyncData('voyages-list', () 
     find('voyages', {
         fields: ['titre', 'description', 'publishedAt', 'slug', 'date_evenement'],
         populate: {
-            images: { fields: ['url', 'alternativeText'] }
+            images: { fields: ['url', 'alternativeText', 'mime', 'name'] }
         },
         filters: { date_evenement: { $notNull: true } },
         sort: ['date_evenement:desc']
@@ -34,6 +34,10 @@ function formatDate(dateStr) {
         month: 'long',
         year: 'numeric'
     }).toUpperCase()
+}
+
+function getCoverImage(images) {
+    return images?.find(img => img.mime?.startsWith('image/')) || null
 }
 </script>
 
@@ -68,9 +72,9 @@ function formatDate(dateStr) {
                         <CardDescription class="h-24">{{ item.description }}</CardDescription>
                     </CardHeader>
 
-                    <CardContent>
-                        <NuxtImg v-if="item.images?.[0]" :src="item.images[0].url"
-                            :alt="item.images[0].alternativeText || item.titre" format="webp" quality="80"
+                    <CardContent v-if="getCoverImage(item.images)">
+                        <NuxtImg :src="getCoverImage(item.images).url"
+                            :alt="getCoverImage(item.images).alternativeText || item.titre" format="webp" quality="80"
                             loading="lazy" sizes="320px md:384px lg:384px"
                             class="w-full h-48 object-cover rounded-lg" />
                     </CardContent>

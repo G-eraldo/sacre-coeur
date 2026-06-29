@@ -9,7 +9,7 @@ const { data: actualites, pending, error } = useAsyncData('actualites-home', () 
     find('actualites', {
         fields: ['titre', 'description', 'publishedAt', 'slug', 'date_evenement'],
         populate: {
-            images: { fields: ['url', 'alternativeText'] }
+            images: { fields: ['url', 'alternativeText', 'mime', 'name'] }
         },
         filters: { date_evenement: { $notNull: true } },
         sort: ['date_evenement:desc'],
@@ -24,6 +24,10 @@ function formatDate(dateStr) {
         month: 'long',
         year: 'numeric'
     }).toUpperCase()
+}
+
+function getCoverImage(images) {
+    return images?.find(img => img.mime?.startsWith('image/')) || null
 }
 
 </script>
@@ -62,10 +66,10 @@ function formatDate(dateStr) {
                             <CardDescription class="line-clamp-3">{{ actualite.description }}</CardDescription>
                         </CardHeader>
 
-                        <CardContent>
+                        <CardContent v-if="getCoverImage(actualite.images)">
                             <div class="w-full h-48 overflow-hidden rounded-lg">
-                                <NuxtImg v-if="actualite.images?.[0]" :src="actualite.images[0].url"
-                                    :alt="actualite.images[0].alternativeText || actualite.titre" format="webp"
+                                <NuxtImg :src="getCoverImage(actualite.images).url"
+                                    :alt="getCoverImage(actualite.images).alternativeText || actualite.titre" format="webp"
                                     quality="80" loading="lazy" sizes="320px md:384px lg:384px"
                                     class="w-full h-full object-cover" />
                             </div>
