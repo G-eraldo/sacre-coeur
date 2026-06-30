@@ -16,6 +16,13 @@ export default defineEventHandler(async (event) => {
       isDemiPensionnaire,
     } = body;
 
+    if (!name || !email || !phone || !classeSouhaite) {
+      throw createError({
+        statusCode: 400,
+        statusMessage: "Certains champs obligatoires sont manquants.",
+      });
+    }
+
     const data = await resend.emails.send({
       from: "contact@lafabriqueducode.fr",
       to: `contact@lafabriqueducode.fr`,

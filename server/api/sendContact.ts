@@ -7,6 +7,13 @@ export default defineEventHandler(async (event) => {
     const body = await readBody(event);
     const { name, phone, email, textarea } = body;
 
+    if (!name || !email || !textarea) {
+      throw createError({
+        statusCode: 400,
+        statusMessage: "Certains champs obligatoires sont manquants.",
+      });
+    }
+
     const data = await resend.emails.send({
       from: "contact@lafabriqueducode.fr",
       to: `contact@lafabriqueducode.fr`,
