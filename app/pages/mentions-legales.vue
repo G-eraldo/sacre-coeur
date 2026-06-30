@@ -61,9 +61,9 @@ useSeoMeta({
               Hébergement
             </h2>
             <p class="text-slate-600 mb-4">
-              Le Site est hébergé par la société Vercel Inc., situé 340 S
-              Lemon Ave #4133, Walnut, CA 91789, États-Unis, (contact
-              téléphonique ou email : +15592887060).
+              Le Site est hébergé par la société IONOS SARL, située 7 Place 
+              de la Gare, BP 70109, 57200 Sarreguemines Cedex, France 
+              (contact téléphonique : +33 9 70 80 89 11).
             </p>
 
 
