@@ -157,9 +157,7 @@ watch(() => voyage.value, (newVoyage) => {
                                     quality="50" class="w-full aspect-video object-cover" />
                             </template>
                         </div>
-                        <p class="text-[11px] font-sans p-2 bg-white truncate lg:w-60 w-36">{{ media.alternativeText ||
-                            media.name?.replace(/\.[^/.]+$/, "") || 'Image' }}
-                        </p>
+
                     </div>
                 </div>
             </div>

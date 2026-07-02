@@ -26,12 +26,7 @@ function formatDate(dateStr) {
     }).toUpperCase()
 }
 
-function getCloudinaryPublicId(url) {
-    if (!url) return ''
-    const match = url.match(/\/upload\/(?:v\d+\/)?(.+)$/)
-    const idWithExt = match ? match[1] : url
-    return idWithExt.replace(/\.[^/.]+$/, "")
-}
+
 
 function getCoverImage(images) {
     return images?.find(img => img.mime?.startsWith('image/')) || null
@@ -72,8 +67,8 @@ function getCoverImage(images) {
                         </CardHeader>
 
                         <CardContent v-if="getCoverImage(voyage.images)">
-                            <NuxtImg :src="getCloudinaryPublicId(getCoverImage(voyage.images).url)"
-                                :alt="getCoverImage(voyage.images).alternativeText || voyage.titre" provider="cloudinary"
+                            <NuxtImg :src="getCoverImage(voyage.images).url"
+                                :alt="getCoverImage(voyage.images).alternativeText || voyage.titre"
                                 format="webp" quality="70" loading="lazy" width="384" height="192"
                                 sizes="320px md:384px lg:384px" class="w-full h-48 object-cover rounded-lg" />
                         </CardContent>
