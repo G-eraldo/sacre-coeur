@@ -29,7 +29,8 @@ function formatDate(dateStr) {
 function getCloudinaryPublicId(url) {
     if (!url) return ''
     const match = url.match(/\/upload\/(?:v\d+\/)?(.+)$/)
-    return match ? match[1] : url
+    const idWithExt = match ? match[1] : url
+    return idWithExt.replace(/\.[^/.]+$/, "")
 }
 
 function getCoverImage(images) {

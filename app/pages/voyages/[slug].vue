@@ -158,7 +158,7 @@ watch(() => voyage.value, (newVoyage) => {
                             </template>
                         </div>
                         <p class="text-[11px] font-sans p-2 bg-white truncate lg:w-60 w-36">{{ media.alternativeText ||
-                            media.name || 'Image' }}
+                            media.name?.replace(/\.[^/.]+$/, "") || 'Image' }}
                         </p>
                     </div>
                 </div>
