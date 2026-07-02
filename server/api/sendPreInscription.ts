@@ -25,7 +25,7 @@ export default defineEventHandler(async (event) => {
 
     const data = await resend.emails.send({
       from: "contact@sacrecoeur-breteuil.fr",
-      to: `contact@lafabriqueducode.fr`,
+      to: `administration@sacrecoeur-breteuil.fr`,
       subject: "Nouveau formulaire de contact",
       html: `
             <!DOCTYPE html>
