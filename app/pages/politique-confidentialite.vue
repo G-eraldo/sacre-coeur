@@ -26,7 +26,7 @@ useSeoMeta({
                     <div class="prose prose-slate max-w-none text-slate-600 space-y-8">
                         <p class="text-lg leading-relaxed">
                             La présente politique de confidentialité a pour objet d’informer les utilisateurs du site
-                            <span class="text-brand-gold font-bold">https://demo-sacre-coeur.vercel.app</span>
+                            <span class="text-brand-gold font-bold">https://www.sacrecoeur-breteuil.fr</span>
                             sur la manière dont l’Institution Sacré-Cœur collecte et traite leurs données personnelles
                             dans le cadre de l’utilisation du site et des formulaires qui y sont proposés.
                         </p>

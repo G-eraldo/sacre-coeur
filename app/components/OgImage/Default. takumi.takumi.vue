@@ -35,7 +35,7 @@ defineProps({
             <div class="px-4 py-2 bg-brand-primary text-white text-xl font-bold uppercase tracking-widest rounded-sm">
                 Breteuil
             </div>
-            <div class="text-white/40 text-xl italic">demo-sacre-coeur.vercel.app</div>
+            <div class="text-white/40 text-xl italic">https://www.sacrecoeur-breteuil.fr</div>
         </div>
     </div>
 </template>

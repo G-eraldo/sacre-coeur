@@ -29,7 +29,7 @@ export default defineNuxtConfig({
   },
 
   site: {
-    url: "https://demo-sacre-coeur.vercel.app",
+    url: "https://www.sacrecoeur-breteuil.fr",
     name: "Institution du Sacré-Cœur à Breteuil",
     description:
       "Site officiel de l'Institution du Sacré-Cœur à Breteuil : École, Collège (SEGPA) et Internat.",
@@ -43,7 +43,7 @@ export default defineNuxtConfig({
     identity: {
       type: "Organization",
       name: "Institution du Sacré-Cœur à Breteuil",
-      url: "https://demo-sacre-coeur.vercel.app",
+      url: "https://www.sacrecoeur-breteuil.fr",
       logo: "/logo4.png",
     },
   },

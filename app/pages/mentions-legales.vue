@@ -23,7 +23,7 @@ useSeoMeta({
             </h1>
             <p class="mt-4 text-lg text-slate-600">
               Informations légales et obligatoires concernant le site
-              <span class="text-brand-gold font-bold">demo-sacre-coeur.vercel.app</span>
+              <span class="text-brand-gold font-bold">https://www.sacrecoeur-breteuil.fr</span>
             </p>
           </div>
 
@@ -45,7 +45,7 @@ useSeoMeta({
             <p class="text-slate-600 mb-4">
               Le présent site, accessible à l’URL
               <span class="text-brand-gold font-bold">
-                https://demo-sacre-coeur.vercel.app/
+                https://www.sacrecoeur-breteuil.fr
               </span>
               (le « Site »), est édité par :
             </p>
@@ -61,8 +61,8 @@ useSeoMeta({
               Hébergement
             </h2>
             <p class="text-slate-600 mb-4">
-              Le Site est hébergé par la société IONOS SARL, située 7 Place 
-              de la Gare, BP 70109, 57200 Sarreguemines Cedex, France 
+              Le Site est hébergé par la société IONOS SARL, située 7 Place
+              de la Gare, BP 70109, 57200 Sarreguemines Cedex, France
               (contact téléphonique : +33 9 70 80 89 11).
             </p>
 
