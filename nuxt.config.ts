@@ -33,7 +33,7 @@ export default defineNuxtConfig({
     name: "Institution du Sacré-Cœur à Breteuil",
     description:
       "Site officiel de l'Institution du Sacré-Cœur à Breteuil : École, Collège (SEGPA) et Internat.",
-    indexable: false,
+    indexable: true,
     defaultLocale: "fr",
   },
   sitemap: {

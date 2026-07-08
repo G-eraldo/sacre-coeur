@@ -1,7 +1,7 @@
 export default defineSitemapEventHandler(async () => {
   const runtimeConfig = useRuntimeConfig();
   const baseUrl =
-    runtimeConfig.strapi.url || "https://backend.lafabriqueducode.fr";
+    runtimeConfig.strapi.url || "https://backend.sacrecoeur-breteuil.fr";
   const token = process.env.STRAPI_TOKEN;
 
   const fetchOptions = {
