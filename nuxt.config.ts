@@ -39,6 +39,9 @@ export default defineNuxtConfig({
   sitemap: {
     sources: ["/api/__sitemap__/urls"],
   },
+  routeRules: {
+    "/sitemap.xml": { prerender: false },
+  },
   schemaOrg: {
     identity: {
       type: "Organization",
