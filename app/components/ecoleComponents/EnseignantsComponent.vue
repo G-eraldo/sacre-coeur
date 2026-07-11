@@ -23,7 +23,7 @@ const horaires = {
     <section class="bg-brand-warm py-24 px-6 md:px-12">
         <div class="grid lg:grid-cols-2 gap-16 max-w-6xl mx-auto items-start">
 
-            <div class="lg:sticky lg:top-24">
+            <div id="horaires" class="lg:sticky lg:top-24">
                 <Card class="bg-brand-primary rounded-sm shadow-sm p-10 text-white relative overflow-hidden">
                     <div class="absolute left-0 top-0 bottom-0 w-1 bg-brand-gold" />
                     <div class="relative z-10">
@@ -74,7 +74,7 @@ const horaires = {
                     <div v-for="classe in liste" :key="classe.id"
                         class="py-5 flex flex-col md:border-b md:border-[#f0ebe3] hover:bg-[#f0ebe3] px-4 -mx-4 rounded-sm transition-all duration-300">
                         <span class="text-[10px] font-bold uppercase tracking-widest text-brand-gold mb-1">{{ classe.nom
-                            }}</span>
+                        }}</span>
                         <span class="text-gray-700 font-serif">{{ classe.enseignant }}</span>
                     </div>
                 </div>
