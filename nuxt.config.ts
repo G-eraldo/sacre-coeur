@@ -43,7 +43,9 @@ export default defineNuxtConfig({
     "/sitemap.xml": { prerender: false },
     "/13-college": { redirect: { to: "/college", statusCode: 301 } },
     "/12-l-ecole": { redirect: { to: "/l-ecole", statusCode: 301 } },
+    "/l-ecole/horaires": { redirect: { to: "/l-ecole#horaires", statusCode: 301 } },
     "/15-internat": { redirect: { to: "/internat", statusCode: 301 } },
+    "/college/horaires-et-structures": { redirect: { to: "/college#horaires", statusCode: 301 } },
   },
   schemaOrg: {
     identity: {
