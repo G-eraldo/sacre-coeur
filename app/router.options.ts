@@ -14,7 +14,7 @@ export default <RouterConfig> {
             behavior: 'smooth',
             top: 100,
           })
-        }, 100) // Small delay allows Nuxt page transitions and hydration to settle
+        }, 500) // Small delay allows Nuxt page transitions and hydration to settle
       })
     }
 
