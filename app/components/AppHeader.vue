@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/first-attribute-linebreak -->
 <script setup>
-import { BookMarkedIcon, BookOpenIcon, ChurchIcon, GraduationCapIcon, HomeIcon, InfoIcon, MenuIcon, PhoneIcon, SchoolIcon, XIcon } from 'lucide-vue-next';
+import { BookMarkedIcon, BookOpenIcon, ChurchIcon, GraduationCapIcon, HomeIcon, InfoIcon, MenuIcon, PhoneIcon, SchoolIcon, UsersIcon, XIcon } from 'lucide-vue-next';
 import { onMounted, onUnmounted, ref } from 'vue';
 
 const isOpen = ref(false)
@@ -38,7 +38,8 @@ const navLinks = [
     { id: 5, title: 'Internat', to: '/internat', icon: BookOpenIcon },
     { id: 6, title: 'A propos', to: '/a-propos', icon: InfoIcon },
     { id: 7, title: 'Pastorale', to: '/pastorale', icon: ChurchIcon },
-    { id: 8, title: 'Contact', to: '/contact', icon: PhoneIcon },
+    { id: 8, title: 'Personnels OGEC', to: '/personnels', icon: UsersIcon },
+    { id: 9, title: 'Contact', to: '/contact', icon: PhoneIcon },
 ]
 </script>
 
