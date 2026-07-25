@@ -10,7 +10,7 @@ const presentation = {
         "1 réseau d’aide, au service de la réussite et du suivi des élèves"
     ],
     description3: "À travers des projets pédagogiques, culturels, sportifs, pastoraux et solidaires, l’Institution du Sacré Cœur souhaite faire grandir chaque enfant dans un climat de confiance, d’exigence et de bienveillance.",
-    director: "Mme Voisin Bazélina",
+    director: "Mme Grioche Pauline",
     phone: "03.44.80.22.50",
     email: "primaire@sacrecoeur-breteuil.fr"
 }
