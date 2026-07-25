@@ -48,6 +48,7 @@ export default defineNuxtConfig({
     "/l-ecole/horaires": { redirect: { to: "/l-ecole#horaires", statusCode: 301 } },
     "/15-internat": { redirect: { to: "/internat", statusCode: 301 } },
     "/college/horaires-et-structures": { redirect: { to: "/college#horaires", statusCode: 301 } },
+    "/inscriptions/10-frontpage/133-inscription-en-ligne-rentree-2022": { redirect: { to: "/pre-inscription", statusCode: 301 } },
   },
   schemaOrg: {
     identity: {
