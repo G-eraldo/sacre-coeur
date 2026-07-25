@@ -9,9 +9,9 @@ import Textarea from '~/components/ui/textarea/Textarea.vue';
 
 useSeoMeta({
     title: 'Contact',
-    description: 'Une question ? Besoin d\'un renseignement ? Contactez l\'équipe de l\'Institution du Sacré-Cœur à Breteuil via notre formulaire en ligne.',
-    ogTitle: 'Institution du Sacré-Cœur à Breteuil — Contact',
-    ogDescription: 'Contactez l\'Institution du Sacré-Cœur à Breteuil.',
+    description: 'Une question ? Besoin d\'un renseignement ? Contactez l\'équipe de l\'Institution du Sacré Cœur à Breteuil via notre formulaire en ligne.',
+    ogTitle: 'Institution du Sacré Cœur à Breteuil — Contact',
+    ogDescription: 'Contactez l\'Institution du Sacré Cœur à Breteuil.',
     ogImage: '/logo4.png',
     ogType: 'website',
 })
@@ -54,7 +54,7 @@ async function submitForm() {
                 <h1 class="text-4xl lg:text-5xl font-serif text-brand-primary mb-6">
                     Contactez <br class="sm:hidden">
                     <span class="text-brand-gold">l'Institution</span>
-                    du Sacré-Cœur
+                    du Sacré Cœur
                 </h1>
                 <p class="text-lg text-gray-700 font-sans leading-relaxed">
                     Vous avez une question sur notre établissement, les admissions ou nos programmes ? <br

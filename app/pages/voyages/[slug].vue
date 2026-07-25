@@ -32,8 +32,8 @@ if (!voyage.value && !error.value) {
 
 useSeoMeta({
     title: () => `Voyage : ${voyage.value.titre}`,
-    description: () => `Découvrez le voyage "${voyage.value.titre}" de l'Institution du Sacré-Cœur.`,
-    ogTitle: () => `Institution du Sacré-Cœur — ${voyage.value.titre}`,
+    description: () => `Découvrez le voyage "${voyage.value.titre}" de l'Institution du Sacré Cœur.`,
+    ogTitle: () => `Institution du Sacré Cœur — ${voyage.value.titre}`,
     ogDescription: () => voyage.value?.description ?? '',
     ogImage: () => voyage.value?.images?.find(img => img.mime?.startsWith('image/'))?.url ?? '/logo4.png',
     ogType: 'article',

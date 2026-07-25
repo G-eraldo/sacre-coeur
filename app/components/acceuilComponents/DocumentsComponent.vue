@@ -39,7 +39,7 @@ function getPdfPreview(url) {
                     <div class="w-20 h-px bg-brand-gold mx-auto mb-6" />
                     <p class="text-gray-600 font-sans text-lg">
                         Consultez et téléchargez les documents officiels, formulaires et brochures de
-                        l'Institution du Sacré-Cœur.
+                        l'Institution du Sacré Cœur.
                     </p>
                 </div>
 

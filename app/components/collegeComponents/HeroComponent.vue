@@ -5,7 +5,7 @@
                 Le Collège
             </span>
             <h1 class="text-5xl lg:text-7xl font-serif text-brand-primary mb-8 leading-tight">
-                Le Collège du <br class="hidden lg:block"> Sacré-Cœur
+                Le Collège du <br class="hidden lg:block"> Sacré Cœur
             </h1>
             <p class="max-w-2xl mx-auto text-lg text-gray-700 font-sans leading-relaxed">
                 Un établissement privé catholique sous contrat d'État, ouvert à tous,

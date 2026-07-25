@@ -5,7 +5,7 @@
 <template>
     <footer
         class="bg-brand-primary text-white p-6 py-8 flex flex-col lg:flex-row justify-center items-center gap-6 text-center lg:text-left">
-        <p class="text-sm lg:text-base">© 2026 Sacré-Cœur Breteuil. Site édité par <span>
+        <p class="text-sm lg:text-base">© 2026 Sacré Cœur Breteuil. Site édité par <span>
                 <NuxtLink to="https://lafabriqueducode.fr" target="_blank" class="hover:text-brand-gold cursor-pointer">
                     La fabrique du code
                 </NuxtLink>

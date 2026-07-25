@@ -14,14 +14,14 @@ import {
     TableRow,
 } from '@/components/ui/table';
 
-useSeoMeta({ title: "Tarifs — Institution du Sacré-Cœur", ogImage: '/logo4.png' })
+useSeoMeta({ title: "Tarifs — Institution du Sacré Cœur", ogImage: '/logo4.png' })
 </script>
 
 <template>
     <main id="main-content" class="pt-40 lg:pt-56 pb-20 min-h-screen bg-brand-warm">
         <div class="max-w-5xl mx-auto px-6">
             <div class="text-center mb-16">
-                <p class="text-xs font-bold uppercase tracking-[0.3em] text-brand-gold mb-3">Institution du Sacré-Cœur
+                <p class="text-xs font-bold uppercase tracking-[0.3em] text-brand-gold mb-3">Institution du Sacré Cœur
                 </p>
                 <h1 class="text-4xl lg:text-5xl font-serif text-brand-primary mb-4">Règlement Financier</h1>
                 <p class="text-2xl font-bold text-gray-700">2026/2027</p>

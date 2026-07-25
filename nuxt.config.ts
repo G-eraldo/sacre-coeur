@@ -30,9 +30,9 @@ export default defineNuxtConfig({
 
   site: {
     url: "https://www.sacrecoeur-breteuil.fr",
-    name: "Institution du Sacré-Cœur à Breteuil",
+    name: "Institution du Sacré Cœur à Breteuil",
     description:
-      "Site officiel de l'Institution du Sacré-Cœur à Breteuil : École, Collège (SEGPA) et Internat.",
+      "Site officiel de l'Institution du Sacré Cœur à Breteuil : École, Collège (SEGPA) et Internat.",
     indexable: true,
     defaultLocale: "fr",
   },
@@ -41,6 +41,8 @@ export default defineNuxtConfig({
   },
   routeRules: {
     "/sitemap.xml": { prerender: false },
+    "/11-l-etablissement": { redirect: { to: "/a-propos", statusCode: 301 } },
+    "/l-etablissement/le-mot-du-directeur": { redirect: { to: "/#mot-du-directeur", statusCode: 301 } },
     "/13-college": { redirect: { to: "/college", statusCode: 301 } },
     "/12-l-ecole": { redirect: { to: "/l-ecole", statusCode: 301 } },
     "/l-ecole/horaires": { redirect: { to: "/l-ecole#horaires", statusCode: 301 } },
@@ -50,7 +52,7 @@ export default defineNuxtConfig({
   schemaOrg: {
     identity: {
       type: "Organization",
-      name: "Institution du Sacré-Cœur à Breteuil",
+      name: "Institution du Sacré Cœur à Breteuil",
       url: "https://www.sacrecoeur-breteuil.fr",
       logo: "/logo4.png",
     },

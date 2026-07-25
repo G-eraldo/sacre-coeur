@@ -7,7 +7,7 @@ import { MailIcon, MapIcon, PhoneIcon } from 'lucide-vue-next';
     <section class="bg-brand-dark text-[#E5E5E5] py-16 px-4 lg:px-20">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
             <div>
-                <NuxtImg src="/logo4.png" alt="Logo de l'Institution du Sacré-Cœur de Breteuil"
+                <NuxtImg src="/logo4.png" alt="Logo de l'Institution du Sacré Cœur de Breteuil"
                     class="lg:w-52 lg:h-52 w-24 h-24 object-contain" width="208" height="208" loading="lazy" />
             </div>
             <div class="space-y-8">

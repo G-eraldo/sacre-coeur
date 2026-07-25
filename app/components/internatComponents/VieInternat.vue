@@ -2,7 +2,7 @@
 const vieInternat = [
     {
         title: "Un « chez soi » loin de chez soi",
-        text: "Loin d’être un simple dortoir, l’internat du Sacré-Cœur est un véritable lieu de vie. Les enfants y ont leurs habitudes, leurs repas partagés, leurs soirées encadrées, leurs espaces pour souffler. Les équipes veillent à ce que chaque élève se sente accueilli, accompagné et en sécurité. L’internat, c’est aussi apprendre à vivre avec les autres : partager l’espace, respecter les règles, prendre soin de ses camarades.",
+        text: "Loin d’être un simple dortoir, l’internat du Sacré Cœur est un véritable lieu de vie. Les enfants y ont leurs habitudes, leurs repas partagés, leurs soirées encadrées, leurs espaces pour souffler. Les équipes veillent à ce que chaque élève se sente accueilli, accompagné et en sécurité. L’internat, c’est aussi apprendre à vivre avec les autres : partager l’espace, respecter les règles, prendre soin de ses camarades.",
         image: "https://res.cloudinary.com/dlnbsf2ed/image/upload/v1780047955/received_1570690504155646_vzps7e.jpg"
 
 
@@ -16,7 +16,7 @@ const vieInternat = [
     },
     {
         title: "Accessible dès le CE2 — une opportunité rare",
-        text: "L’internat du Sacré-Cœur est l’un des rares à accueillir des enfants dès le CE2. C’est une opportunité précieuse pour les familles éloignées géographiquement, les parents aux horaires décalés, ou ceux qui cherchent pour leur enfant un cadre plus structurant et stimulant. L’accueil y est adapté à l’âge : les plus jeunes bénéficient d’une attention particulière et d’un encadrement resserré.",
+        text: "L’internat du Sacré Cœur est l’un des rares à accueillir des enfants dès le CE2. C’est une opportunité précieuse pour les familles éloignées géographiquement, les parents aux horaires décalés, ou ceux qui cherchent pour leur enfant un cadre plus structurant et stimulant. L’accueil y est adapté à l’âge : les plus jeunes bénéficient d’une attention particulière et d’un encadrement resserré.",
         image: "https://res.cloudinary.com/dlnbsf2ed/image/upload/v1779258799/noel_internat_pns38p.png"
     }
 ]

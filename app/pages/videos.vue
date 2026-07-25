@@ -15,7 +15,7 @@ const videos = computed(() => videosData.value?.data ?? [])
 
 useSeoMeta({
     title: 'Témoignages',
-    description: 'Écoutez les témoignages de notre communauté autour du Sacré-Cœur de Breteuil.',
+    description: 'Écoutez les témoignages de notre communauté autour du Sacré Cœur de Breteuil.',
     ogImage: '/logo4.png',
     ogType: 'website',
 })
@@ -30,7 +30,7 @@ useSeoMeta({
                     Écoutez les voix de notre communauté
                 </h1>
                 <p class="text-gray-600 max-w-2xl mx-auto">
-                    Découvrez comment le Sacré-Cœur a touché la vie de nos paroissiens.
+                    Découvrez comment le Sacré Cœur a touché la vie de nos paroissiens.
                     Des histoires authentiques de foi, de transformation et d'espérance.
                 </p>
             </div>

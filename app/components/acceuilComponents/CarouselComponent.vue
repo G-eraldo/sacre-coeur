@@ -32,7 +32,7 @@ const images = [
     },
     {
         url: 'https://res.cloudinary.com/dlnbsf2ed/image/upload/v1779258797/CM2_ndqjao.png',
-        title: 'L\'esprit Sacré-Cœur',
+        title: 'L\'esprit Sacré Cœur',
         subtitle: 'Plus qu\'une école, un lieu de vie et de partage pour nos futurs citoyens.'
     }
 ]

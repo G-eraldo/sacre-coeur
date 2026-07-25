@@ -50,9 +50,9 @@ const navLinks = [
             :class="isScrolled ? 'h-18' : 'hidden'">
             <div class="flex items-center gap-3" :class="isScrolled ? '' : 'hidden'">
                 <NuxtLink to="/" class="flex items-center gap-3">
-                    <NuxtImg src="/logo4.png" alt="Logo de l'Institution du Sacré-Cœur de Breteuil" width="72"
+                    <NuxtImg src="/logo4.png" alt="Logo de l'Institution du Sacré Cœur de Breteuil" width="72"
                         height="48" class="h-12 w-auto object-contain bg-white rounded p-1 shadow-sm" loading="eager" fetchpriority="high" />
-                    <span class="text-lg font-serif font-bold tracking-tight sm:block">Sacré-Cœur de Breteuil</span>
+                    <span class="text-lg font-serif font-bold tracking-tight sm:block">Sacré Cœur de Breteuil</span>
                 </NuxtLink>
             </div>
 
@@ -83,7 +83,7 @@ const navLinks = [
                     <!-- Visual title only; accessible h1 is in the page -->
                     <NuxtLink to="/" class="text-3xl lg:text-5xl text-black tracking-wide font-serif"
                         aria-hidden="true">
-                        Sacré-Cœur de Breteuil
+                        Sacré Cœur de Breteuil
                     </NuxtLink>
                 </div>
                 <button class="mr-4 lg:hidden" :aria-label="isOpen ? 'Fermer le menu' : 'Ouvrir le menu'"

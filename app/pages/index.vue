@@ -9,9 +9,9 @@ import VideoComponent from '~/components/acceuilComponents/VideoComponent.vue';
 
 useSeoMeta({
     title: 'Accueil',
-    description: 'Bienvenue sur le site officiel de l\'Institution du Sacré-Cœur à Breteuil. Découvrez notre école, notre collège avec section SEGPA et notre internat.',
-    ogTitle: 'Institution du Sacré-Cœur à Breteuil — Accueil',
-    ogDescription: 'Bienvenue sur le site officiel de l\'Institution du Sacré-Cœur à Breteuil.',
+    description: 'Bienvenue sur le site officiel de l\'Institution du Sacré Cœur à Breteuil. Découvrez notre école, notre collège avec section SEGPA et notre internat.',
+    ogTitle: 'Institution du Sacré Cœur à Breteuil — Accueil',
+    ogDescription: 'Bienvenue sur le site officiel de l\'Institution du Sacré Cœur à Breteuil.',
     ogImage: '/logo4.png',
     ogType: 'website',
 })
@@ -19,7 +19,7 @@ useSeoMeta({
 
 <template>
     <main id="main-content" aria-label="Contenu principal" class="relative w-full">
-        <h1 class="sr-only">Sacré-Cœur de Breteuil</h1>
+        <h1 class="sr-only">Sacré Cœur de Breteuil</h1>
         <CarouselComponent />
         <InstitutionComponent />
         <ActualiteComponent />

@@ -155,7 +155,7 @@ watch(videos, (newVideos) => {
                     <ClientOnly>
                         <iframe v-if="isVisiteLoaded" src="/visite/app-files/index.html"
                             class="w-full h-112.5 sm:h-137.5 lg:h-162.5" style="border:none; display:block;"
-                            title="Visite virtuelle de l'Institution Sacré-Cœur" allowfullscreen />
+                            title="Visite virtuelle de l'Institution Sacré Cœur" allowfullscreen />
                         <template #fallback>
                             <div class="w-full h-112.5 bg-gray-100 flex items-center justify-center">
                                 <p class="text-gray-400">Chargement de la visite...</p>
@@ -177,7 +177,7 @@ watch(videos, (newVideos) => {
                     <ClientOnly>
                         <iframe v-if="isInternatLoaded" src="/internat/app-files/index.html"
                             class="w-full h-112.5 sm:h-137.5 lg:h-162.5" style="border:none; display:block;"
-                            title="Visite virtuelle de l'internat de l'Institution Sacré-Cœur" allowfullscreen />
+                            title="Visite virtuelle de l'internat de l'Institution Sacré Cœur" allowfullscreen />
                         <template #fallback>
                             <div class="w-full h-112.5 bg-gray-100 flex items-center justify-center">
                                 <p class="text-gray-400">Chargement de la visite...</p>

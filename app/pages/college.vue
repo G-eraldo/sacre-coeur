@@ -8,9 +8,9 @@ import PresentationComponent from '~/components/collegeComponents/PresentationCo
 
 useSeoMeta({
     title: 'Le Collège',
-    description: 'Découvrez le collège de l\'Institution du Sacré-Cœur à Breteuil : notre projet pédagogique, nos enseignants et les atouts de notre établissement.',
-    ogTitle: 'Institution du Sacré-Cœur à Breteuil — Le Collège',
-    ogDescription: 'Découvrez le collège de l\'Institution du Sacré-Cœur à Breteuil.',
+    description: 'Découvrez le collège de l\'Institution du Sacré Cœur à Breteuil : notre projet pédagogique, nos enseignants et les atouts de notre établissement.',
+    ogTitle: 'Institution du Sacré Cœur à Breteuil — Le Collège',
+    ogDescription: 'Découvrez le collège de l\'Institution du Sacré Cœur à Breteuil.',
     ogImage: '/logo4.png',
     ogType: 'website',
 })

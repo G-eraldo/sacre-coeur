@@ -10,7 +10,7 @@
             </h1>
             <p class="max-w-2xl mx-auto text-lg text-gray-700 font-sans leading-relaxed">
                 Un cadre bienveillant pour l'épanouissement et la réussite de chaque enfant,
-                au sein du collège Sacré-Cœur de Breteuil.
+                au sein du collège Sacré Cœur de Breteuil.
             </p>
             <div class="mt-12 flex justify-center">
                 <div class="w-15 h-0.75 bg-brand-gold" />

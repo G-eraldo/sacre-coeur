@@ -7,7 +7,7 @@ const projetPedagogique = {
         { name: "Eveil et découverte", icon: LucideCompass },
         { name: "Autonomie", icon: LucideUserCheck }
     ],
-    description: "L'établissement du Sacré-Cœur propose un accompagnement pédagogique personnalisé renforcé. Ces études dirigées visent à donner aux élèves les moyens d'apprendre à apprendre."
+    description: "L'établissement du Sacré Cœur propose un accompagnement pédagogique personnalisé renforcé. Ces études dirigées visent à donner aux élèves les moyens d'apprendre à apprendre."
 }
 </script>
 

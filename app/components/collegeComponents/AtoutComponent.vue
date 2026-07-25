@@ -2,7 +2,7 @@
 const atouts = [
     {
         title: "Un parcours continu, sans rupture",
-        text: "Au Sacré-Cœur, l’entrée en 6ème n’est pas un saut dans l’inconnu. Les élèves qui ont grandi dans notre école primaire retrouvent des adultes qui les connaissent, un environnement familier et une communauté soudée. Pour les familles qui nous rejoignent en collège, l’accueil est personnalisé et le suivi immédiat.",
+        text: "Au Sacré Cœur, l’entrée en 6ème n’est pas un saut dans l’inconnu. Les élèves qui ont grandi dans notre école primaire retrouvent des adultes qui les connaissent, un environnement familier et une communauté soudée. Pour les familles qui nous rejoignent en collège, l’accueil est personnalisé et le suivi immédiat.",
         image: "https://res.cloudinary.com/dlnbsf2ed/image/upload/v1780047956/received_1389681735871320_itapmp.jpg"
     },
     {

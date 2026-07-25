@@ -1,7 +1,7 @@
 <script setup>
 const presentation = {
     title: "Vivre et apprendre ensemble au Collège",
-    description: "Le collège du Sacré-Cœur, c’est quatre années décisives dans un cadre que les élèves connaissent et où ils se sentent attendus. La continuité avec l’école primaire, la taille humaine de l’établissement et l’engagement de chaque enseignant font du collège un lieu où chaque jeune peut construire son parcours en confiance, sans jamais se sentir perdu dans la masse.",
+    description: "Le collège du Sacré Cœur, c’est quatre années décisives dans un cadre que les élèves connaissent et où ils se sentent attendus. La continuité avec l’école primaire, la taille humaine de l’établissement et l’engagement de chaque enseignant font du collège un lieu où chaque jeune peut construire son parcours en confiance, sans jamais se sentir perdu dans la masse.",
     classes: [
         "Classes de la 6ème à la 3ème",
         "Section d'Enseignement Général et Professionnel Adapté (SEGPA)",

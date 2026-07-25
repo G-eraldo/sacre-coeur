@@ -34,7 +34,7 @@ const presentation = {
                 <div
                     class="absolute -top-4 -left-4 w-full h-full border-2 border-brand-gold opacity-20 transform -translate-x-2 -translate-y-2" />
                 <NuxtImg src="https://res.cloudinary.com/dlnbsf2ed/image/upload/v1779258797/pasto_eglise_prrfd8.png"
-                    alt="Bâtiment Sacré-Cœur" format="webp" quality="80" loading="lazy" sizes="100vw lg:800px"
+                    alt="Bâtiment Sacré Cœur" format="webp" quality="80" loading="lazy" sizes="100vw lg:800px"
                     class="hidden lg:block relative z-10 w-full h-125 object-cover rounded-sm shadow-xl" />
             </div>
         </div>

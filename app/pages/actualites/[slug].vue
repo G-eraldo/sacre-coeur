@@ -33,7 +33,7 @@ if (!article.value && !error.value) {
 useSeoMeta({
     title: () => article.value?.titre ?? 'Actualité',
     description: () => article.value?.description ?? '',
-    ogTitle: () => `Institution du Sacré-Cœur — ${article.value?.titre ?? ''}`,
+    ogTitle: () => `Institution du Sacré Cœur — ${article.value?.titre ?? ''}`,
     ogDescription: () => article.value?.description ?? '',
     ogImage: () => article.value?.images?.find(img => img.mime?.startsWith('image/'))?.url ?? '/logo4.png',
     ogType: 'article',

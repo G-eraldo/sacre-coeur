@@ -26,7 +26,7 @@
                         </Button>
                         <Button as-child variant="outline"
                             class="border-brand-primary text-brand-primary px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-brand-gold hover:text-white hover:border-brand-gold transition-all rounded-sm">
-                            <NuxtLink to="/contact" aria-label="En savoir plus sur l'Institution du Sacré-Cœur">Nous
+                            <NuxtLink to="/contact" aria-label="En savoir plus sur l'Institution du Sacré Cœur">Nous
                                 contacter</NuxtLink>
                         </Button>
                     </div>

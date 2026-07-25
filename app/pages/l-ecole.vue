@@ -8,9 +8,9 @@ import PresentationComponent from '~/components/ecoleComponents/PresentationComp
 
 useSeoMeta({
     title: 'L\'école',
-    description: 'Découvrez l\'école de l\'Institution du Sacré-Cœur à Breteuil : sa pédagogie, son équipe enseignante et son cadre de vie.',
-    ogTitle: 'Institution du Sacré-Cœur à Breteuil — L\'école',
-    ogDescription: 'Découvrez l\'école de l\'Institution du Sacré-Cœur à Breteuil.',
+    description: 'Découvrez l\'école de l\'Institution du Sacré Cœur à Breteuil : sa pédagogie, son équipe enseignante et son cadre de vie.',
+    ogTitle: 'Institution du Sacré Cœur à Breteuil — L\'école',
+    ogDescription: 'Découvrez l\'école de l\'Institution du Sacré Cœur à Breteuil.',
     ogImage: '/logo4.png',
     ogType: 'website',
 })

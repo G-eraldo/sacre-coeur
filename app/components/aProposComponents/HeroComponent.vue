@@ -5,7 +5,7 @@
                 Notre Histoire & Nos Valeurs
             </span>
             <h1 class="text-5xl lg:text-7xl font-serif text-brand-primary mb-8 leading-tight">
-                L'Institution <br class="hidden lg:block"> du Sacré-Cœur
+                L'Institution <br class="hidden lg:block"> du Sacré Cœur
             </h1>
             <p class="max-w-2xl mx-auto text-lg text-gray-700 font-sans leading-relaxed">
                 Un établissement familial au service de la réussite et de l'épanouissement

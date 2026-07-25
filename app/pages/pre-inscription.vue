@@ -14,9 +14,9 @@ import SelectValue from '~/components/ui/select/SelectValue.vue';
 
 useSeoMeta({
     title: 'Pré-inscription',
-    description: 'Inscrivez votre enfant à l\'Institution du Sacré-Cœur à Breteuil via notre formulaire de pré-inscription en ligne.',
-    ogTitle: 'Institution du Sacré-Cœur à Breteuil — Pré-inscription',
-    ogDescription: 'Pré-inscrivez votre enfant au Sacré-Cœur à Breteuil.',
+    description: 'Inscrivez votre enfant à l\'Institution du Sacré Cœur à Breteuil via notre formulaire de pré-inscription en ligne.',
+    ogTitle: 'Institution du Sacré Cœur à Breteuil — Pré-inscription',
+    ogDescription: 'Pré-inscrivez votre enfant au Sacré Cœur à Breteuil.',
     ogImage: '/logo4.png',
     ogType: 'website',
 })
@@ -88,10 +88,10 @@ async function submitForm() {
                 <h1 class="text-4xl lg:text-5xl font-serif text-brand-primary mb-6">
                     Pré-inscrire <br class="sm:hidden">
                     <span class="text-brand-gold">mon enfant</span>
-                    au Sacré-Cœur
+                    au Sacré Cœur
                 </h1>
                 <p class="text-lg text-gray-700 font-sans leading-relaxed">
-                    Remplissez ce formulaire pour pré-inscrire votre enfant au Sacré-Cœur. <br class="hidden lg:block">
+                    Remplissez ce formulaire pour pré-inscrire votre enfant au Sacré Cœur. <br class="hidden lg:block">
                     Nous vous contacterons dans les plus brefs délais pour fixer un rendez-vous.
                 </p>
             </div>

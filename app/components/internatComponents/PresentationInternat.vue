@@ -1,6 +1,6 @@
 <script setup>
 const presentation = {
-    title: "Vivre au Sacré-Cœur",
+    title: "Vivre au Sacré Cœur",
     description: "L’internat Louis et Zélie Martin accueille les élèves du CE2 à la 3ème dans un cadre structurant, chaleureux et exigeant. C’est un lieu de vie à part entière, où les enfants grandissent, apprennent à vivre ensemble et gagnent en autonomie. Pour de nombreuses familles, l’internat est une solution pratique. Pour les élèves, c’est souvent bien plus : une expérience qui les construit.",
     points: [
         "Un accueil mixte pour garçons et filles",

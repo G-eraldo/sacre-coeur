@@ -1,7 +1,7 @@
 <script setup>
 const presentation = {
     title: "Présentation de la SEGPA",
-    description: "La SEGPA du Sacré-Cœur, c’est un dispositif qui croit en chaque élève — y compris et surtoutceux que le système scolaire traditionnel a parfois blessés. Ici, on repart des forces de chaquejeune. On lui redonne le goût d’apprendre, le plaisir de réussir, et on lui ouvre des perspectivesconcrètes et valorisantes.",
+    description: "La SEGPA du Sacré Cœur, c’est un dispositif qui croit en chaque élève — y compris et surtoutceux que le système scolaire traditionnel a parfois blessés. Ici, on repart des forces de chaquejeune. On lui redonne le goût d’apprendre, le plaisir de réussir, et on lui ouvre des perspectivesconcrètes et valorisantes.",
     points: [
         "Un enseignement adapté aux rythmes de chacun",
         "Des classes à effectifs réduits (maximum 16 élèves)",

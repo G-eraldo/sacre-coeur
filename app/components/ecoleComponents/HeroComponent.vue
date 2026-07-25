@@ -5,7 +5,7 @@
                 L'école élémentaire & maternelle
             </span>
             <h1 class="text-5xl lg:text-7xl font-serif text-brand-primary mb-8 leading-tight">
-                L'École du <br class="hidden lg:block"> Sacré-Cœur
+                L'École du <br class="hidden lg:block"> Sacré Cœur
             </h1>
             <p class="max-w-2xl mx-auto text-lg text-gray-700 font-sans leading-relaxed">
                 Un cadre bienveillant pour l'épanouissement et la réussite de chaque enfant,

@@ -4,10 +4,10 @@ import TempsFortCard from '~/components/calendrier/TempsFortCard.vue'
 import VacancesCard from '~/components/calendrier/VacancesCard.vue'
 
 useSeoMeta({
-    title: 'Calendrier scolaire — Sacré-Cœur de Breteuil',
-    description: 'Consultez les dates des vacances scolaires et du calendrier de l\'Institution Sacré-Cœur de Breteuil, Zone B.',
-    ogTitle: 'Calendrier scolaire — Sacré-Cœur de Breteuil',
-    ogDescription: 'Dates des vacances scolaires Zone B pour l\'Institution Sacré-Cœur de Breteuil.'
+    title: 'Calendrier scolaire — Sacré Cœur de Breteuil',
+    description: 'Consultez les dates des vacances scolaires et du calendrier de l\'Institution Sacré Cœur de Breteuil, Zone B.',
+    ogTitle: 'Calendrier scolaire — Sacré Cœur de Breteuil',
+    ogDescription: 'Dates des vacances scolaires Zone B pour l\'Institution Sacré Cœur de Breteuil.'
 })
 
 // ─── Constantes ────────────────────────────────────────────────────────────────

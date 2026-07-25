@@ -7,9 +7,9 @@ import PresentationComponent from '~/components/segpaComponents/PresentationComp
 
 useSeoMeta({
     title: 'La SEGPA',
-    description: 'Découvrez la Section d\'Enseignement Général et Professionnel Adapté (SEGPA) de l\'Institution du Sacré-Cœur à Breteuil.',
-    ogTitle: 'Institution du Sacré-Cœur à Breteuil — La SEGPA',
-    ogDescription: 'Découvrez la SEGPA de l\'Institution du Sacré-Cœur à Breteuil.',
+    description: 'Découvrez la Section d\'Enseignement Général et Professionnel Adapté (SEGPA) de l\'Institution du Sacré Cœur à Breteuil.',
+    ogTitle: 'Institution du Sacré Cœur à Breteuil — La SEGPA',
+    ogDescription: 'Découvrez la SEGPA de l\'Institution du Sacré Cœur à Breteuil.',
     ogImage: '/logo4.png',
     ogType: 'website',
 })

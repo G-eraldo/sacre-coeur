@@ -24,7 +24,7 @@ export default defineEventHandler(async (event) => {
             <head>
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Nouveau Message de Contact - Institution Sacré-Cœur</title>
+                <title>Nouveau Message de Contact - Institution Sacré Cœur</title>
                 <style>
                     body {
                         font-family: 'Poppins', Arial, sans-serif;
@@ -117,7 +117,7 @@ export default defineEventHandler(async (event) => {
             <body>
                 <div class="container">
                     <div class="header">
-                        <h1>Institution Sacré-Cœur</h1>
+                        <h1>Institution Sacré Cœur</h1>
                         <div style="width: 40px; height: 2px; background: #C4A55F; margin: 15px auto;"></div>
                     </div>
                     
@@ -144,7 +144,7 @@ export default defineEventHandler(async (event) => {
 
                     <div class="footer">
                         Ceci est une notification automatique de votre site web.<br/>
-                        Institution Sacré-Cœur de Breteuil
+                        Institution Sacré Cœur de Breteuil
                     </div>
                 </div>
             </body>

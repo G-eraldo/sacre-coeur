@@ -1,5 +1,5 @@
 <template>
-    <section class="w-full py-16 lg:py-24 bg-white">
+    <section id="mot-du-directeur" class="w-full py-16 lg:py-24 bg-white">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
 
@@ -14,7 +14,7 @@
 
                     <div class="space-y-5 text-gray-700 leading-relaxed text-base">
                         <p class="font-bold text-xl text-brand-primary mb-2">
-                            Bienvenue à l'Institution du Sacré-Cœur de Breteuil.
+                            Bienvenue à l'Institution du Sacré Cœur de Breteuil.
                         </p>
                         <p>
                             Choisir une école pour son enfant, c'est une décision qui engage. Vous cherchez un endroit
@@ -26,7 +26,7 @@
                             équipes s'attachent à tenir chaque jour.
                         </p>
                         <p>
-                            L'Institution du Sacré-Cœur, c'est <span class="text-brand-gold font-bold">252
+                            L'Institution du Sacré Cœur, c'est <span class="text-brand-gold font-bold">252
                                 élèves</span> de la toute petite section à la troisième —
                             une école maternelle et élémentaire, un collège avec dispositif ULIS, une SEGPA et un
                             internat. Un ensemble scolaire complet, <span class="text-brand-gold font-bold">à taille
@@ -71,7 +71,7 @@
                                 <p class="font-bold text-brand-primary text-lg">Bazelina Voisin</p>
                                 <p class="text-sm text-gray-600 mt-1">Cheffe d'établissement coordinatrice École —
                                     Collège — SEGPA — Internat</p>
-                                <p class="text-sm text-gray-600">Institution du Sacré-Cœur, Breteuil-sur-Noye</p>
+                                <p class="text-sm text-gray-600">Institution du Sacré Cœur, Breteuil-sur-Noye</p>
                                 <p class="text-sm font-bold text-brand-primary mt-1">03 44 80 22 50</p>
                             </div>
                         </div>
@@ -86,7 +86,7 @@
                         </Button>
                         <Button as-child variant="outline"
                             class="border-brand-primary text-brand-primary px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-brand-gold hover:text-white hover:border-brand-gold transition-all rounded-sm">
-                            <NuxtLink to="/a-propos" aria-label="En savoir plus sur l'Institution du Sacré-Cœur">En
+                            <NuxtLink to="/a-propos" aria-label="En savoir plus sur l'Institution du Sacré Cœur">En
                                 savoir plus</NuxtLink>
                         </Button>
                     </div>
@@ -105,7 +105,7 @@
                         <div class="relative bg-white p-3 shadow-xl rounded-xl z-10">
                             <NuxtImg
                                 src="https://res.cloudinary.com/dlnbsf2ed/image/upload/v1779260240/devanture_tg0ajw.png"
-                                alt="Campus de l'Institution du Sacré-Cœur de Breteuil" format="webp" quality="80"
+                                alt="Campus de l'Institution du Sacré Cœur de Breteuil" format="webp" quality="80"
                                 loading="lazy" sizes="100vw lg:600px" class="w-full h-auto object-cover rounded-lg" />
                         </div>
                     </div>

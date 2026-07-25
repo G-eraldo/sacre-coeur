@@ -6,9 +6,9 @@ import PastoralePresentationComponent from '~/components/pastoraleComponents/Pas
 
 useSeoMeta({
     title: 'La Pastorale',
-    description: 'Découvrez l\'animation pastorale à l\'Institution du Sacré-Cœur : nos engagements, nos actions et le projet d\'animation.',
-    ogTitle: 'Institution du Sacré-Cœur à Breteuil — La Pastorale',
-    ogDescription: 'Découvrez l\'animation pastorale à l\'Institution du Sacré-Cœur.',
+    description: 'Découvrez l\'animation pastorale à l\'Institution du Sacré Cœur : nos engagements, nos actions et le projet d\'animation.',
+    ogTitle: 'Institution du Sacré Cœur à Breteuil — La Pastorale',
+    ogDescription: 'Découvrez l\'animation pastorale à l\'Institution du Sacré Cœur.',
     ogImage: '/logo4.png',
     ogType: 'website',
 })

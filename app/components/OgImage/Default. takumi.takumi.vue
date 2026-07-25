@@ -2,7 +2,7 @@
 defineProps({
     title: {
         type: String,
-        default: 'Institution du Sacré-Cœur'
+        default: 'Institution du Sacré Cœur'
     },
     description: {
         type: String,
@@ -18,9 +18,9 @@ defineProps({
 
         <div class="flex items-center gap-6 mb-8">
             <NuxtImg src="/logo4.png" width="80" height="100" class="object-contain"
-                alt="Logo de l'Institution du Sacré-Cœur" />
+                alt="Logo de l'Institution du Sacré Cœur" />
             <div class="h-12 w-1 bg-brand-gold/30" />
-            <div class="text-white/60 text-3xl font-serif">Institution du Sacré-Cœur</div>
+            <div class="text-white/60 text-3xl font-serif">Institution du Sacré Cœur</div>
         </div>
 
         <h1 class="text-white text-6xl font-bold leading-tight mb-6 font-serif">

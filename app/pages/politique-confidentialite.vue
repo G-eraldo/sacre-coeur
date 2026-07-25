@@ -1,9 +1,9 @@
 <script setup>
 useSeoMeta({
     title: 'Politique de confidentialité',
-    description: 'Consultez la politique de confidentialité de l\'Institution du Sacré-Cœur à Breteuil.',
-    ogTitle: 'Institution du Sacré-Cœur à Breteuil — Politique de confidentialité',
-    ogDescription: 'Politique de confidentialité du site de l\'Institution du Sacré-Cœur.',
+    description: 'Consultez la politique de confidentialité de l\'Institution du Sacré Cœur à Breteuil.',
+    ogTitle: 'Institution du Sacré Cœur à Breteuil — Politique de confidentialité',
+    ogDescription: 'Politique de confidentialité du site de l\'Institution du Sacré Cœur.',
     ogImage: '/logo4.png',
     ogType: 'website',
 })
@@ -27,12 +27,12 @@ useSeoMeta({
                         <p class="text-lg leading-relaxed">
                             La présente politique de confidentialité a pour objet d’informer les utilisateurs du site
                             <span class="text-brand-gold font-bold">https://www.sacrecoeur-breteuil.fr</span>
-                            sur la manière dont l’Institution Sacré-Cœur collecte et traite leurs données personnelles
+                            sur la manière dont l’Institution Sacré Cœur collecte et traite leurs données personnelles
                             dans le cadre de l’utilisation du site et des formulaires qui y sont proposés.
                         </p>
 
                         <p>
-                            L’Institution Sacré-Cœur s’engage à traiter les données personnelles dans le respect de la
+                            L’Institution Sacré Cœur s’engage à traiter les données personnelles dans le respect de la
                             réglementation applicable, notamment du Règlement Général sur la Protection des Données
                             (RGPD), et à ne collecter que les données strictement nécessaires aux finalités poursuivies.
                         </p>
@@ -41,7 +41,7 @@ useSeoMeta({
                             <h2 class="text-2xl font-bold text-brand-primary mb-4">1. Responsable du traitement</h2>
                             <p>Le responsable du traitement est :</p>
                             <div class="mt-4 pl-4 border-l-2 border-brand-gold bg-white/50 p-4 rounded-r-sm">
-                                <p class="font-bold text-brand-primary">Institution Sacré-Cœur</p>
+                                <p class="font-bold text-brand-primary">Institution Sacré Cœur</p>
                                 <p>21, Rue des Écoles, BP 60104</p>
                                 <p>60120 BRETEUIL CEDEX</p>
                                 <p>Tél : 03 44 80 22 50</p>
@@ -51,7 +51,7 @@ useSeoMeta({
 
                         <section>
                             <h2 class="text-2xl font-bold text-brand-primary mb-4">2. Données collectées</h2>
-                            <p>Dans le cadre de l’utilisation du site, l’Institution Sacré-Cœur peut collecter les
+                            <p>Dans le cadre de l’utilisation du site, l’Institution Sacré Cœur peut collecter les
                                 données suivantes :</p>
                             <ul class="list-disc pl-5 mt-2 space-y-1">
                                 <li>nom et prénom ;</li>
@@ -102,7 +102,7 @@ useSeoMeta({
                             <h2 class="text-2xl font-bold text-brand-primary mb-4">5. Destinataires des données</h2>
                             <p>
                                 Les données collectées via le site sont destinées uniquement aux personnes habilitées au
-                                sein de l’Institution Sacré-Cœur, dans la limite de leurs missions respectives.
+                                sein de l’Institution Sacré Cœur, dans la limite de leurs missions respectives.
                             </p>
                             <p class="mt-2">
                                 Elles peuvent également être transmises à des prestataires techniques intervenant pour
@@ -157,7 +157,7 @@ useSeoMeta({
                                 de permettre le traitement de la demande.
                             </p>
                             <p class="mt-2 text-brand-primary font-medium">
-                                À défaut, l’Institution Sacré-Cœur peut ne pas être en mesure de répondre au message ou
+                                À défaut, l’Institution Sacré Cœur peut ne pas être en mesure de répondre au message ou
                                 d’examiner la demande de pré-inscription.
                             </p>
                         </section>
@@ -165,7 +165,7 @@ useSeoMeta({
                         <section>
                             <h2 class="text-2xl font-bold text-brand-primary mb-4">9. Sécurité</h2>
                             <p>
-                                L’Institution Sacré-Cœur met en œuvre des mesures techniques et organisationnelles
+                                L’Institution Sacré Cœur met en œuvre des mesures techniques et organisationnelles
                                 appropriées afin d’assurer la sécurité, l’intégrité et la confidentialité des données
                                 personnelles, et d’éviter tout accès non autorisé, perte, altération ou divulgation.
                             </p>

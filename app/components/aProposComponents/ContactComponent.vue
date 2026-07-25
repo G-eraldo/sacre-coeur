@@ -49,7 +49,7 @@ import { ExternalLink, Mail, MapPin, Phone } from 'lucide-vue-next';
                         </li>
                         <Button as-child variant="outline"
                             class="bg-brand-primary text-white px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-[#5a171d] transition-colors rounded-sm">
-                            <NuxtLink to="/contact" aria-label="En savoir plus sur l'Institution du Sacré-Cœur"
+                            <NuxtLink to="/contact" aria-label="En savoir plus sur l'Institution du Sacré Cœur"
                                 class="hover:text-brand-gold">Nous
                                 contacter</NuxtLink>
                         </Button>

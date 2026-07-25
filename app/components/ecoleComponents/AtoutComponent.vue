@@ -2,7 +2,7 @@
 const atouts = [
     {
         title: "École en extérieur",
-        text: "L’Institution du Sacré-Cœur propose, en lien avec ses projets pédagogiques, des temps d’activités et d’enseignement réalisés en extérieur.",
+        text: "L’Institution du Sacré Cœur propose, en lien avec ses projets pédagogiques, des temps d’activités et d’enseignement réalisés en extérieur.",
         image: "https://res.cloudinary.com/dlnbsf2ed/image/upload/v1780047958/ecole_dehors_2_bvs0co.jpg"
     },
     {

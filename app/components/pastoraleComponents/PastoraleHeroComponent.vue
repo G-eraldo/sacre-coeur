@@ -8,7 +8,7 @@
                 La Pastorale
             </h1>
             <p class="max-w-2xl mx-auto text-lg text-gray-700 font-sans leading-relaxed">
-                Au Sacré-Cœur, la pastorale est au cœur de notre projet éducatif.
+                Au Sacré Cœur, la pastorale est au cœur de notre projet éducatif.
                 Elle invite chaque enfant à s'ouvrir au monde et à autrui dans le respect des convictions de chacun.
             </p>
             <div class="mt-12 flex justify-center">

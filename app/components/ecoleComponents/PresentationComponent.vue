@@ -1,7 +1,7 @@
 <script setup>
 const presentation = {
     title: "Présentation de l'école",
-    description: "L’Institution du Sacré-Cœur accueille les enfants de la Toute Petite Section au CM2 dans un cadre bienveillant, familial et porteur des valeurs de l’Enseignement catholique. Établissement privé catholique sous contrat avec l’État, notre école est ouverte à tous, dans le respect des convictions de chacun, de la diversité et du vivre-ensemble.",
+    description: "L’Institution du Sacré Cœur accueille les enfants de la Toute Petite Section au CM2 dans un cadre bienveillant, familial et porteur des valeurs de l’Enseignement catholique. Établissement privé catholique sous contrat avec l’État, notre école est ouverte à tous, dans le respect des convictions de chacun, de la diversité et du vivre-ensemble.",
     description2: "Notre équipe éducative accompagne chaque élève avec attention afin de favoriser son épanouissement personnel, scolaire et humain.",
     classes: [
         "3 classes de maternelle : TPS/PS, MS et GS",
@@ -9,7 +9,7 @@ const presentation = {
         "1 dispositif ULIS, permettant l’accompagnement d’élèves à besoins éducatifs particuliers",
         "1 réseau d’aide, au service de la réussite et du suivi des élèves"
     ],
-    description3: "À travers des projets pédagogiques, culturels, sportifs, pastoraux et solidaires, l’Institution du Sacré-Cœur souhaite faire grandir chaque enfant dans un climat de confiance, d’exigence et de bienveillance.",
+    description3: "À travers des projets pédagogiques, culturels, sportifs, pastoraux et solidaires, l’Institution du Sacré Cœur souhaite faire grandir chaque enfant dans un climat de confiance, d’exigence et de bienveillance.",
     director: "Mme Voisin Bazélina",
     phone: "03.44.80.22.50",
     email: "primaire@sacrecoeur-breteuil.fr"
