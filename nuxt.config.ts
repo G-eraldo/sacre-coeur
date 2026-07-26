@@ -41,6 +41,9 @@ export default defineNuxtConfig({
   },
   routeRules: {
     "/sitemap.xml": { prerender: false },
+    "/10-frontpage/134-visite-virtuelle": {
+      redirect: { to: "/a-propos", statusCode: 301 },
+    },
     "/11-l-etablissement": { redirect: { to: "/a-propos", statusCode: 301 } },
     "/l-etablissement/le-mot-du-directeur": {
       redirect: { to: "/#mot-du-directeur", statusCode: 301 },
