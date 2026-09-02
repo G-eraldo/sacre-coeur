@@ -51,7 +51,7 @@ useSeoMeta({
             </p>
 
             <p class="text-slate-600 mb-4 pl-4 border-l-2 border-brand-gold">
-              Gérald Francois, résidant 27A grande rue 80250 Thory, de
+              Gérald Francois, résidant 11 rue de la gare, 80360 Guillemont, de
               nationalité Française (France), né(e) le 30/11/1994, inscrite au
               R.C.S. de AMIENS sous le numéro 994 074 458 R.C.S. Amiens,
             </p>
@@ -88,8 +88,8 @@ useSeoMeta({
                 contact@lafabriqueducode.fr
               </li>
               <li>
-                <strong class="text-brand-gold">Par courrier :</strong> 27A
-                grande rue 80250 Thory
+                <strong class="text-brand-gold">Par courrier :</strong> 11 rue de la
+                gare 80360 Guillemont
               </li>
             </ul>
           </div>
