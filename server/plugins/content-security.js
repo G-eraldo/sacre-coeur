@@ -1,0 +1,51 @@
+import { getResponseHeader, setResponseHeader } from "h3";
+import { randomBytes } from "node:crypto";
+
+export function nonceScripts(html, nonce) {
+  // Only call on framework head output, never on user/component body HTML.
+  return html.replace(/<script\b([^>]*)>/gi, (_tag, attributes) => {
+    const clean = attributes.replace(
+      /\snonce\s*=\s*(?:"[^"]*"|'[^']*'|[^\s>]+)/gi,
+      "",
+    );
+    return `<script nonce="${nonce}"${clean}>`;
+  });
+}
+
+export function withScriptNonce(policy, nonce) {
+  return policy.replace(
+    /(^|;)\s*script-src\s+([^;]*)/i,
+    (_match, separator, sources) =>
+      `${separator} script-src ${sources.replace(/'unsafe-inline'\s*/g, "").trim()} 'nonce-${nonce}'`,
+  );
+}
+
+export default defineNitroPlugin((nitroApp) => {
+  if (import.meta.dev) return;
+
+  nitroApp.hooks.hook("render:html", (html, { event }) => {
+    const policy = getResponseHeader(event, "content-security-policy");
+    if (typeof policy !== "string") return;
+    const nonce = randomBytes(32).toString("base64");
+    event.context.contentSecurityNonce = nonce;
+    // Nuxt's payload and Unhead scripts are outside rendered component markup.
+    for (const section of ["head", "bodyAppend"]) {
+      html[section] = html[section].map((chunk) => nonceScripts(chunk, nonce));
+    }
+    // nuxt-site-config ajoute __NUXT_SITE_CONFIG__ dans html.body après Unhead.
+    html.body = html.body.map((entry) =>
+      /^<script>window\.__NUXT_SITE_CONFIG__=[^<]*<\/script>$/.test(entry)
+        ? entry.replace("<script>", `<script nonce="${nonce}">`)
+        : entry);
+    setResponseHeader(
+      event,
+      "content-security-policy",
+      withScriptNonce(policy, nonce),
+    );
+    // A cached HTML document must not replay a per-request nonce. HTML is
+    // therefore deliberately not cached (private, no-store): every navigation
+    // re-renders it, forgoing browser/CDN HTML caching. This trade-off is
+    // accepted; the resulting TTFB impact should be measured before release.
+    setResponseHeader(event, "cache-control", "private, no-store");
+  });
+});

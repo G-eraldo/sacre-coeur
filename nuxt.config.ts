@@ -40,6 +40,16 @@ export default defineNuxtConfig({
     sources: ["/api/__sitemap__/urls"],
   },
   routeRules: {
+    "/**": {
+      headers: {
+        "Content-Security-Policy": `default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; form-action 'self'; img-src 'self' data: blob: https://res.cloudinary.com https://*.cloudinary.com; font-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' ${process.env.NODE_ENV === "production" ? "" : "'unsafe-inline' "}; script-src-attr 'unsafe-hashes' 'sha256-bwK6T5wZVTANitXbrTsel7kl/PyCjCd/Dq5Qoz3imjM='; connect-src 'self' https://backend.sacrecoeur-breteuil.fr https://data.education.gouv.fr https://calendrier.api.gouv.fr; upgrade-insecure-requests`,
+        "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "SAMEORIGIN",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Permissions-Policy": "camera=(), microphone=(), geolocation=(), payment=()",
+      },
+    },
     "/sitemap.xml": { prerender: false },
     "/10-frontpage/134-visite-virtuelle": {
       redirect: { to: "/a-propos", statusCode: 301 },
