@@ -42,7 +42,10 @@ export default defineNitroPlugin((nitroApp) => {
       "content-security-policy",
       withScriptNonce(policy, nonce),
     );
-    // A cached HTML document must not replay a per-request nonce.
+    // A cached HTML document must not replay a per-request nonce. HTML is
+    // therefore deliberately not cached (private, no-store): every navigation
+    // re-renders it, forgoing browser/CDN HTML caching. This trade-off is
+    // accepted; the resulting TTFB impact should be measured before release.
     setResponseHeader(event, "cache-control", "private, no-store");
   });
 });
